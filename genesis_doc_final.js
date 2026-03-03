@@ -138,7 +138,7 @@ content.push(para([
   ti("Omphalos"),
   t(" (Greek for \u201Cnavel\u201D\u2014the question being whether Adam, who was never born, had a navel). Gosse argued that God necessarily created a world with the "),
   ti("appearance"),
-  t(" of age, because a functioning world requires pre-existing conditions: trees need rings, soil needs organic matter, rivers need erosion patterns, and light from distant stars must already be in transit. The appearance of age is not deception but a necessary feature of mature creation.")
+  t(" of age, because a functioning world requires pre-existing conditions: trees need rings, soil needs organic matter, rivers need erosion patterns, and light from distant stars must already be in transit. The appearance of age is not deception but a necessary feature of mature creation. We will return to this argument below, because while it is internally consistent, it runs into a devastating theological objection that its proponents rarely address.")
 ]));
 
 content.push(para([
@@ -157,6 +157,88 @@ content.push(para([
   t("Seventh, some young earth advocates point to \u201Cpolystrate fossils\u201D\u2014tree trunks and other structures that extend vertically through multiple geological strata. If each stratum represents millions of years of deposition, how could a tree trunk remain upright and intact while being slowly buried over eons? This, they argue, suggests rapid deposition consistent with a global flood rather than gradual accumulation over millions of years.")
 ]));
 
+content.push(heading2("Young Earth Resources: The Educational Ecosystem"));
+
+content.push(para([
+  t("It is worth noting that the young earth position is not merely a set of isolated arguments but is supported by a substantial educational ecosystem. Two publishers in particular have shaped how millions of Christian homeschool students learn science.")
+]));
+
+content.push(para([
+  tb("Apologia Educational Ministries"),
+  t(", founded by Dr. Jay L. Wile (PhD in nuclear chemistry, University of Rochester), publishes the widely used "),
+  ti("Exploring Creation"),
+  t(" series, which covers general science, biology, chemistry, physics, and earth science for middle and high school students. Originally written by Dr. Wile himself, the curriculum teaches science from a creation-based perspective. The series frames uniformitarianism as requiring \u201Cfaith that the Bible is not literally true,\u201D presents the fossil record as better explained by catastrophism consistent with a global flood, and critiques Darwinian evolution from within a Christian worldview. Apologia\u2019s earth science curriculum covers radiometric dating, geological strata, and the age question, generally favoring the young earth position while noting the debate. After Dr. Wile sold the company in 2008 to Davis Carman, the curriculum became more explicitly aligned with young earth creationism.")
+]));
+
+content.push(para([
+  tb("Berean Builders"),
+  t(", also founded by Dr. Jay Wile, publishes two science curriculum series. The elementary "),
+  ti("Science in History"),
+  t(" series (grades K\u20136) includes titles such as "),
+  ti("Science in the Beginning"),
+  t(" (2013), which uses the days of creation as an organizing framework for teaching scientific concepts. The high school "),
+  ti("Discovering Design"),
+  t(" series includes courses in earth science, biology, chemistry, and physics. While Dr. Wile writes from a young earth creationist perspective, Berean Builders is notably more irenic than many YEC publishers: it presents both young earth and old earth positions, acknowledges that serious Christians hold different views on the age of the earth, and does not treat the old earth position as inherently unbiblical. Dr. Wile\u2019s approach demonstrates that one can hold the young earth position with intellectual honesty and respect for scientific evidence\u2014a quality not always present in YEC literature.")
+]));
+
+content.push(para([
+  t("These curricula matter because they represent the primary science education for a significant portion of homeschooled Christians. Their arguments are the ones many young Catholics and Protestants encounter first. Understanding them is essential for engaging the young earth position fairly.")
+]));
+
+content.push(heading2("Why Some Catholics Argue Young Earth Belief Is Required"));
+
+content.push(para([
+  t("The strongest case for a young earth within Catholicism does not come from the Protestant fundamentalist tradition but from a distinctly Catholic argument rooted in the Church Fathers, ecumenical councils, and Thomistic metaphysics. The most prominent advocate of this position is the Kolbe Center for the Study of Creation, founded in 2000 and directed by Hugh Owen. Their arguments deserve serious engagement, because they appeal to sources that every Catholic must take seriously.")
+]));
+
+content.push(para([
+  tb("The Church Fathers Argument. "),
+  t("The Kolbe Center argues that every Apostle, Father, and Doctor of the Church upheld a young earth chronology derived from Genesis. They challenge opponents to \u201Cshow us a single statement from a Church Father who taught that God used long periods of time in the creation of the material universe.\u201D This matters because the First Vatican Council, "),
+  ti("Dei Filius"),
+  t(", Chapter 2, teaches that Scripture must be interpreted \u201Caccording to that sense which Holy Mother Church has held and holds\u201D and \u201Cin accordance with the unanimous consent of the Fathers.\u201D If the Fathers unanimously taught a young earth, a Catholic might be bound to accept it.")
+]));
+
+content.push(para([
+  t("However, this argument has a critical weakness: the Fathers were not, in fact, unanimous on this point. Saint Augustine, in "),
+  ti("De Genesi ad Litteram"),
+  t(" (circa 415 AD), explicitly argued that the \u201Cdays\u201D of Genesis were not ordinary days but a literary framework whose actual duration was unknown. Augustine wrote that the creation narrative was arranged not according to temporal sequence but according to a logical order. Saint Basil of Caesarea, while defending the days as real periods, acknowledged that the first day was called \u201Cone\u201D rather than \u201Cfirst\u201D to indicate its special character. The very existence of disagreement among the Fathers means the \u201Cunanimous consent\u201D rule does not apply to the specific question of the earth\u2019s age.")
+]));
+
+content.push(para([
+  tb("The Fourth Lateran Council Argument. "),
+  t("The Kolbe Center and the Catholic Origins apostolate argue that the Fourth Lateran Council (1215), in its "),
+  ti("Firmiter"),
+  t(" constitution, dogmatically defined fiat creation. The key Latin text reads: "),
+  ti("Deus\u2026 sua omnipotenti virtute simul ab initio temporis utramque de nihilo condidit creaturam"),
+  t(" (\u201CGod\u2026 by His own omnipotent power at once from the beginning of time created each creature from nothing\u201D). Young earth advocates read "),
+  ti("simul"),
+  t(" as \u201Csimultaneously\u201D and "),
+  ti("ab initio temporis"),
+  t(" as \u201Cfrom the beginning of time,\u201D concluding that creation was instantaneous and occurred at the very start of time\u2014allowing no room for billions of years. Saint Lawrence of Brindisi (1559\u20131619), a Doctor of the Church, read the text this way, as did the Flemish Jesuit exegete Cornelius a Lapide (1567\u20131637).")
+]));
+
+content.push(para([
+  t("However, reputable theologians such as P. Hurter, S.J. and M. Jungmann have argued that "),
+  ti("simul"),
+  t(" in the Lateran text can be understood not as simultaneity of time but as unity of plan and community of origin\u2014meaning that all creatures share one Creator and one act of creation, not necessarily that they were created in a single instant. The Council\u2019s primary target was the Albigensian/Catharist heresy, which denied that the material world was created by the good God. The "),
+  ti("Firmiter"),
+  t(" was asserting that both spiritual and material creation come from the same God, against Cathar dualism\u2014not defining a timeline for creation.")
+]));
+
+content.push(para([
+  tb("The Creation-Providence Framework. "),
+  t("Hugh Owen argues that all arguments for an old earth assume a \u201Cnaturalistic-uniformitarian framework\u201D inherited from Enlightenment philosophers, which was rejected by all the Church Fathers. The Fathers instead embraced what Owen calls a \u201CCreation-Providence Framework,\u201D in which the entire work of creation was supernatural, and the natural order only began when creation was complete. Therefore, natural processes cannot be extrapolated backward to determine the age of creation. Owen rejects the label \u201CYoung Earth Creationist\u201D in favor of \u201CDRAC\u201D\u2014\u201CDivinely-Revealed-Age-Catholic\u201D\u2014framing his position as the default Catholic position held by the Fathers, not a modern innovation.")
+]));
+
+content.push(para([
+  tb("The Cana Wine Analogy. "),
+  t("The Kolbe Center draws a parallel to Jesus turning water into wine at Cana (John 2:1\u201311). The wine had all the chemical markers of having gone through a long natural process of fermentation and aging\u2014yet it was created instantaneously by divine power. Just as we can only know the true age of the Cana wine from the testimony of Scripture (not from chemical analysis), we can only know the true age of the cosmos from Genesis. This is essentially a more theologically grounded version of the Omphalos argument.")
+]));
+
+content.push(para([
+  t("These are real arguments, held by serious Catholics, grounded in genuine sources. They deserve honest engagement rather than dismissal. Our response, given in the section that follows, is that the evidence against a young earth is not merely scientific but theological: the Omphalos hypothesis in all its forms\u2014including the Cana Wine analogy\u2014runs afoul of the First Vatican Council\u2019s dogmatic teaching that God can be known with certainty from created things. If created things systematically misrepresent their own history, that foundation collapses.")
+]));
+
 content.push(heading2("Additional Evidence Against a Young Earth"));
 
 content.push(para([
@@ -172,7 +254,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("Coral reefs present a similar challenge. The Great Barrier Reef has been growing for approximately 500,000 years. Coral growth rates are measurable in the present: typically a few millimeters to a few centimeters per year. The Eniwetok Atoll in the Pacific has reef limestone over 1,400 meters thick, requiring hundreds of thousands of years of growth at observed rates. A young earth requires that either coral grew hundreds of times faster in the past\u2014contradicting observable biology\u2014or that God created reefs with the appearance of ancient growth, returning us to the Omphalos problem.")
+  t("Coral reefs present a similar challenge. The Great Barrier Reef has been growing for approximately 500,000 years. Coral growth rates are measurable in the present: typically a few millimeters to a few centimeters per year. The Eniwetok Atoll in the Pacific has reef limestone over 1,400 meters thick, requiring hundreds of thousands of years of growth at observed rates. A young earth requires that either coral grew hundreds of times faster in the past\u2014contradicting observable biology\u2014or that God created reefs with the appearance of ancient growth, returning us once again to Gosse\u2019s Omphalos hypothesis and the theological difficulty it creates, which we address below.")
 ]));
 
 content.push(para([
@@ -294,27 +376,77 @@ content.push(para([
 content.push(heading2("Required vs. Open: What the Church Demands About the Age of the Earth"));
 
 content.push(para([
-  tb("Required: "),
-  t("God is the Creator of all things visible and invisible (Nicene Creed; First Vatican Council, "),
+  t("To answer this question with precision, we must understand the levels of doctrinal authority in Catholic theology. Ludwig Ott, in his authoritative "),
+  ti("Fundamentals of Catholic Dogma"),
+  t(" (1952), classifies teachings by their degree of certainty: "),
+  ti("de fide definita"),
+  t(" (divinely revealed and solemnly defined\u2014denial is heresy); "),
+  ti("de fide"),
+  t(" (divinely revealed\u2014denial is heresy); "),
+  ti("sententia fidei proxima"),
+  t(" (close to faith\u2014denial is near-heresy); "),
+  ti("sententia certa"),
+  t(" (theologically certain); "),
+  ti("sententia communis"),
+  t(" (common teaching); and "),
+  ti("sententia probabilis"),
+  t(" (probable opinion). This hierarchy matters enormously, because not everything taught by Catholic authorities carries the same weight.")
+]));
+
+content.push(para([
+  tb("Required (De Fide): "),
+  t("The following teachings about creation are classified by Ott as "),
+  ti("de fide"),
+  t("\u2014divinely revealed truths whose denial constitutes heresy: All that exists outside God was, in its whole substance, produced out of nothing by God (Fourth Lateran Council; Vatican I, "),
   ti("Dei Filius"),
-  t(", Chapter 1, Canon 5). Creation is an act of divine will and wisdom, not accident (Fourth Lateran Council, 1215: \u201CGod\u2026 by His own omnipotent power at once from the beginning of time created each creature from nothing\u201D). Human beings are made in God\u2019s image (Genesis 1:27; CCC \u00A7356). The human soul is directly created by God and cannot be a product of material processes alone ("),
+  t(", Chapter 1, Canon 5). God was moved by His goodness to create the world (Vatican I, "),
+  ti("Dei Filius"),
+  t(", Chapter 1, Canon 2). The world had a beginning in time ("),
+  ti("Dei Filius"),
+  t(", Chapter 1, Canon 5: \u201CIf anyone does not confess that the world and all things which are contained in it, both spiritual and material, as regards their whole substance, have been produced by God from nothing\u2026 let him be anathema\u201D). God alone created the world ("),
+  ti("Dei Filius"),
+  t(", Chapter 1). God keeps all created things in existence and guides them through His Providence ("),
+  ti("Dei Filius"),
+  t(", Chapter 1). The first man was created by God (Genesis 1:27; CCC \u00A7356). Man consists of a material body and a spiritual soul (CCC \u00A7362\u2013368). The rational soul is the essential form of the body (Council of Vienne, 1312). Every human soul is directly created by God ("),
   ti("Humani Generis"),
   t(", \u00A736; CCC \u00A7366). Adam and Eve are real, historical individuals from whom all humans descend ("),
   ti("Humani Generis"),
-  t(", \u00A737; Council of Trent, Session V, Canon 1\u20134). Creation reveals God\u2019s existence and attributes to human reason (Romans 1:19\u201320; First Vatican Council, "),
+  t(", \u00A737; Council of Trent, Session V, Canons 1\u20134). Creation reveals God\u2019s existence and attributes to human reason (Romans 1:19\u201320; "),
   ti("Dei Filius"),
   t(", Chapter 2, Canon 1; CCC \u00A736). The Genesis account, while using \u201Cfigurative language\u201D (CCC \u00A7390), \u201Caffirms a primeval event, a deed that took place at the beginning of the history of man.\u201D")
 ]));
 
 content.push(para([
-  tb("Open: "),
-  t("The Catholic Church does not require belief in a young earth. This is not a matter of opinion; it is a matter of documented Church teaching. Pope Pius XII, in "),
-  ti("Humani Generis"),
-  t(" (1950), \u00A736, explicitly permitted Catholics to investigate evolution as it pertains to the human body. The Pontifical Biblical Commission (1909) ruled that the word "),
+  tb("Not required (Open): "),
+  t("The age of the earth is not listed among the "),
+  ti("de fide"),
+  t(" teachings in Ott or any other standard manual of Catholic dogmatic theology. It is not defined by any ecumenical council, papal encyclical, or ex cathedra statement. This is documented in the following sources:")
+]));
+
+content.push(para([
+  t("The Pontifical Biblical Commission (1909), in its decree "),
+  ti("De charactere historico trium priorum capitum Geneseos"),
+  t(", was asked (Question VIII): \u201CIn the designation and distinction of the six days mentioned in the first chapter of Genesis may the word "),
   ti("yom"),
-  t(" in Genesis may be understood as \u201Ca certain space of time,\u201D not necessarily a twenty-four-hour day. The International Theological Commission, in its 2004 document \u201CCommunion and Stewardship,\u201D approved by the Congregation for the Doctrine of the Faith (then headed by Cardinal Ratzinger), stated that \u201Cthe story of human origins is complex and subject to revision\u201D and acknowledged \u201Cthe emergence of the first members of the human species (whether as individuals or in populations).\u201D Saint Augustine, in "),
+  t(" (day) be taken either in the literal sense for the natural day or in an applied sense for a certain space of time, and may this question be the subject of free discussion among exegetes?\u201D The Commission answered: \u201CIn the affirmative.\u201D The same Commission affirmed (Question VII) that the sacred author did not intend \u201Cto give scientific teaching about the internal constitution of visible things\u201D but rather \u201Ca popular notion in accord with the current speech of the time.\u201D And (Question VI) that \u201Cprovided that the literal and historical sense is presupposed,\u201D passages \u201Cmay wisely and profitably be interpreted in an allegorical and prophetical sense, in the light of the example of the holy Fathers and of the Church itself.\u201D")
+]));
+
+content.push(para([
+  t("In 1948, the Pontifical Biblical Commission sent a letter to Cardinal Suhard of Paris, effectively clarifying the scope of its 1909 responses: \u201CThese literary forms do not correspond exactly with any classical category\u201D and the \u201Chistoricity can neither be denied nor affirmed simply.\u201D Pope Pius XII, in "),
+  ti("Humani Generis"),
+  t(" (1950), \u00A736, explicitly permitted Catholics to investigate evolution as it pertains to the human body. The International Theological Commission, in its 2004 document \u201CCommunion and Stewardship,\u201D approved by the Congregation for the Doctrine of the Faith (then headed by Cardinal Ratzinger), stated that \u201Cthe story of human origins is complex and subject to revision.\u201D")
+]));
+
+content.push(para([
+  t("Saint Augustine, in "),
   ti("De Genesi ad Litteram"),
-  t(" (circa 415 AD), argued that the \u201Cdays\u201D of Genesis were not ordinary days but a framework whose actual duration was unknown. None of these requirements specify an age for the earth. None require six literal days. None prohibit deep time. The question of the earth\u2019s age is, in Catholic theology, an open question\u2014and the overwhelming convergence of evidence from physics, chemistry, geology, astronomy, and biology points to a universe approximately 13.8 billion years old and an earth approximately 4.5 billion years old.")
+  t(" (circa 415 AD), argued that the \u201Cdays\u201D of Genesis were not ordinary days but a literary framework whose actual duration was unknown\u2014and was not condemned for this view. The Pontifical Academy of Sciences, established by Pope Pius XI in 1936, operates on the assumption of deep time and modern cosmology. Cardinal Paul Poupard, then President of the Pontifical Council for Culture, stated that \u201Cthe faithful have the obligation to listen to that which secular modern science has to offer,\u201D warning of \u201Cthe dangers of a religion that severs its links with reason.\u201D")
+]));
+
+content.push(para([
+  t("None of the "),
+  ti("de fide"),
+  t(" requirements listed above specify an age for the earth. None require six literal days. None prohibit deep time. The question of the earth\u2019s age is, in Catholic theology, an open question\u2014and the overwhelming convergence of evidence from physics, chemistry, geology, astronomy, and biology points to a universe approximately 13.8 billion years old and an earth approximately 4.5 billion years old.")
 ]));
 
 content.push(heading2("A Word to Young Earth Believers"));
@@ -1575,7 +1707,14 @@ const refs = [
   { text: "Second Vatican Council. Gaudium et Spes: Pastoral Constitution on the Church in the Modern World. December 7, 1965.", url: "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html" },
   { text: "Fourth Lateran Council. Constitution 1: On the Catholic Faith (Firmiter Credimus). 1215." },
   { text: "Fifth Lateran Council. Apostolici Regiminis: Bull on the Immortality of the Soul. December 19, 1513." },
-  { text: "Pontifical Academy of Sciences. Founded 1936 by Pope Pius XI; Statutes renewed by Pope John Paul II, 1986.", url: "https://www.pas.va/en.html" }
+  { text: "Pontifical Academy of Sciences. Founded 1936 by Pope Pius XI; Statutes renewed by Pope John Paul II, 1986.", url: "https://www.pas.va/en.html" },
+  { text: "Ott, Ludwig. Fundamentals of Catholic Dogma. Translated by Patrick Lynch. Edited by James Canon Bastible. Baronius Press, 2018 (orig. 1952).", url: "https://www.baronius.com/fundamentals-of-catholic-dogma.html" },
+  { text: "Pontifical Biblical Commission. De charactere historico trium priorum capitum Geneseos (On the Historical Character of the First Three Chapters of Genesis). June 30, 1909.", url: "http://catholicapologetics.info/scripture/oldtestament/commission.htm" },
+  { text: "Owen, Hugh, and the Kolbe Center for the Study of Creation. Creation, Evolution, and Catholicism: A Discussion for Those Who Believe. Kolbe Center, 2000ff.", url: "https://kolbecenter.org/" },
+  { text: "Wile, Jay L. Science in the Beginning. Berean Builders, 2013. See also the Discovering Design series (2015\u20132022).", url: "https://bereanbuilders.com/ecomm/" },
+  { text: "Apologia Educational Ministries. Exploring Creation science curriculum series. Founded by Jay L. Wile; currently published by Davis Carman.", url: "https://www.apologia.com/" },
+  { text: "Pius X, Pope St. Praestantia Scripturae. Motu proprio on the authority of the Pontifical Biblical Commission, November 18, 1907." },
+  { text: "Poupard, Cardinal Paul. Address on Faith and Science, Pontifical Council for Culture. Cited in Catholic News Service reports on the Galileo Commission findings." }
 ];
 
 refs.forEach((ref, i) => {
@@ -1660,7 +1799,7 @@ const indexEntries = [
   "Radiometric dating \u2014 Chapter 1",
   "RATE project \u2014 Chapter 1",
   "Rational soul \u2014 Chapters 3, 5, 8",
-  "Required vs. open framework \u2014 Chapters 2\u20139",
+  "Required vs. open framework \u2014 Chapters 1\u201313",
   "Romans 5:13 \u2014 Chapters 5, 12",
   "Sensitive soul \u2014 Chapters 3, 5",
   "Stanciu, George \u2014 Chapter 3",
@@ -1675,6 +1814,16 @@ const indexEntries = [
   "Thomistic philosophy \u2014 Chapters 3, 5",
   "Tiktaalik \u2014 Chapter 3",
   "Young earth creationism \u2014 Chapter 1",
+  "Apologia Educational Ministries \u2014 Chapter 1",
+  "Berean Builders (Dr. Jay Wile) \u2014 Chapter 1",
+  "Kolbe Center for the Study of Creation \u2014 Chapter 1",
+  "Owen, Hugh \u2014 Chapter 1",
+  "Lateran IV, Firmiter constitution \u2014 Chapters 1, 12",
+  "Ott, Ludwig (Fundamentals of Catholic Dogma) \u2014 Chapter 1",
+  "Pontifical Biblical Commission, 1909 decree \u2014 Chapter 1",
+  "Poupard, Cardinal Paul \u2014 Chapter 1",
+  "De fide definita (levels of doctrinal authority) \u2014 Chapter 1",
+  "Fides et Ratio \u2014 Chapters 11, 13",
   "50/500 rule \u2014 Chapter 10"
 ];
 
@@ -1684,6 +1833,9 @@ indexEntries.forEach(entry => {
 
 // Build document
 const doc = new Document({
+  features: {
+    updateFields: true
+  },
   styles: {
     default: {
       document: {
@@ -1738,6 +1890,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then(buffer => {
-  fs.writeFileSync("/home/claude/genesis_science_catholic_theology.docx", buffer);
+  fs.writeFileSync("Genesis_Science_Catholic_Theology.docx", buffer);
   console.log("Document created successfully");
 });
