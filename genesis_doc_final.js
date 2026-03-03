@@ -291,30 +291,30 @@ content.push(para([
   t(" must be taken as a natural day or may be understood as a certain space of time. The answer: \u201CIn the affirmative\u201D\u2014meaning Catholics are free to interpret the days of Genesis as periods of time rather than twenty-four-hour days. This was not a concession forced by modernity; it was a recognition of what the text itself permits.")
 ]));
 
-content.push(heading2("What the Church Requires and What It Does Not"));
+content.push(heading2("Required vs. Open: What the Church Demands About the Age of the Earth"));
 
 content.push(para([
-  t("The Catholic Church does not require belief in a young earth. This is not a matter of opinion; it is a matter of documented Church teaching.")
+  tb("Required: "),
+  t("God is the Creator of all things visible and invisible (Nicene Creed; First Vatican Council, "),
+  ti("Dei Filius"),
+  t(", Chapter 1, Canon 5). Creation is an act of divine will and wisdom, not accident (Fourth Lateran Council, 1215: \u201CGod\u2026 by His own omnipotent power at once from the beginning of time created each creature from nothing\u201D). Human beings are made in God\u2019s image (Genesis 1:27; CCC \u00A7356). The human soul is directly created by God and cannot be a product of material processes alone ("),
+  ti("Humani Generis"),
+  t(", \u00A736; CCC \u00A7366). Adam and Eve are real, historical individuals from whom all humans descend ("),
+  ti("Humani Generis"),
+  t(", \u00A737; Council of Trent, Session V, Canon 1\u20134). Creation reveals God\u2019s existence and attributes to human reason (Romans 1:19\u201320; First Vatican Council, "),
+  ti("Dei Filius"),
+  t(", Chapter 2, Canon 1; CCC \u00A736). The Genesis account, while using \u201Cfigurative language\u201D (CCC \u00A7390), \u201Caffirms a primeval event, a deed that took place at the beginning of the history of man.\u201D")
 ]));
 
 content.push(para([
-  t("Pope Pius XII, in "),
+  tb("Open: "),
+  t("The Catholic Church does not require belief in a young earth. This is not a matter of opinion; it is a matter of documented Church teaching. Pope Pius XII, in "),
   ti("Humani Generis"),
-  t(" (1950), paragraph 36, explicitly permitted Catholics to investigate evolution as it pertains to the human body, requiring only that the human soul is understood as directly created by God. The Catechism of the Catholic Church acknowledges that Genesis uses \u201Cfigurative language\u201D (CCC \u00A7390) while affirming the historical reality of the events it describes. The International Theological Commission, in a 2004 document approved by the Congregation for the Doctrine of the Faith, stated that \u201Cthe story of human origins is complex and subject to revision\u201D and acknowledged \u201Cthe emergence of the first members of the human species (whether as individuals or in populations).\u201D")
-]));
-
-content.push(para([
-  t("What the Church "),
-  ti("does"),
-  t(" require is this: that God is the Creator of all things visible and invisible (Nicene Creed). That creation is not an accident but an act of divine will and wisdom. That human beings are made in God\u2019s image (Genesis 1:27). That the human soul is directly created by God and cannot be a product of material processes alone ("),
-  ti("Humani Generis"),
-  t(", \u00A736; CCC \u00A7366). That Adam and Eve are real, historical individuals from whom all humans descend ("),
-  ti("Humani Generis"),
-  t(", \u00A737). And that creation reveals God\u2019s existence and attributes to human reason (Romans 1:19\u201320; CCC \u00A746).")
-]));
-
-content.push(para([
-  t("None of these requirements specify an age for the earth. None require six literal days. None prohibit deep time. The question of the earth\u2019s age is, in Catholic theology, an open question\u2014and the overwhelming convergence of evidence from physics, chemistry, geology, astronomy, and biology points to a universe approximately 13.8 billion years old and an earth approximately 4.5 billion years old.")
+  t(" (1950), \u00A736, explicitly permitted Catholics to investigate evolution as it pertains to the human body. The Pontifical Biblical Commission (1909) ruled that the word "),
+  ti("yom"),
+  t(" in Genesis may be understood as \u201Ca certain space of time,\u201D not necessarily a twenty-four-hour day. The International Theological Commission, in its 2004 document \u201CCommunion and Stewardship,\u201D approved by the Congregation for the Doctrine of the Faith (then headed by Cardinal Ratzinger), stated that \u201Cthe story of human origins is complex and subject to revision\u201D and acknowledged \u201Cthe emergence of the first members of the human species (whether as individuals or in populations).\u201D Saint Augustine, in "),
+  ti("De Genesi ad Litteram"),
+  t(" (circa 415 AD), argued that the \u201Cdays\u201D of Genesis were not ordinary days but a framework whose actual duration was unknown. None of these requirements specify an age for the earth. None require six literal days. None prohibit deep time. The question of the earth\u2019s age is, in Catholic theology, an open question\u2014and the overwhelming convergence of evidence from physics, chemistry, geology, astronomy, and biology points to a universe approximately 13.8 billion years old and an earth approximately 4.5 billion years old.")
 ]));
 
 content.push(heading2("A Word to Young Earth Believers"));
@@ -689,14 +689,26 @@ content.push(heading2("Required vs. Open: What the Church Demands About Our Homi
 
 content.push(para([
   tb("Required: "),
-  t("Human beings are made in the image and likeness of God (Genesis 1:27; CCC \u00A7356). The human soul is directly created by God and is not the product of material evolution (CCC \u00A7366). All true human beings\u2014those possessing rational souls\u2014descend from Adam and Eve.")
+  t("Human beings are made in the image and likeness of God (Genesis 1:27; CCC \u00A7356; "),
+  ti("Gaudium et Spes"),
+  t(", \u00A712: \u201CAccording to the almost unanimous opinion of believers and unbelievers alike, all things on earth should be related to man as their center and crown\u201D). The human soul is directly created by God and is not the product of material evolution (CCC \u00A7366; "),
+  ti("Humani Generis"),
+  t(", \u00A736: \u201Cthe Catholic faith obliges us to hold that souls are immediately created by God\u201D). The soul is the substantial form of the body (Council of Vienne, 1312, "),
+  ti("Fidei Catholicae"),
+  t("; Fifth Lateran Council, 1513, "),
+  ti("Apostolici Regiminis"),
+  t("; CCC \u00A7365). All true human beings\u2014those possessing rational souls\u2014descend from Adam and Eve ("),
+  ti("Humani Generis"),
+  t(", \u00A737).")
 ]));
 
 content.push(para([
   tb("Open: "),
   t("The Church has issued no definitive teaching on the spiritual status of Neanderthals, Denisovans, "),
   ti("Homo erectus"),
-  t(", or any other hominid group. Whether these beings possessed rational souls, whether they are descendants of Adam, and how they relate to the ensoulment event are all questions of legitimate inquiry. The fossil record\u2019s classification of hominid species is a scientific question, not a theological one. Our framework proposes that all hominid groups showing evidence of symbolic, rational behavior are ensouled descendants of Adam\u2014but this is a theological interpretation, not a dogmatic requirement. A Catholic could coherently hold different views on the spiritual status of Neanderthals without contradicting any defined teaching.")
+  t(", or any other hominid group. The International Theological Commission\u2019s 2004 document \u201CCommunion and Stewardship\u201D acknowledges \u201Cthe emergence of the first members of the human species (whether as individuals or in populations)\u201D without specifying which fossil species counts as human. Pope Pius XII, in "),
+  ti("Humani Generis"),
+  t(", \u00A736, permitted investigation of bodily evolution from pre-existing living matter but made no pronouncement on which ancestral forms qualify. Whether Neanderthals and Denisovans possessed rational souls, whether they are descendants of Adam, and how they relate to the ensoulment event are all questions of legitimate inquiry. Our framework proposes that all hominid groups showing evidence of symbolic, rational behavior are ensouled descendants of Adam\u2014but this is a theological interpretation, not a dogmatic requirement. A Catholic could coherently hold different views on the spiritual status of Neanderthals without contradicting any defined teaching.")
 ]));
 
 content.push(pageBreak());
@@ -811,14 +823,20 @@ content.push(heading2("Required vs. Open: What the Church Demands of This Synthe
 
 content.push(para([
   tb("Required: "),
-  t("Everything enumerated in the dogmatic requirements applies here with full force. Adam and Eve must be real historical individuals. All humans must descend from them. Original sin must be transmitted through generation. The soul must be directly created by God. Our framework is constructed specifically to satisfy every one of these requirements.")
+  t("The dogmatic requirements constraining this synthesis are drawn from the highest levels of Church authority. Adam and Eve must be real, historical individuals ("),
+  ti("Humani Generis"),
+  t(", \u00A737: the faithful \u201Ccannot embrace that opinion which maintains\u2026 that Adam represents a certain number of first parents\u201D). All humans must descend from them through biological generation (Council of Trent, Session V, Canon 3: original sin \u201Cin its origin is one, and being transfused into all by propagation, not by imitation\u201D). The soul must be directly created by God in each individual (CCC \u00A7366; "),
+  ti("Humani Generis"),
+  t(", \u00A736). The soul is the form of the body, transforming the whole being (Council of Vienne, 1312). The Fall was a real event with real consequences for all humanity (CCC \u00A7390; Council of Trent, Session V, Canons 1\u20132). Our framework is constructed specifically to satisfy every one of these requirements.")
 ]));
 
 content.push(para([
   tb("Open: "),
   t("The specific date of ensoulment (our proposal of 750,000 to 1,000,000 years ago), the identification of Adam with "),
   ti("Homo heidelbergensis"),
-  t(", the mechanism of early interbreeding, the exact timeline of dispersal, and the claim that all post-dispersal hominid groups are ensouled\u2014these are all interpretive proposals, not dogmatic claims. A Catholic could accept our framework\u2019s dogmatic foundations while differing on its specific scientific and historical claims. The synthesis is offered as a coherent possibility, not as a binding interpretation.")
+  t(", the mechanism of early interbreeding, the exact timeline of dispersal, and the claim that all post-dispersal hominid groups are ensouled\u2014these are all interpretive proposals operating within the open space Catholic theology permits. The International Theological Commission (2004) acknowledged that \u201Cthe story of human origins is complex and subject to revision,\u201D and "),
+  ti("Humani Generis"),
+  t(", \u00A736, permits inquiry into bodily evolution \u201Cin as far as it inquires into the origin of the human body as coming from pre-existent and living matter.\u201D The Pontifical Biblical Commission (1909) confirmed that Catholics may interpret the \u201Cdays\u201D of Genesis as periods of time. A Catholic could accept our framework\u2019s dogmatic foundations while differing on its specific scientific and historical claims. The synthesis is offered as a coherent possibility, not as a binding interpretation.")
 ]));
 
 content.push(pageBreak());
@@ -1285,6 +1303,26 @@ content.push(para([
   t("What we can say with confidence is this: the Church requires belief in a real Adam who really sinned and from whom all humans really descend. The science of population genetics is compatible with this, given our framework\u2019s mechanisms of deep time and early interbreeding. The Church does not require belief in a literal global flood or literal eight survivors. The science of population genetics rules out an eight-person bottleneck in human history, but confirms a bottleneck in the low thousands at the right time and place. Our framework reads the Flood as a compressed theological account of that documented event. The dogma is preserved. The science is respected. And the 270 flood narratives from cultures around the world remain one of the most haunting patterns in all of human storytelling.")
 ]));
 
+content.push(heading2("Required vs. Open: Summary for the Bottleneck and the Flood"));
+
+content.push(para([
+  tb("Required: "),
+  t("On Adam, the requirements are dogmatic and non-negotiable: Adam was a real, historical individual who committed an actual sin, and all humans descend from him through generation (Council of Trent, Session V, Canons 1\u20134; "),
+  ti("Humani Generis"),
+  t(", \u00A737; CCC \u00A7\u00A7390, 404). Every human soul is directly created by God (CCC \u00A7366; "),
+  ti("Humani Generis"),
+  t(", \u00A736). On the Flood, the Church requires that the narrative conveys real theological truth: God judges sin, God saves the righteous, God offers new beginnings. The Ark and the Flood are established types (prefigurations) of baptism and the Church (1 Peter 3:20\u201321; CCC \u00A71219). Jesus referred to Noah as a historical figure (Matthew 24:37\u201339; Luke 17:26\u201327). There must be some real event underlying the narrative.")
+]));
+
+content.push(para([
+  tb("Open: "),
+  t("Whether the Flood was global or regional, whether the ark was a literal vessel or a narrative vehicle, whether Noah\u2019s family numbered literally eight or represents a compressed account of a larger remnant\u2014these are all open questions. The Pontifical Biblical Commission\u2019s 1948 letter to Cardinal Suhard granted \u201Cconsiderable liberty\u201D regarding \u201Cthe literary genre of the first eleven chapters of Genesis.\u201D Pope Pius XII in "),
+  ti("Humani Generis"),
+  t(", \u00A738, described these chapters as using \u201Csimple and metaphorical language adapted to the mentality of a people but little cultured.\u201D The Catholic Encyclopedia\u2019s article on the Deluge acknowledged that viewing the Flood as preserving \u201Cunder the embroidery of poetical parlance, the memory of a fact handed down by a very old tradition\u201D could \u201Cbe readily accepted by a Catholic.\u201D The connection between the 800,000\u2013900,000-year bottleneck (Hu et al., "),
+  ti("Science"),
+  t(", 2023) and the Genesis Flood is a speculative proposal within this open space\u2014not a dogmatic claim.")
+]));
+
 content.push(pageBreak());
 
 // ===== CHAPTER 11: WHAT A SCIENTIST WOULD SAY =====
@@ -1332,6 +1370,22 @@ content.push(para([
 
 content.push(para([
   t("That assessment\u2014not agreement, but acknowledgment of intellectual coherence and compatibility with the evidence\u2014is about the most that any theological framework can hope for from empirical science. And it is considerably more than most theological frameworks on human origins currently achieve.")
+]));
+
+content.push(heading2("Required vs. Open: What the Church Demands About the Relationship Between Faith and Science"));
+
+content.push(para([
+  tb("Required: "),
+  t("Faith and reason cannot contradict each other. The First Vatican Council, "),
+  ti("Dei Filius"),
+  t(", Chapter 4, teaches: \u201CSince the same God who reveals mysteries and infuses faith has bestowed the light of reason on the human mind, God cannot deny himself, nor can truth ever contradict truth.\u201D The same document (Chapter 2, Canon 1) defines under anathema that God \u201Ccan be known with certainty from the things that have been made, by the natural light of human reason.\u201D Pope St. John Paul II, in "),
+  ti("Fides et Ratio"),
+  t(" (1998), \u00A7\u00A713\u201316, affirmed that faith and reason are \u201Clike two wings on which the human spirit rises to the contemplation of truth\u201D and that reason retains its proper autonomy within its own domain. The Pontifical Academy of Sciences, established by Pope Pius XI in 1936 and renewed by John Paul II in 1986, exists precisely to honor the Church\u2019s commitment to genuine scientific inquiry.")
+]));
+
+content.push(para([
+  tb("Open: "),
+  t("The precise relationship between theological claims and scientific methodology\u2014how non-overlapping magisteria interact, whether and how theology may inform scientific interpretation, and what counts as genuine conflict versus mere apparent tension\u2014these are matters of ongoing discussion. Pope Benedict XVI, in his 2007 meeting at Castel Gandolfo, noted that \u201Cthe question of origins is not merely a scientific question but also a philosophical and theological one.\u201D The Church does not require any particular philosophy of science. It requires only that science\u2019s legitimate findings not be dismissed, and that theology\u2019s legitimate claims not be surrendered. Our framework operates within this space: accepting the findings of science while maintaining the theological commitments the Church defines as non-negotiable.")
 ]));
 
 content.push(pageBreak());
@@ -1384,6 +1438,30 @@ content.push(para([
   t("The fact that something is fundamentally broken in the human condition is not seriously in question by anyone who looks honestly at human history and human behavior. The Catholic claim is that this brokenness has a name (original sin), an origin (the Fall), and a cure (redemption through Christ).")
 ]));
 
+content.push(heading2("Required vs. Open: The Dogmatic Core of the Framework"));
+
+content.push(para([
+  t("Of the ten points above, the following are grounded in dogmatic teaching and are non-negotiable for any Catholic framework:")
+]));
+
+content.push(para([
+  tb("Dogmatic (Required): "),
+  t("God is Creator of all things (Nicene Creed; Fourth Lateran Council, 1215; First Vatican Council, "),
+  ti("Dei Filius"),
+  t(", Chapter 1). Adam and Eve are real, historical individuals ("),
+  ti("Humani Generis"),
+  t(", \u00A737). All humans descend from them through generation (Council of Trent, Session V, Canon 3: original sin is \u201Ctransfused into all by propagation, not by imitation\u201D). The Fall was a real, historical event (CCC \u00A7390). Original sin is transmitted to all descendants (Council of Trent, Session V, Canons 1\u20134). Every human soul is directly created by God (CCC \u00A7366; "),
+  ti("Humani Generis"),
+  t(", \u00A736). The soul is the form of the body (Council of Vienne, 1312; CCC \u00A7365). Redemption comes through Christ alone (Council of Trent, Session VI, Chapter 3; CCC \u00A7\u00A7388\u2013389, 402\u2013405).")
+]));
+
+content.push(para([
+  tb("Interpretive (Open): "),
+  t("The specific dating of Adam and Eve (~750,000\u20131,000,000 years ago). The identification of the biological substrate with "),
+  ti("Homo heidelbergensis"),
+  t(". The mechanism of early interbreeding as the source of genetic diversity. The claim that all post-dispersal hominid groups (Neanderthals, Denisovans) are ensouled descendants of Adam. The connection between the population bottleneck and the Genesis Flood. The Augros/Stanciu model of latent biological potential. The \u201Cjump\u201D argument from the hard problem of consciousness. These are all proposals within the open space Catholic theology permits\u2014the best synthesis we can construct from available evidence, offered as a coherent possibility rather than a binding interpretation.")
+]));
+
 content.push(pageBreak());
 
 // ===== CHAPTER 13: ACKNOWLEDGMENTS OF WEAKNESS =====
@@ -1423,6 +1501,24 @@ content.push(para([
 content.push(para([
   tb("The framework is unfalsifiable at its core"),
   t(". The ensoulment event leaves no genetic or fossil signature. This is a genuine weakness from a scientific standpoint, even though it is a logical feature of the model (immaterial souls would not be expected to leave material traces). The framework\u2019s compatibility with evidence should not be confused with confirmation by evidence.")
+]));
+
+content.push(heading2("Required vs. Open: Why Acknowledging Weakness Is Itself a Theological Requirement"));
+
+content.push(para([
+  tb("Required: "),
+  t("Intellectual honesty is a theological obligation, not merely a rhetorical strategy. The First Vatican Council, "),
+  ti("Dei Filius"),
+  t(", Chapter 4, teaches that \u201Creason, illuminated by faith, when it seeks earnestly, piously and calmly, attains by a gift from God some understanding, and that a most fruitful one, of mysteries.\u201D The word \u201Csome\u201D is significant\u2014the Council explicitly acknowledges the limits of human understanding even when aided by faith. The same document warns against \u201Cthat false appearance of knowledge\u201D which presents speculation as certainty. Pope St. John Paul II, in "),
+  ti("Fides et Ratio"),
+  t(", \u00A74, insisted that philosophy and theology must maintain \u201Ca legitimate autonomy\u201D and that faith \u201Cdoes not fear reason, but seeks it out and has trust in it.\u201D Acknowledging weaknesses in a theological framework is not a failure of faith; it is fidelity to the Church\u2019s own teaching about the limits of human reasoning.")
+]));
+
+content.push(para([
+  tb("Open: "),
+  t("All six weaknesses acknowledged above operate within the open space of Catholic theology. The early interbreeding question involves a moral judgment about pre-law conditions\u2014a matter on which the Church has issued no definitive ruling. The fuzzy transition point is shared by every competing model. The metaphorical reading of \u201Cdust of the ground\u201D is permitted by "),
+  ti("Humani Generis"),
+  t(", \u00A736, which allows that the human body may derive from \u201Cpre-existing and living matter.\u201D The genetic challenge to monogenism is addressed by our mechanisms but not fully resolved\u2014a candor the Church\u2019s own International Theological Commission (2004) models when it acknowledges that the science of human origins is \u201Ccomplex and subject to revision.\u201D The Augros/Stanciu mechanism is a philosophical proposal, not a doctrinal commitment. And the unfalsifiability of ensoulment is a necessary feature of any claim about an immaterial reality acting on a material world\u2014a feature shared by every Catholic doctrine about the soul.")
 ]));
 
 content.push(pageBreak());
@@ -1474,7 +1570,12 @@ const refs = [
   { text: "RATE Project. Vardiman, Larry, Andrew A. Snelling, and Eugene F. Chaffin, eds. Radioisotopes and the Age of the Earth, Vol. 2. Institute for Creation Research, 2005." },
   { text: "Barnes, Thomas G. \"Decay of the Earth's Magnetic Moment and the Geochronological Implications.\" Creation Research Society Quarterly 9 (1973): 24\u201329." },
   { text: "EPICA Community Members. \"Eight Glacial Cycles from an Antarctic Ice Core.\" Nature 429 (2004): 623\u2013628.", url: "https://doi.org/10.1038/nature02599" },
-  { text: "Friedrich, Michael, et al. \"The 12,460-Year Hohenheim Oak and Pine Tree-Ring Chronology.\" Radiocarbon 46 (2004): 1111\u20131122.", url: "https://doi.org/10.1017/S0033822200033078" }
+  { text: "Friedrich, Michael, et al. \"The 12,460-Year Hohenheim Oak and Pine Tree-Ring Chronology.\" Radiocarbon 46 (2004): 1111\u20131122.", url: "https://doi.org/10.1017/S0033822200033078" },
+  { text: "John Paul II, Pope. Fides et Ratio. Encyclical Letter, September 14, 1998.", url: "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html" },
+  { text: "Second Vatican Council. Gaudium et Spes: Pastoral Constitution on the Church in the Modern World. December 7, 1965.", url: "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html" },
+  { text: "Fourth Lateran Council. Constitution 1: On the Catholic Faith (Firmiter Credimus). 1215." },
+  { text: "Fifth Lateran Council. Apostolici Regiminis: Bull on the Immortality of the Soul. December 19, 1513." },
+  { text: "Pontifical Academy of Sciences. Founded 1936 by Pope Pius XI; Statutes renewed by Pope John Paul II, 1986.", url: "https://www.pas.va/en.html" }
 ];
 
 refs.forEach((ref, i) => {
