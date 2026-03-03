@@ -148,25 +148,55 @@ content.push(para([
 content.push(heading2("The Problem That Unhinges the Argument"));
 
 content.push(para([
-  t("The Omphalos hypothesis is philosophically watertight but theologically devastating, and this is where it fails.")
+  t("The Omphalos hypothesis is philosophically watertight but theologically devastating\u2014and this is where it fails. The problem is not merely that it makes God a deceiver. The problem is that it contradicts the dogmatic teaching of an ecumenical council and undermines the very foundation by which Catholic theology says we can know that God exists.")
 ]));
 
 content.push(para([
-  t("If God created the universe six thousand years ago with the appearance of billions of years of history, then God embedded in creation an elaborate record of events that never happened. The light arriving tonight from the Andromeda galaxy\u2014light that appears to have traveled 2.5 million years\u2014was created already in transit, carrying information about a galaxy that never went through the processes that information describes. The fossils in the rocks record the deaths of creatures that never lived. The radioactive decay products in minerals record billions of years of atomic processes that never occurred. The cosmic microwave background radiation describes a Big Bang that never happened.")
+  t("Thomas Aquinas, in the "),
+  ti("Summa Theologica"),
+  t(" (Prima Pars, Question 2, Article 3), presented five demonstrations of God\u2019s existence\u2014the famous Five Ways. All five proceed "),
+  ti("a posteriori"),
+  t(": from observations of the created world to the existence of God as their necessary explanation. The First Way reasons from motion in the world to an Unmoved Mover. The Second Way reasons from chains of efficient causes to a First Cause. The Third Way reasons from contingent beings to a Necessary Being. The Fourth Way reasons from degrees of perfection in things to a source of all perfection. The Fifth Way reasons from the purposeful order of natural things to an Intelligent Governor of the universe. Every one of these arguments depends on the created world being "),
+  ti("real evidence"),
+  t("\u2014on the motions, causes, contingencies, perfections, and purposes we observe in creation being genuine features of reality, not fabrications.")
+]));
+
+content.push(para([
+  t("The First Vatican Council (1870), in its dogmatic constitution "),
+  ti("Dei Filius"),
+  t(", elevated this principle to the level of dogma. The Council taught: \u201CThe same Holy Mother Church holds and teaches that God, the beginning and end of all things, can be known with certainty by the natural light of human reason from created things.\u201D The Council then issued its teaching under anathema\u2014the strongest language available to an ecumenical council, meaning that the condemned position is formally incompatible with Catholic faith. In the early Church, anathema meant complete excommunication; by the time of the great councils, it functioned as a declaration that the rejected view constitutes heresy, and that a Catholic who knowingly and obstinately holds it has placed himself outside the faith on that point. It does not mean automatic damnation\u2014that judgment belongs to God alone\u2014but it means the Church has drawn a line and will not move it. The canon reads: \u201CIf anyone says that the one, true God, our creator and lord, cannot be known with certainty from the things that have been made, by the natural light of human reason: let him be anathema.\u201D The Catechism of the Catholic Church repeats this at \u00A736: God \u201Ccan be known with certainty from the created world by the natural light of human reason.\u201D And the Council cited Romans 1:20: \u201CFor the invisible things of him, from the creation of the world, are clearly seen, being understood by the things that are made.\u201D")
+]));
+
+content.push(para([
+  t("Now consider what the Omphalos hypothesis requires. If God created the universe six thousand years ago with the appearance of billions of years of history, then God embedded in creation an elaborate record of events that never happened. The light arriving tonight from the Andromeda galaxy\u2014light that appears to have traveled 2.5 million years\u2014was created already in transit, carrying information about a galaxy that never went through the processes that information describes. The fossils in the rocks record the deaths of creatures that never lived. The radioactive decay products in minerals record billions of years of atomic processes that never occurred. The cosmic microwave background radiation describes a Big Bang that never happened.")
 ]));
 
 content.push(para([
   t("This does not merely mean that God created a world that "),
   ti("looks"),
   t(" old. It means God created a world that "),
-  ti("lies"),
-  t(". Every photon of starlight, every fossil, every isotope ratio, every ice core layer, every tree ring sequence, every coral growth band, every supernova remnant is false testimony\u2014evidence of a history that God fabricated and planted in the fabric of reality. This is not a God who creates maturely; this is a God who deceives comprehensively.")
+  ti("testifies falsely"),
+  t(". Every photon of starlight, every fossil, every isotope ratio, every ice core layer, every tree ring sequence, every coral growth band, every supernova remnant is false testimony\u2014evidence of a history that God fabricated and planted in the fabric of reality.")
 ]));
 
 content.push(para([
-  t("Catholic theology has consistently held that God is truth itself ("),
-  ti("Veritas"),
-  t(") and that creation is a form of divine self-revelation. The Catechism states that \u201CGod, who creates and conserves all things by his Word, provides men with constant evidence of himself in created things\u201D (CCC \u00A746, citing Romans 1:19\u201320). If creation is evidence of God, then creation must be truthful evidence. A God who plants false evidence in His own creation contradicts His own nature as Truth. The Omphalos hypothesis, taken to its logical conclusion, makes God a deceiver on a cosmic scale\u2014and this is the principle that unhinges the young earth argument from within.")
+  t("But if creation testifies falsely, then creation cannot be relied upon as evidence for God\u2019s existence\u2014and yet Vatican I defined "),
+  ti("under anathema"),
+  t(" that God "),
+  ti("can"),
+  t(" be known with certainty from created things. If the starlight lies, Aquinas\u2019s First Way collapses: the motions we observe in the cosmos did not really happen as observed, so we cannot reliably reason from them to an Unmoved Mover. If the fossils lie, the Fifth Way collapses: the purposeful order we see in the development of life was fabricated, so we cannot reason from it to an Intelligent Governor. If the isotope ratios lie, the Second Way collapses: the causal chains we trace through geological history are fictional, so we cannot reason from them to a First Cause.")
+]));
+
+content.push(para([
+  t("Furthermore, "),
+  ti("Dei Filius"),
+  t(" Chapter 4 teaches: \u201CSince the same God who reveals mysteries and infuses faith has bestowed the light of reason on the human mind, God cannot deny himself, nor can truth ever contradict truth.\u201D If creation and revelation are both from the same God, and God cannot contradict Himself, then the evidence of creation and the truth of revelation must be compatible. A creation that bears false witness about its own history contradicts truth\u2014and thereby contradicts God Himself.")
+]));
+
+content.push(para([
+  t("The Omphalos hypothesis, then, does not merely make God a deceiver in some abstract philosophical sense. It undermines the very foundation by which Catholic dogma says we can know that God exists. It contradicts an anathematized canon of an ecumenical council. It renders the Five Ways of Aquinas inoperable. And it pits creation against revelation in precisely the way "),
+  ti("Dei Filius"),
+  t(" says is impossible. This is not a minor theological difficulty. It is a catastrophic internal contradiction for any Catholic who holds it.")
 ]));
 
 content.push(heading2("The Starlight Problem\u2014and Its Beautiful Inversion"));
@@ -1184,9 +1214,14 @@ const refs = [
   "Nunn, Patrick D., and Nicholas J. Reid. \"Aboriginal Memories of Inundation of the Australian Coast Dating from More than 7000 Years Ago.\" Australian Geographer 47, no. 1 (2016): 11\u201347.",
   "Frazer, James George. Folklore in the Old Testament: Studies in Comparative Religion, Legend, and Law. Macmillan, 1918.",
   "Gosse, Philip Henry. Omphalos: An Attempt to Untie the Geological Knot. John Van Voorst, 1857.",
+  "First Vatican Council. Dei Filius: Dogmatic Constitution on the Catholic Faith. April 24, 1870.",
+  "Thomas Aquinas. Summa Theologica, Prima Pars, Question 2, Article 3.",
   "Pontifical Biblical Commission. \"On the Historical Character of the First Three Chapters of Genesis.\" June 30, 1909.",
   "Masse, W. Bruce. \"The Archaeology and Anthropology of Quaternary Period Cosmic Impact.\" In Comet/Asteroid Impacts and Human Society, edited by Peter T. Bobrowsky and Hans Rickman, 25\u201370. Springer, 2007.",
-  "Rooth, Anna Birgitta. \"The Creation Myths of the North American Indians.\" Anthropos 52 (1957): 497\u2013508."
+  "Rooth, Anna Birgitta. \"The Creation Myths of the North American Indians.\" Anthropos 52 (1957): 497\u2013508.",
+  "Council of Trent. Session V: Decree Concerning Original Sin. June 17, 1546.",
+  "Pontifical Biblical Commission. Letter to Cardinal Suhard on the Pentateuch and Genesis 1\u201311. January 16, 1948.",
+  "Council of Vienne. Decrees on the Soul as the Form of the Body. 1312."
 ];
 
 refs.forEach((ref, i) => {
@@ -1202,6 +1237,7 @@ content.push(heading1("Index of Key Terms and Persons"));
 
 const indexEntries = [
   "Adam and Eve \u2014 Chapters 1\u201313, passim",
+  "Aquinas, Thomas (Five Ways) \u2014 Chapter 1",
   "Augros, Robert \u2014 Chapter 3",
   "Augustine of Hippo, Saint \u2014 Chapter 1",
   "Ayala, Francisco \u2014 Chapter 7",
@@ -1216,6 +1252,7 @@ const indexEntries = [
   "Council of Vienne \u2014 Chapter 5",
   "Craig, William Lane \u2014 Chapters 2, 5",
   "Deucalion and Pyrrha \u2014 Chapter 10",
+  "Dei Filius (Vatican I) \u2014 Chapter 1",
   "Denisovans \u2014 Chapters 4, 5",
   "Ensoulment \u2014 Chapters 3, 5, 7, 8, 10",
   "Evo-devo (evolutionary developmental biology) \u2014 Chapter 3",
