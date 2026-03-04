@@ -122,7 +122,7 @@ content.push(para([
 content.push(para([
   t("First, the most natural reading of Genesis 1 describes six days of creation. The Hebrew word "),
   ti("yom"),
-  t(" is used with the formula \u201Cthere was evening and there was morning, the Xth day\u201D\u2014a construction that, everywhere else in the Old Testament, refers to an ordinary calendar day. Exodus 20:11 grounds the Sabbath commandment in this six-day pattern: \u201CFor in six days the Lord made heaven and earth, the sea, and all that is in them, and rested on the seventh day.\u201D If the days of Genesis are not literal days, this commandment loses its grounding.")
+  t(" is used with the formula \u201Cthere was evening and there was morning, the Xth day\u201D\u2014a construction that, as Hebrew scholars such as Gerhard F. Hasel (Andrews University) have argued, everywhere else in the Old Testament with an ordinal number refers to an ordinary calendar day. Exodus 20:11 grounds the Sabbath commandment in this six-day pattern: \u201CFor in six days the Lord made heaven and earth, the sea, and all that is in them, and rested on the seventh day\u201D (RSV-CE Ex 20:11). If the days of Genesis are not literal days, this commandment loses its grounding.")
 ]));
 
 content.push(para([
