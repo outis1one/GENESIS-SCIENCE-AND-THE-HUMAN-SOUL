@@ -1306,13 +1306,23 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("Eve is then created from Adam\u2014\u201Cfrom his side\u201D\u2014however one understands this: a second direct creative act using Adam\u2019s biological material as substrate, ensuring that the two ensouled beings share the same nature completely.")
-]));
-
-content.push(para([
   t("The result is a being that is "),
   ti("genuinely different"),
   t(" from the hominids around him. Not just invisibly, metaphysically different. Actually, observably different. Adam can think abstractly. He can recognize God. He can name things\u2014which in Genesis is an act of intellectual comprehension, not just labeling. He understands moral categories. He can choose. None of the surrounding hominids can do these things, because these capacities require the rational soul, and the rational soul transforms the whole being.")
+]));
+
+content.push(para([
+  t("Genesis 2:19\u201320 records that God brought every living creature to Adam to see what he would call them, and that \u201Cwhatever the man called each living creature, that was its name\u201D ("),
+  sLink("NABRE Gn 2:19\u201320", "https://www.biblegateway.com/passage/?search=Genesis+2:19-20&version=NABRE"),
+  t("). The text concludes: \u201CBut none proved to be a suitable partner for the man.\u201D In our framework, this survey would have included the near-human hominids living alongside Adam\u2014beings produced by the same divinely guided process, biologically sophisticated, yet lacking the rational soul. Adam, precisely because he possesses that soul, can recognize the difference. He perceives that none of these creatures\u2014not even the most human-like among them\u2014shares his nature. No suitable partner exists in all of creation.")
+]));
+
+content.push(para([
+  t("So God acts again. He puts Adam into a deep sleep and creates Eve \u201Cfrom his side\u201D ("),
+  sLink("NABRE Gn 2:21\u201322", "https://www.biblegateway.com/passage/?search=Genesis+2:21-22&version=NABRE"),
+  t("). However one understands this mysterious language, the framework suggests God is working from the same biological substrate\u2014taking a female hominid from the population that produced Adam\u2019s body and performing the same transformative act: ensouling her, making her a being of the same rational nature as Adam. The phrase \u201Cfrom his side\u201D conveys their shared origin\u2014she comes from the same material, the same lineage, the same \u201Cdust of the ground\u201D that God had been preparing for millennia. Adam\u2019s recognition is immediate: \u201CThis one, at last, is bone of my bones and flesh of my flesh\u201D ("),
+  sLink("NABRE Gn 2:23", "https://www.biblegateway.com/passage/?search=Genesis+2:23&version=NABRE"),
+  t("). She is what the hominids were not\u2014a true partner, sharing his ensouled nature completely.")
 ]));
 
 content.push(para([
@@ -1333,9 +1343,15 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("Is such interbreeding bestiality? This is where the Abraham and Jacob precedent becomes crucial. Paul writes in "),
+  t("Is such interbreeding bestiality? To answer this, we must consider an important biblical principle. Paul writes in "),
   sLink("Romans 5:13 (NABRE)", "https://www.biblegateway.com/passage/?search=Romans+5:13&version=NABRE"),
-  t(", \u201CSin is not counted where there is no law.\u201D Abraham, the \u201CFather in Faith,\u201D had children by Hagar and Keturah while married to Sarah. Jacob fathered the twelve tribes of Israel through four different women\u2014Leah, Rachel, Bilhah, and Zilpah. These arrangements are not presented as scandalous in the text; they are the normal way God\u2019s plan unfolds at that stage of salvation history. The Mosaic law against such arrangements had not yet been given.")
+  t(", \u201CSin is not counted where there is no law.\u201D Scripture itself provides precedents for arrangements that later moral law would prohibit but that were tolerated\u2014even blessed\u2014before that law was given. Abraham, the \u201CFather in Faith,\u201D had children by Hagar ("),
+  sLink("Gn 16:1\u20134", "https://www.biblegateway.com/passage/?search=Genesis+16:1-4&version=NABRE"),
+  t(") and Keturah ("),
+  sLink("Gn 25:1\u20132", "https://www.biblegateway.com/passage/?search=Genesis+25:1-2&version=NABRE"),
+  t(") while married to Sarah. Jacob fathered the twelve tribes of Israel through four different women\u2014Leah, Rachel, Bilhah, and Zilpah ("),
+  sLink("Gn 29\u201330", "https://www.biblegateway.com/passage/?search=Genesis+29-30&version=NABRE"),
+  t("). These arrangements are not presented as scandalous in the text; they are the normal way God\u2019s plan unfolds at that stage of salvation history. The Mosaic law against such arrangements had not yet been given.")
 ]));
 
 content.push(para([
@@ -1345,7 +1361,9 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("Critically, every child of such a union receives a rational soul from God, because it descends from Adam. The soul does not come from the non-ensouled parent; it comes from God directly, triggered by descent from the ensouled lineage. This is consistent with Catholic teaching that every human soul is individually created by God (Catechism, \u00A7366).")
+  t("Critically, every child of such a union receives a rational soul from God, because it descends from Adam. The soul does not come from the non-ensouled parent; it comes from God directly, triggered by descent from the ensouled lineage. This is consistent with Catholic teaching that every human soul is individually created by God ("),
+  cccLink(366),
+  t(").")
 ]));
 
 content.push(heading3("Stage Four: The Dispersal (~500,000\u2013300,000 Years Ago)"));
@@ -1433,12 +1451,16 @@ content.push(heading2("Required vs. Open: What the Church Demands About Cain, Ab
 
 content.push(para([
   tb("Required: "),
-  t("The narrative of the Fall conveys a real, historical event\u2014\u201Ca deed that took place at the beginning of the history of man\u201D (CCC \u00A7390). Sin and its consequences are real. The theological truths embedded in the Cain and Abel story\u2014that sin escalates, that violence follows disobedience, that God holds us accountable\u2014are matters of faith and morals.")
+  t("The narrative of the Fall conveys a real, historical event\u2014\u201Ca deed that took place at the beginning of the history of man\u201D ("),
+  cccLink(390),
+  t("). Sin and its consequences are real. The theological truths embedded in the Cain and Abel story\u2014that sin escalates, that violence follows disobedience, that God holds us accountable\u2014are matters of faith and morals.")
 ]));
 
 content.push(para([
   tb("Open: "),
-  t("Whether Cain and Abel were literally the first and second children born to Adam and Eve, who the \u201Cother people\u201D were, where Nod was located, and the chronological scope of the narrative are all open questions. The Catechism acknowledges that Genesis uses \u201Cfigurative language\u201D (\u00A7390), and the Pontifical Biblical Commission\u2019s 1948 letter grants liberty regarding the literary forms of Genesis 1\u201311. The identity of Cain\u2019s wife has been an open question since the patristic era\u2014Augustine addressed it, as did Aquinas\u2014and the Church has never issued a definitive answer.")
+  t("Whether Cain and Abel were literally the first and second children born to Adam and Eve, who the \u201Cother people\u201D were, where Nod was located, and the chronological scope of the narrative are all open questions. The Catechism acknowledges that Genesis uses \u201Cfigurative language\u201D ("),
+  cccLink(390),
+  t("), and the Pontifical Biblical Commission\u2019s 1948 letter grants liberty regarding the literary forms of Genesis 1\u201311. The identity of Cain\u2019s wife has been an open question since the patristic era\u2014Augustine addressed it, as did Aquinas\u2014and the Church has never issued a definitive answer.")
 ]));
 
 content.push(pageBreak());
@@ -1570,7 +1592,13 @@ content.push(heading2("Required vs. Open: What the Church Demands About the Soul
 
 content.push(para([
   tb("Required: "),
-  t("The rational soul is directly created by God and is immaterial\u2014it is not \u201Cproduced\u201D by the parents (CCC \u00A7366). The soul is the form of the body (Council of Vienne, 1312; CCC \u00A7365). Human dignity is grounded in the fact that human beings are made in the image of God, possessing intellect and free will (CCC \u00A71700\u20131706). The difference between human beings and animals is not merely one of degree but of kind\u2014the rational soul confers capacities that matter alone cannot produce.")
+  t("The rational soul is directly created by God and is immaterial\u2014it is not \u201Cproduced\u201D by the parents ("),
+  cccLink(366),
+  t("). The soul is the form of the body (Council of Vienne, 1312; "),
+  cccLink(365),
+  t("). Human dignity is grounded in the fact that human beings are made in the image of God, possessing intellect and free will ("),
+  cccRangeLink(1700, 1706),
+  t("). The difference between human beings and animals is not merely one of degree but of kind\u2014the rational soul confers capacities that matter alone cannot produce.")
 ]));
 
 content.push(para([
@@ -1656,7 +1684,11 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("The Catechism of the Catholic Church (\u00A7390) states that the account of the Fall \u201Cuses figurative language, but affirms a primeval event, a deed that took place at the beginning of the history of man.\u201D Paragraph 366 teaches that \u201Cevery spiritual soul is created immediately by God\u2014it is not \u2018produced\u2019 by the parents.\u201D")
+  t("The Catechism of the Catholic Church ("),
+  cccLink(390),
+  t(") states that the account of the Fall \u201Cuses figurative language, but affirms a primeval event, a deed that took place at the beginning of the history of man.\u201D "),
+  cccLink(366),
+  t(" teaches that \u201Cevery spiritual soul is created immediately by God\u2014it is not \u2018produced\u2019 by the parents.\u201D")
 ]));
 
 content.push(para([
@@ -1904,7 +1936,9 @@ content.push(para([
   magSectionLink(", \u00A736", 'HUMANI_GENERIS'),
   t("). On the Flood, the Church requires that the narrative conveys real theological truth: God judges sin, God saves the righteous, God offers new beginnings. The Ark and the Flood are established types (prefigurations) of baptism and the Church ("),
   sLink("1 Pt 3:20\u201321", "https://www.biblegateway.com/passage/?search=1+Peter+3:20-21&version=NABRE"),
-  t("; CCC \u00A71219). Jesus referred to Noah as a historical figure ("),
+  t("; "),
+  cccLink(1219),
+  t("). Jesus referred to Noah as a historical figure ("),
   sLink("Mt 24:37\u201339", "https://www.biblegateway.com/passage/?search=Matthew+24:37-39&version=NABRE"),
   t("; "),
   sLink("Lk 17:26\u201327", "https://www.biblegateway.com/passage/?search=Luke+17:26-27&version=NABRE"),
