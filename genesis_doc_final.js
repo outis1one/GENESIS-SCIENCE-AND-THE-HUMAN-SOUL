@@ -85,7 +85,7 @@ content.push(new TableOfContents("Table of Contents", {
 content.push(pageBreak());
 
 // ===== INTRODUCTION =====
-content.push(heading1("Introduction: The Problem and the Promise"));
+content.push(heading1("Chapter 1: The Problem and the Promise"));
 
 content.push(para([
   t("For centuries, the opening chapters of Genesis have stood at the center of a seemingly irreconcilable conflict between faith and science. On one side, Catholic teaching holds that Adam and Eve were real, historical individuals\u2014the first true humans, from whom every human being descends, and through whom original sin entered the world. On the other side, modern genetics, paleoanthropology, and the fossil record present a picture of human origins that appears to challenge these claims at every turn: populations of thousands, not a single pair; timescales of hundreds of thousands of years, not six thousand; a branching family tree of hominid species, not a single created couple in a garden.")
@@ -106,8 +106,8 @@ content.push(para([
 content.push(pageBreak());
 
 
-// ===== CHAPTER 1: THE AGE OF THE EARTH =====
-content.push(heading1("Chapter 1: The Age of the Earth\u2014Young and Old"));
+// ===== CHAPTER 2: THE CASE FOR A YOUNG EARTH =====
+content.push(heading1("Chapter 2: The Case for a Young Earth\u2014Stated Fairly and Fully"));
 
 content.push(para([
   t("The question of the earth\u2019s age stands at the threshold of any serious discussion of human origins. It deserves more than a dismissive paragraph. The young earth position is held sincerely by many faithful Christians, and intellectual honesty requires that we present it at its strongest before explaining why this document takes a different path.")
@@ -236,10 +236,50 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("These are real arguments, held by serious Catholics, grounded in genuine sources. They deserve honest engagement rather than dismissal. Our response, given in the section that follows, is that the evidence against a young earth is not merely scientific but theological: the Omphalos hypothesis in all its forms\u2014including the Cana Wine analogy\u2014runs afoul of the First Vatican Council\u2019s dogmatic teaching that God can be known with certainty from created things. If created things systematically misrepresent their own history, that foundation collapses.")
+  t("These are real arguments, held by serious Catholics, grounded in genuine sources. They deserve honest engagement rather than dismissal\u2014and they will receive it in the next chapter. The case for a young earth is stronger than many old-earth advocates acknowledge. The reader should sit with these arguments before moving on, because the framework we propose in the rest of this document takes the young earth position seriously precisely because it "),
+  ti("is"),
+  t(" serious.")
 ]));
 
-content.push(heading2("Additional Evidence Against a Young Earth"));
+content.push(pageBreak());
+
+// ===== CHAPTER 3: THE CRUX =====
+content.push(heading1("Chapter 3: The Crux\u2014Why the Young Earth Position, Though Permitted, Is Untenable"));
+
+content.push(para([
+  t("The previous chapter stated the case for a young earth as fairly and fully as we could. This chapter explains why, despite the strength of those arguments, we believe the young earth position ultimately fails\u2014not because the science overwhelms it (though it does), but because it collides with a dogmatic teaching of the Catholic Church that its proponents rarely address.")
+]));
+
+content.push(para([
+  t("But first, an essential clarification.")
+]));
+
+content.push(heading2("Can a Catholic Hold a Young Earth Position?"));
+
+content.push(para([
+  tb("Yes."),
+  t(" The Catholic Church does not require belief in an old earth, and a Catholic who holds a young earth position is not in heresy. This must be stated clearly, because intellectual honesty demands it. The question of the earth\u2019s age is not defined by any ecumenical council, papal encyclical, or ex cathedra statement. Ludwig Ott\u2019s "),
+  ti("Fundamentals of Catholic Dogma"),
+  t(" does not list the earth\u2019s age among the "),
+  ti("de fide"),
+  t(" (divinely revealed) teachings of the Church. The Pontifical Biblical Commission (1909) explicitly ruled that the word "),
+  ti("yom"),
+  t(" in Genesis may be understood either as a literal day or as \u201Ca certain space of time\u201D\u2014and that this question \u201Cmay be the subject of free discussion among exegetes.\u201D Catholic Answers, the most prominent Catholic apologetics organization, states plainly: \u201CThe Catholic Church does not have a teaching about the theory of evolution or the extinction of the dinosaurs. You can be a faithful Catholic and deny or accept evolution.\u201D")
+]));
+
+content.push(para([
+  t("What the Church "),
+  ti("does"),
+  t(" require is that certain theological truths be upheld regardless of one\u2019s position on the earth\u2019s age: that God is Creator, that Adam and Eve were real individuals, that all humans descend from them, that original sin is transmitted through generation, and that every human soul is directly created by God. A young earth Catholic who affirms all of these is fully within the bounds of Catholic orthodoxy.")
+]));
+
+content.push(para([
+  t("Our argument is not that the young earth position is heretical. It is that it is "),
+  ti("untenable"),
+  t("\u2014that it requires accepting consequences that contradict other things the Church teaches, and that the weight of evidence\u2014both scientific and theological\u2014points decisively in the other direction. The distinction between \u201Cpermitted\u201D and \u201Cwise\u201D matters here. A Catholic is permitted to believe in a flat earth; no doctrine forbids it. But no serious person would recommend it.")
+]));
+
+content.push(heading2("The Scientific Evidence: Why Deep Time Is Overwhelming"));
 
 content.push(para([
   t("Before turning to the theological argument that unhinges the young earth position, it is worth noting that the scientific evidence against it extends far beyond starlight and radiometric dating. Multiple independent lines of evidence converge on deep time, each using different physical processes, and their agreement is what makes the case overwhelming.")
@@ -461,8 +501,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 2: EXISTING MODELS =====
-content.push(heading1("Chapter 2: Existing Models and Why They Fall Short"));
+// ===== CHAPTER 4: EXISTING MODELS =====
+content.push(heading1("Chapter 4: Existing Models and Why They Fall Short"));
 
 content.push(para([
   t("Before presenting our synthesis, it is worth surveying the major models that Catholic thinkers have proposed to reconcile Adam and Eve with modern science. Each has real strengths. Each also has significant weaknesses that our framework attempts to address.")
@@ -556,8 +596,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 3: THE NEW BIOLOGY =====
-content.push(heading1("Chapter 3: Augros and Stanciu\u2014The New Biology and Latent Potential"));
+// ===== CHAPTER 5: THE NEW BIOLOGY =====
+content.push(heading1("Chapter 5: Augros and Stanciu\u2014The New Biology and Latent Potential"));
 
 content.push(para([
   t("Before presenting our synthesis, we need one more piece of the puzzle. In 1987, philosopher Robert Augros and physicist George Stanciu published "),
@@ -574,7 +614,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("The analogy to a computer algorithm is apt: an organism carries within its genetic code the potential for a more advanced version of itself, and under the right environmental and developmental conditions, that potential is realized. The entire diversity of biological form, in this view, is present at the beginning and unfolds over time, rather than being generated from scratch by random mutation.")
+  t("An analogy may help, though it should not be pressed too far: an acorn contains within itself, invisibly, the full blueprint for an oak tree\u2014roots, trunk, branches, leaves, acorns of its own. No new information is added from outside; the oak unfolds from what was already present. Augros and Stanciu suggest something analogous operates in the genome: the entire diversity of biological form is present in potential from the beginning and unfolds over time, rather than being generated from scratch by random mutation. This is a philosophical and biological proposal, not yet a scientific consensus, but it resonates with discoveries in evo-devo that reveal deep genetic conservation across vastly different organisms.")
 ]));
 
 content.push(heading2("The Unfolding from the Big Bang"));
@@ -586,7 +626,7 @@ content.push(para([
 content.push(heading3("Stage One: The First Moments (0 to 380,000 Years)"));
 
 content.push(para([
-  t("At the instant of the Big Bang\u201413.8 billion years ago\u2014all matter, energy, space, and time come into existence. In the first fractions of a second, the four fundamental forces (gravity, electromagnetism, the strong nuclear force, and the weak nuclear force) separate from what physicists believe was a single unified force. Quarks form and combine into protons and neutrons. Within the first three minutes, nuclear fusion produces the lightest elements: roughly 75% hydrogen, 25% helium, and trace amounts of lithium. Nothing heavier exists yet. No carbon, no oxygen, no iron\u2014none of the elements necessary for life or for solid planets.")
+  t("At the instant of the Big Bang\u201413.8 billion years ago\u2014all matter, energy, space, and time come into existence. (A note on the scientific consensus: the standard model of cosmology holds that there was one Big Bang. Alternative models\u2014Roger Penrose\u2019s Conformal Cyclic Cosmology and Paul Steinhardt\u2019s cyclic/bouncing cosmology\u2014propose that the universe may undergo repeated cycles, but these remain minority positions. The 2024\u20132025 DESI data hinting that dark energy may be weakening has generated renewed interest in cyclic models, but the single-Big-Bang model remains the dominant scientific framework.) In the first fractions of a second, the four fundamental forces (gravity, electromagnetism, the strong nuclear force, and the weak nuclear force) separate from what physicists believe was a single unified force. Quarks form and combine into protons and neutrons. Within the first three minutes, a process called Big Bang nucleosynthesis\u2014confirmed by decades of observation and laboratory nuclear physics\u2014produces the lightest elements: roughly 75% hydrogen, 25% helium, and trace amounts of lithium and deuterium. These ratios are among the most precisely confirmed predictions in all of cosmology. Nothing heavier exists yet. No carbon, no oxygen, no iron\u2014none of the elements necessary for life or for solid planets.")
 ]));
 
 content.push(para([
@@ -596,15 +636,15 @@ content.push(para([
 content.push(heading3("Stage Two: The First Stars and Stellar Nucleosynthesis (200 Million to 1 Billion Years)"));
 
 content.push(para([
-  t("Gravity draws hydrogen and helium into increasingly dense clouds. Roughly 200 million years after the Big Bang, the first stars ignite. These \u201CPopulation III\u201D stars are massive\u2014hundreds of times the mass of our sun\u2014and burn hot and fast. In their cores, nuclear fusion builds heavier elements: hydrogen fuses into helium, helium into carbon, carbon into oxygen, oxygen into neon, neon into silicon, and silicon into iron. Iron is the end of the line for fusion\u2014fusing iron absorbs energy rather than releasing it.")
+  t("Gravity draws hydrogen and helium into increasingly dense clouds. Roughly 200 million years after the Big Bang, the first stars ignite. Theoretical models predict these \u201CPopulation III\u201D stars were massive\u2014possibly hundreds of times the mass of our sun\u2014and burned hot and fast. As of 2025, no Population III star has been definitively confirmed by observation, though the James Webb Space Telescope has identified a strong candidate in the galaxy LAP1-B (Visbal et al., "), ti("The Astrophysical Journal Letters"), t(", 2025), seen as it was just 800 million years after the Big Bang. In the cores of massive stars, nuclear fusion builds heavier elements through a well-established process called stellar nucleosynthesis: hydrogen fuses into helium, helium into carbon, carbon into oxygen, oxygen into neon, neon into silicon, and silicon into iron. Iron is the end of the line for exothermic fusion\u2014fusing iron absorbs energy rather than releasing it. This fusion chain is confirmed by spectroscopic observations of stellar atmospheres and by laboratory nuclear physics.")
 ]));
 
 content.push(para([
-  t("When these massive stars exhaust their fuel, they collapse and explode as supernovae. The explosion itself generates temperatures and pressures so extreme that elements heavier than iron are forged in seconds\u2014gold, silver, uranium, all the heavy elements. The explosion scatters these newly created elements into the surrounding space, enriching the interstellar medium with the raw materials for a second generation of stars and, crucially, for rocky planets.")
+  t("When these massive stars exhaust their fuel, they collapse and explode as supernovae. The explosion generates temperatures and pressures extreme enough to forge some elements heavier than iron through the rapid neutron-capture process (r-process). The explosion scatters these newly created elements into the surrounding space, enriching the interstellar medium with the raw materials for a second generation of stars and, crucially, for rocky planets. However, supernovae are not the only source of heavy elements. In 2017, the LIGO and Virgo gravitational-wave detectors observed the merger of two neutron stars (event GW170817), and the electromagnetic afterglow\u2014called a kilonova\u2014confirmed that neutron star mergers are a major, perhaps dominant, source of the heaviest r-process elements: gold, platinum, and uranium among them (Pian et al., "), ti("Nature"), t(", 2017; Kasen et al., "), ti("Nature"), t(", 2017). In 2023, the James Webb Space Telescope spectroscopically identified tellurium in the kilonova associated with GRB 230307A (Levan et al., "), ti("Nature"), t(", 2024), providing the most direct identification yet of a specific heavy element produced in a neutron star merger. The picture that emerges is that the elements necessary for life are manufactured through multiple cosmic processes\u2014stellar fusion for the lighter elements up through iron, supernovae and neutron star mergers for the heavier ones.")
 ]));
 
 content.push(para([
-  t("This is the cosmic alchemy that makes life possible. Every atom of carbon in your body was forged in the core of a star that died before the sun was born. Every atom of iron in your blood was manufactured in a supernova explosion. Every atom of calcium in your bones, every atom of oxygen in your lungs, was built inside a star through nuclear fusion and scattered into space by a stellar death. Genesis 2:7\u2019s image of God forming man from \u201Cthe dust of the ground\u201D is, read through the lens of modern astrophysics, literally true\u2014we are made of star-dust, and that dust had to be manufactured across billions of years of stellar life cycles.")
+  t("This is the cosmic alchemy that makes life possible. Every atom of carbon in your body was forged in the core of a star that died before the sun was born. Every atom of iron in your blood was manufactured in a massive star\u2019s core and scattered by a supernova. Every atom of calcium in your bones, every atom of oxygen in your lungs, was built inside a star through nuclear fusion. And trace amounts of heavier elements\u2014the iodine in your thyroid, the cobalt in your vitamin B12\u2014may trace their origins to the cataclysmic collision of neutron stars. Genesis 2:7\u2019s image of God forming man from \u201Cthe dust of the ground\u201D is, read through the lens of modern astrophysics, literally true\u2014we are made of star-dust and merger-debris, and that dust had to be manufactured across billions of years of stellar life cycles and cosmic collisions.")
 ]));
 
 content.push(heading3("Stage Three: The Solar System and Earth (4.6 Billion Years Ago)"));
@@ -715,8 +755,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 4: THE HOMINID FAMILY =====
-content.push(heading1("Chapter 4: The Hominid Family Tree\u2014Who Are These Cousins?"));
+// ===== CHAPTER 6: THE HOMINID FAMILY =====
+content.push(heading1("Chapter 6: The Hominid Family Tree\u2014Who Are These Cousins?"));
 
 content.push(para([
   t("Before presenting the synthesis, it is important to understand the cast of characters. The fossil record reveals a rich and complex family of hominid species spanning millions of years. Here are the major players relevant to our discussion.")
@@ -845,8 +885,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 5: THE SYNTHESIS =====
-content.push(heading1("Chapter 5: The Synthesis\u2014A Proposed Framework"));
+// ===== CHAPTER 7: THE SYNTHESIS =====
+content.push(heading1("Chapter 7: The Synthesis\u2014A Proposed Framework"));
 
 content.push(para([
   t("Having surveyed the evidence and the existing models, we are now in a position to present the framework that this document proposes. It attempts to satisfy all of the following constraints simultaneously:")
@@ -973,8 +1013,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 6: CAIN AND ABEL =====
-content.push(heading1("Chapter 6: The Cain and Abel Problem"));
+// ===== CHAPTER 8: CAIN AND ABEL =====
+content.push(heading1("Chapter 8: The Cain and Abel Problem"));
 
 content.push(para([
   t("If Adam and Eve are the first humans and the Fall happens before any children are born, then when Cain kills Abel and is exiled to the land of Nod, where are the other people he fears? Where does his wife come from?")
@@ -1014,8 +1054,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 7: GENETIC DIVERSITY =====
-content.push(heading1("Chapter 7: The Genetic Diversity Problem\u2014Honestly Addressed"));
+// ===== CHAPTER 9: GENETIC DIVERSITY =====
+content.push(heading1("Chapter 9: The Genetic Diversity Problem\u2014Honestly Addressed"));
 
 content.push(para([
   t("The most scientifically challenging aspect of any monogenist framework is the genetic diversity problem. It deserves honest treatment.")
@@ -1092,8 +1132,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 8: CONSCIOUSNESS =====
-content.push(heading1("Chapter 8: The Hard Problem of Consciousness\u2014The Strongest Argument"));
+// ===== CHAPTER 10: CONSCIOUSNESS =====
+content.push(heading1("Chapter 10: The Hard Problem of Consciousness\u2014The Strongest Argument"));
 
 content.push(para([
   t("The strongest evidence for a divine act in human origins is not a gap in the fossil record. It is a gap in scientific explanation itself.")
@@ -1149,8 +1189,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 9: ORIGINAL SIN =====
-content.push(heading1("Chapter 9: Original Sin and the Nature of the Fall"));
+// ===== CHAPTER 11: ORIGINAL SIN =====
+content.push(heading1("Chapter 11: Original Sin and the Nature of the Fall"));
 
 content.push(para([
   t("The Catholic claim about original sin is not that humanity has a design flaw that education, politics, technology, or evolution can fix. It is that humanity has a spiritual wound that only grace can heal.")
@@ -1199,8 +1239,8 @@ content.push(pageBreak());
 
 
 
-// ===== CHAPTER 10: THE BOTTLENECK, THE FLOOD, AND UNIVERSAL MEMORY =====
-content.push(heading1("Chapter 10: The Bottleneck, the Flood, and the Memory of Near-Extinction"));
+// ===== CHAPTER 12: THE BOTTLENECK, THE FLOOD, AND UNIVERSAL MEMORY =====
+content.push(heading1("Chapter 12: The Bottleneck, the Flood, and the Memory of Near-Extinction"));
 
 content.push(para([
   t("Before exploring the connection between the population bottleneck and the Genesis Flood, it is essential to distinguish clearly between what the Catholic Church "),
@@ -1457,8 +1497,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 11: WHAT A SCIENTIST WOULD SAY =====
-content.push(heading1("Chapter 11: What a Scientist Would Say\u2014An Honest Assessment"));
+// ===== CHAPTER 13: WHAT A SCIENTIST WOULD SAY =====
+content.push(heading1("Chapter 13: What a Scientist Would Say\u2014An Honest Assessment"));
 
 content.push(para([
   t("Any framework that claims compatibility with science must be willing to face scientific scrutiny. Here is an honest assessment of how a fair-minded, non-believing scientist would likely evaluate our proposal.")
@@ -1522,8 +1562,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 12: SUMMARY =====
-content.push(heading1("Chapter 12: The Framework Summarized"));
+// ===== CHAPTER 14: SUMMARY =====
+content.push(heading1("Chapter 14: The Framework Summarized"));
 
 content.push(para([
   t("For clarity, here is the complete framework in condensed form:")
@@ -1596,8 +1636,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 13: ACKNOWLEDGMENTS OF WEAKNESS =====
-content.push(heading1("Chapter 13: Acknowledged Weaknesses and Open Questions"));
+// ===== CHAPTER 15: ACKNOWLEDGMENTS OF WEAKNESS =====
+content.push(heading1("Chapter 15: Acknowledged Weaknesses and Open Questions"));
 
 content.push(para([
   t("Intellectual honesty requires acknowledging where this framework is weakest and where questions remain open.")
@@ -1714,7 +1754,12 @@ const refs = [
   { text: "Wile, Jay L. Science in the Beginning. Berean Builders, 2013. See also the Discovering Design series (2015\u20132022).", url: "https://bereanbuilders.com/ecomm/" },
   { text: "Apologia Educational Ministries. Exploring Creation science curriculum series. Founded by Jay L. Wile; currently published by Davis Carman.", url: "https://www.apologia.com/" },
   { text: "Pius X, Pope St. Praestantia Scripturae. Motu proprio on the authority of the Pontifical Biblical Commission, November 18, 1907." },
-  { text: "Poupard, Cardinal Paul. Address on Faith and Science, Pontifical Council for Culture. Cited in Catholic News Service reports on the Galileo Commission findings." }
+  { text: "Poupard, Cardinal Paul. Address on Faith and Science, Pontifical Council for Culture. Cited in Catholic News Service reports on the Galileo Commission findings." },
+  { text: "Pian, E., et al. \"Spectroscopic identification of r-process nucleosynthesis in a double neutron-star merger.\" Nature 551 (2017): 67\u201370.", url: "https://doi.org/10.1038/nature24298" },
+  { text: "Kasen, Daniel, et al. \"Origin of the heavy elements in binary neutron-star mergers from a gravitational-wave event.\" Nature 551 (2017): 80\u201384.", url: "https://doi.org/10.1038/nature24453" },
+  { text: "Levan, A.J., et al. \"Heavy-element production in a compact object merger observed by JWST.\" Nature 626 (2024): 737\u2013741.", url: "https://doi.org/10.1038/s41586-023-06759-1" },
+  { text: "Visbal, Eli, et al. \"LAP1-B is the First Observed System Consistent with Theoretical Predictions for Population III Stars.\" The Astrophysical Journal Letters (2025).", url: "https://arxiv.org/abs/2508.03842" },
+  { text: "Catholic Answers. \"Can Catholics Believe in a Young Earth?\" Catholic Answers Magazine.", url: "https://www.catholic.com/magazine/print-edition/the-six-days-of-creation" }
 ];
 
 refs.forEach((ref, i) => {
@@ -1735,96 +1780,99 @@ content.push(pageBreak());
 content.push(heading1("Index of Key Terms and Persons"));
 
 const indexEntries = [
-  "Adam and Eve \u2014 Chapters 1\u201313, passim",
-  "Aquinas, Thomas (Five Ways) \u2014 Chapter 1",
-  "Augros, Robert \u2014 Chapter 3",
-  "Augustine of Hippo, Saint \u2014 Chapter 1",
-  "Australopithecus \u2014 Chapter 3",
-  "Ayala, Francisco \u2014 Chapter 7",
-  "Barnes, Thomas G. (magnetic field decay) \u2014 Chapter 1",
-  "Behavioral modernity \u2014 Chapter 8",
-  "Bestiality objection \u2014 Chapters 2, 5",
-  "Big Bang \u2014 Chapters 1, 3",
-  "Bonnette, Dennis \u2014 Chapters 2, 5",
-  "Bottleneck, population \u2014 Chapters 4, 7, 10",
-  "Cain and Abel \u2014 Chapter 6",
-  "Cambrian explosion \u2014 Chapter 3",
-  "Chalmers, David \u2014 Chapter 8",
-  "Consciousness, hard problem of \u2014 Chapter 8",
-  "Continental drift \u2014 Chapter 1",
-  "Coral reef growth \u2014 Chapter 1",
-  "Cosmic microwave background \u2014 Chapter 3",
-  "Council of Trent \u2014 Chapters 2, 5, 9",
-  "Council of Vienne \u2014 Chapter 5",
-  "Craig, William Lane \u2014 Chapters 2, 5",
-  "Deucalion and Pyrrha \u2014 Chapter 10",
-  "Dei Filius (Vatican I) \u2014 Chapter 1",
-  "Dendrochronology (tree rings) \u2014 Chapter 1",
-  "Denisovans \u2014 Chapters 4, 5",
-  "Ensoulment \u2014 Chapters 3, 5, 7, 8, 10",
-  "EPICA ice core \u2014 Chapter 1",
-  "Evo-devo (evolutionary developmental biology) \u2014 Chapter 3",
-  "Feser, Edward \u2014 Chapter 2",
-  "Genetic diversity \u2014 Chapter 7",
-  "Gosse, Philip Henry \u2014 Chapter 1",
-  "Flood, Genesis \u2014 Chapter 10",
-  "Flood myths, cross-cultural \u2014 Chapter 10",
-  "Gilgamesh, Epic of \u2014 Chapter 10",
-  "Great Oxidation Event \u2014 Chapter 3",
-  "Hard problem of consciousness \u2014 Chapter 8",
-  "HLA genes \u2014 Chapter 7",
-  "Homo erectus \u2014 Chapters 3, 4, 5",
-  "Homo floresiensis \u2014 Chapter 4",
-  "Homo habilis \u2014 Chapter 3",
-  "Homo heidelbergensis \u2014 Chapters 3, 4, 5",
-  "Homo naledi \u2014 Chapter 4",
+  "Adam and Eve \u2014 Chapters 2\u201315, passim",
+  "Apologia Educational Ministries \u2014 Chapter 2",
+  "Aquinas, Thomas (Five Ways) \u2014 Chapter 3",
+  "Augros, Robert \u2014 Chapter 5",
+  "Augustine of Hippo, Saint \u2014 Chapters 2, 3",
+  "Australopithecus \u2014 Chapter 5",
+  "Ayala, Francisco \u2014 Chapter 9",
+  "Barnes, Thomas G. (magnetic field decay) \u2014 Chapter 2",
+  "Behavioral modernity \u2014 Chapter 10",
+  "Berean Builders (Dr. Jay Wile) \u2014 Chapter 2",
+  "Bestiality objection \u2014 Chapters 4, 7",
+  "Big Bang \u2014 Chapters 3, 5",
+  "Bonnette, Dennis \u2014 Chapters 4, 7",
+  "Bottleneck, population \u2014 Chapters 6, 9, 12",
+  "Cain and Abel \u2014 Chapter 8",
+  "Cambrian explosion \u2014 Chapter 5",
+  "Catholic Answers (on YE permissibility) \u2014 Chapter 3",
+  "Chalmers, David \u2014 Chapter 10",
+  "Consciousness, hard problem of \u2014 Chapter 10",
+  "Continental drift \u2014 Chapter 3",
+  "Coral reef growth \u2014 Chapter 3",
+  "Cosmic microwave background \u2014 Chapter 5",
+  "Council of Trent \u2014 Chapters 4, 7, 11",
+  "Council of Vienne \u2014 Chapter 7",
+  "Craig, William Lane \u2014 Chapters 4, 7",
+  "Cyclic universe models (Penrose, Steinhardt) \u2014 Chapter 5",
+  "De fide definita (levels of doctrinal authority) \u2014 Chapter 3",
+  "Dei Filius (Vatican I) \u2014 Chapters 2, 3",
+  "Dendrochronology (tree rings) \u2014 Chapter 3",
+  "Denisovans \u2014 Chapters 6, 7",
+  "Deucalion and Pyrrha \u2014 Chapter 12",
+  "Ensoulment \u2014 Chapters 5, 7, 9, 10, 12",
+  "EPICA ice core \u2014 Chapter 3",
+  "Evo-devo (evolutionary developmental biology) \u2014 Chapter 5",
+  "Feser, Edward \u2014 Chapter 4",
+  "Fides et Ratio \u2014 Chapters 13, 15",
+  "50/500 rule \u2014 Chapter 12",
+  "Flood, Genesis \u2014 Chapter 12",
+  "Flood myths, cross-cultural \u2014 Chapter 12",
+  "Genetic diversity \u2014 Chapter 9",
+  "Gilgamesh, Epic of \u2014 Chapter 12",
+  "Gosse, Philip Henry \u2014 Chapters 2, 3",
+  "Great Oxidation Event \u2014 Chapter 5",
+  "Hard problem of consciousness \u2014 Chapter 10",
+  "HLA genes \u2014 Chapter 9",
+  "Homo erectus \u2014 Chapters 5, 6, 7",
+  "Homo floresiensis \u2014 Chapter 6",
+  "Homo habilis \u2014 Chapter 5",
+  "Homo heidelbergensis \u2014 Chapters 5, 6, 7",
+  "Homo naledi \u2014 Chapter 6",
   "Homo neanderthalensis \u2014 see Neanderthals",
-  "Humani Generis \u2014 Chapters 1, 2, 5",
-  "Ice cores \u2014 Chapter 1",
-  "Interbreeding, early \u2014 Chapters 5, 7, 12",
-  "Kemp, Kenneth \u2014 Chapter 2",
-  "Latent potential, biological \u2014 Chapter 3",
-  "Monogenism \u2014 Chapters 2, 5, 7, 11",
-  "Minimum viable population \u2014 Chapter 10",
-  "Mount St. Helens \u2014 Chapter 1",
-  "Neanderthals \u2014 Chapters 4, 5, 8",
-  "Original sin \u2014 Chapters 5, 9",
-  "Omphalos hypothesis \u2014 Chapter 1",
-  "Nunn, Patrick \u2014 Chapter 10",
-  "Pike, Alistair \u2014 Chapter 4",
-  "Pius XII, Pope \u2014 Chapters 1, 2",
-  "Polystrate fossils \u2014 Chapter 1",
-  "Polygenism \u2014 Chapter 2",
-  "Popol Vuh \u2014 Chapter 10",
-  "Radiometric dating \u2014 Chapter 1",
-  "RATE project \u2014 Chapter 1",
-  "Rational soul \u2014 Chapters 3, 5, 8",
-  "Required vs. open framework \u2014 Chapters 1\u201313",
-  "Romans 5:13 \u2014 Chapters 5, 12",
-  "Sensitive soul \u2014 Chapters 3, 5",
-  "Stanciu, George \u2014 Chapter 3",
-  "Stellar nucleosynthesis \u2014 Chapter 3",
-  "Stringer, Chris \u2014 Chapter 4",
-  "Suarez, Antoine \u2014 Chapter 2",
-  "Supernovae \u2014 Chapters 1, 3",
-  "Swamidass, S. Joshua \u2014 Chapter 2",
-  "Symbolic behavior \u2014 Chapters 4, 8",
-  "Starlight problem \u2014 Chapter 1",
-  "Tattersall, Ian \u2014 Chapter 8",
-  "Thomistic philosophy \u2014 Chapters 3, 5",
-  "Tiktaalik \u2014 Chapter 3",
-  "Young earth creationism \u2014 Chapter 1",
-  "Apologia Educational Ministries \u2014 Chapter 1",
-  "Berean Builders (Dr. Jay Wile) \u2014 Chapter 1",
-  "Kolbe Center for the Study of Creation \u2014 Chapter 1",
-  "Owen, Hugh \u2014 Chapter 1",
-  "Lateran IV, Firmiter constitution \u2014 Chapters 1, 12",
-  "Ott, Ludwig (Fundamentals of Catholic Dogma) \u2014 Chapter 1",
-  "Pontifical Biblical Commission, 1909 decree \u2014 Chapter 1",
-  "Poupard, Cardinal Paul \u2014 Chapter 1",
-  "De fide definita (levels of doctrinal authority) \u2014 Chapter 1",
-  "Fides et Ratio \u2014 Chapters 11, 13",
-  "50/500 rule \u2014 Chapter 10"
+  "Humani Generis \u2014 Chapters 2, 3, 4, 7",
+  "Ice cores \u2014 Chapter 3",
+  "Interbreeding, early \u2014 Chapters 7, 9, 14",
+  "Kemp, Kenneth \u2014 Chapter 4",
+  "Kolbe Center for the Study of Creation \u2014 Chapter 2",
+  "Lateran IV, Firmiter constitution \u2014 Chapters 2, 14",
+  "Latent potential, biological \u2014 Chapter 5",
+  "Minimum viable population \u2014 Chapter 12",
+  "Monogenism \u2014 Chapters 4, 7, 9, 13",
+  "Mount St. Helens \u2014 Chapter 3",
+  "Neanderthals \u2014 Chapters 6, 7, 10",
+  "Neutron star mergers \u2014 Chapter 5",
+  "Nunn, Patrick \u2014 Chapter 12",
+  "Omphalos hypothesis \u2014 Chapters 2, 3",
+  "Original sin \u2014 Chapters 7, 11",
+  "Ott, Ludwig (Fundamentals of Catholic Dogma) \u2014 Chapter 3",
+  "Owen, Hugh \u2014 Chapter 2",
+  "Pike, Alistair \u2014 Chapter 6",
+  "Pius XII, Pope \u2014 Chapters 2, 3, 4",
+  "Polystrate fossils \u2014 Chapter 2",
+  "Polygenism \u2014 Chapter 4",
+  "Pontifical Biblical Commission, 1909 decree \u2014 Chapters 2, 3",
+  "Popol Vuh \u2014 Chapter 12",
+  "Poupard, Cardinal Paul \u2014 Chapter 3",
+  "Radiometric dating \u2014 Chapter 2",
+  "RATE project \u2014 Chapters 2, 3",
+  "Rational soul \u2014 Chapters 5, 7, 10",
+  "Required vs. open framework \u2014 Chapters 2\u201315",
+  "Romans 5:13 \u2014 Chapters 7, 14",
+  "Sensitive soul \u2014 Chapters 5, 7",
+  "Stanciu, George \u2014 Chapter 5",
+  "Starlight problem \u2014 Chapter 3",
+  "Stellar nucleosynthesis \u2014 Chapter 5",
+  "Stringer, Chris \u2014 Chapter 6",
+  "Suarez, Antoine \u2014 Chapter 4",
+  "Supernovae \u2014 Chapters 3, 5",
+  "Swamidass, S. Joshua \u2014 Chapter 4",
+  "Symbolic behavior \u2014 Chapters 6, 10",
+  "Tattersall, Ian \u2014 Chapter 10",
+  "Thomistic philosophy \u2014 Chapters 5, 7",
+  "Tiktaalik \u2014 Chapter 5",
+  "Young earth creationism \u2014 Chapters 2, 3"
 ];
 
 indexEntries.forEach(entry => {
