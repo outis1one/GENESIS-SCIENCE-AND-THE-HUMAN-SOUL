@@ -17,13 +17,15 @@ const heading1 = (text) => {
   const bookmarkName = `ch_${bookmarkCounter}`;
   bookmarkCounter++;
   chapterBookmarks[text] = bookmarkName;
-  return new Paragraph({
+  const p = new Paragraph({
     heading: HeadingLevel.HEADING_1,
     children: [
       new Bookmark({ id: bookmarkName, children: [new TextRun(text)] })
     ],
     spacing: { before: 360, after: 200 }
   });
+  p._chapterTitle = text;
+  return p;
 };
 
 const heading2 = (text) => new Paragraph({
@@ -99,7 +101,11 @@ const magSectionLink = (text, docKey) => new ExternalHyperlink({
   link: MAGISTERIAL_URLS[docKey]
 });
 
-const pageBreak = () => new Paragraph({ children: [new PageBreak()] });
+const pageBreak = () => {
+  const p = new Paragraph({ children: [new PageBreak()] });
+  p._isPageBreak = true;
+  return p;
+};
 
 // Build all content
 // ===== FOOTNOTE CITATION SYSTEM =====
@@ -2400,33 +2406,69 @@ const doc = new Document({
       }
     ]
   },
-  sections: [{
-    properties: {
-      page: {
-        size: { width: 12240, height: 15840 },
-        margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 }
+  sections: (() => {
+    // Split content into sections at each heading1 (chapter boundary)
+    const sections = [];
+    let currentChildren = [];
+    let currentTitle = "Genesis, Science, and the Human Soul";
+
+    const makeFooter = () => new Footer({
+      children: [new Paragraph({
+        alignment: AlignmentType.CENTER,
+        children: [new TextRun({ children: [PageNumber.CURRENT], size: 20, font: "Georgia" })],
+        border: { top: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
+      })]
+    });
+
+    const makeHeader = (title) => new Header({
+      children: [new Paragraph({
+        alignment: AlignmentType.CENTER,
+        children: [new TextRun({ text: title, italics: true, size: 18, font: "Georgia", color: "888888" })],
+        border: { bottom: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
+      })]
+    });
+
+    const pushSection = (children, title) => {
+      sections.push({
+        properties: {
+          page: {
+            size: { width: 12240, height: 15840 },
+            margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 }
+          }
+        },
+        headers: { default: makeHeader(title) },
+        footers: { default: makeFooter() },
+        children: children
+      });
+    };
+
+    for (let i = 0; i < content.length; i++) {
+      const item = content[i];
+      if (item._chapterTitle) {
+        // Remove trailing pageBreak from previous section (section break handles page break)
+        while (currentChildren.length > 0 && currentChildren[currentChildren.length - 1]._isPageBreak) {
+          currentChildren.pop();
+        }
+        // Push the previous section
+        if (currentChildren.length > 0 || sections.length === 0) {
+          pushSection(currentChildren, currentTitle);
+        }
+        currentTitle = item._chapterTitle;
+        currentChildren = [item];
+      } else {
+        currentChildren.push(item);
       }
-    },
-    headers: {
-      default: new Header({
-        children: [new Paragraph({
-          alignment: AlignmentType.CENTER,
-          children: [new TextRun({ text: "Genesis, Science, and the Human Soul", italics: true, size: 18, font: "Georgia", color: "888888" })],
-          border: { bottom: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
-        })]
-      })
-    },
-    footers: {
-      default: new Footer({
-        children: [new Paragraph({
-          alignment: AlignmentType.CENTER,
-          children: [new TextRun({ children: [PageNumber.CURRENT], size: 20, font: "Georgia" })],
-          border: { top: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
-        })]
-      })
-    },
-    children: content
-  }]
+    }
+    // Push the last section
+    while (currentChildren.length > 0 && currentChildren[currentChildren.length - 1]._isPageBreak) {
+      currentChildren.pop();
+    }
+    if (currentChildren.length > 0) {
+      pushSection(currentChildren, currentTitle);
+    }
+
+    return sections;
+  })()
 });
 
 Packer.toBuffer(doc).then(buffer => {
