@@ -94,6 +94,7 @@ const SOURCES = {
   KOLBE: { text: 'Owen, Hugh, and the Kolbe Center. Creation, Evolution, and Catholicism. Kolbe Center, 2000ff.', url: 'https://kolbecenter.org/' },
   VISBAL: { text: 'Visbal, Eli, et al. "LAP1-B: Population III Stars." ApJ Letters (2025).', url: 'https://arxiv.org/abs/2508.03842' },
   CA_YEC: { text: 'Catholic Answers. "Can Catholics Believe in a Young Earth?"', url: 'https://www.catholic.com/magazine/print-edition/the-six-days-of-creation' },
+  CE_DELUGE: { text: 'Gigot, Francis E. "Deluge." In The Catholic Encyclopedia, Vol. 4. Robert Appleton Company, 1908.', url: 'https://www.newadvent.org/cathen/04702a.htm' },
   BONNETTE: { text: 'Bonnette, Dennis. "Time to Abandon the Genesis Story?" Homiletic & Pastoral Review, July 2014.' },
   TABACZEK: { text: 'Tabaczek, Mariusz. "Contemporary Version of the Monogenetic Model." Religions 14, no. 4 (2023): 528.', url: 'https://doi.org/10.3390/rel14040528' },
   OTT: { text: 'Ott, Ludwig. Fundamentals of Catholic Dogma. Baronius Press, 2018 (orig. 1952).', url: 'https://www.baronius.com/fundamentals-of-catholic-dogma.html' },
@@ -101,6 +102,7 @@ const SOURCES = {
   ROOTH: { text: 'Rooth, Anna Birgitta. "The Creation Myths of the North American Indians." Anthropos 52 (1957): 497\u2013508.' },
   SETTERFIELD: { text: 'Setterfield, Barry, and Trevor Norman. "The Atomic Constants, Light, and Time." Invited Research Paper, Flinders University, August 1987.' },
   IRVING: { text: 'Irving, Washington. A History of the Life and Voyages of Christopher Columbus. G. & C. Carvill, 1828.' },
+  SCS: { text: 'Society of Catholic Scientists. "Q6: How Do Adam and Eve Fit in with Evolution and the Science of Human Origins?" 2022.', url: 'https://www.catholicscientists.org/common-questions/adam-and-eve' },
   ENCODE: { text: 'ENCODE Project Consortium. "An integrated encyclopedia of DNA elements in the human genome." Nature 489 (2012): 57\u201374.', url: 'https://doi.org/10.1038/nature11247' },
   CARROLL_EVO: { text: 'Carroll, Sean B. Endless Forms Most Beautiful: The New Science of Evo Devo. W.W. Norton, 2005.' },
   SMITHSONIAN_NEAND: { text: 'Smithsonian Institution. "Homo neanderthalensis." Human Origins Program, 2024.', url: 'https://humanorigins.si.edu/evidence/human-fossils/species/homo-neanderthalensis' },
@@ -185,8 +187,8 @@ content.push(new Paragraph({
 const tocEntries = [
   "Chapter 1: The Problem and the Promise",
   "Chapter 2: The Case for a Young Earth\u2014Stated Fairly and Fully",
-  "Chapter 3: The Crux\u2014Why the Young Earth Position, Though Permitted, Is Untenable",
-  "Chapter 4: Existing Models and Why They Fall Short",
+  "Chapter 3: The Crux\u2014Why This Document Parts Ways with the Young Earth Position",
+  "Chapter 4: Existing Models\u2014Their Strengths and Limitations",
   "Chapter 5: Augros and Stanciu\u2014The New Biology and Latent Potential",
   "Chapter 6: The Hominid Family Tree\u2014Who Are These Cousins?",
   "Chapter 7: The Synthesis\u2014A Proposed Framework",
@@ -277,7 +279,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("Third, Jesus himself spoke of the creation of humanity at \u201Cthe beginning\u201D (Mark 10:6, 13:19), which young earth advocates argue is difficult to reconcile with humanity appearing only in the last fraction of a percent of cosmic history. If humans arrived 13.8 billion years into a 13.8-billion-year-old universe, that is not \u201Cthe beginning\u201D in any natural sense of the word.")
+  t("Third, Jesus himself spoke of the creation of humanity at \u201Cthe beginning\u201D (RSV-CE Mk 10:6; 13:19), which young earth advocates argue is difficult to reconcile with humanity appearing only in the last fraction of a percent of cosmic history. If humans arrived 13.8 billion years into a 13.8-billion-year-old universe, that is not \u201Cthe beginning\u201D in any natural sense of the word.")
 ]));
 
 content.push(para([
@@ -295,7 +297,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("Fifth, young earth advocates point to what they consider anomalies in radiometric dating. They argue that the assumptions underlying these methods\u2014constant decay rates, known initial conditions, closed systems\u2014cannot be verified for events in the unobserved past. The RATE (Radioisotopes and the Age of The Earth) research project, funded by the Institute for Creation Research and the Creation Research Society, reported findings of carbon-14 in coal and diamonds that, under standard assumptions, should contain none. They also reported helium retention in zircon crystals at levels they argued were inconsistent with billions of years of radioactive decay.")
+  t("Fifth, young earth advocates point to what they consider anomalies in radiometric dating. They argue that the assumptions underlying these methods\u2014constant decay rates, known initial conditions, closed systems\u2014cannot be verified for events in the unobserved past. The RATE (Radioisotopes and the Age of The Earth) research project, funded by the Institute for Creation Research and the Creation Research Society, reported findings of carbon-14 in coal and diamonds that, under standard assumptions, should contain none. They also reported helium retention in zircon crystals (extremely hard, naturally occurring minerals that trap radioactive elements and their decay products, making them useful as geological clocks) at levels they argued were inconsistent with billions of years of radioactive decay.")
 ]));
 
 content.push(para([
@@ -374,12 +376,12 @@ content.push(para([
 
 content.push(para([
   tb("The Creation-Providence Framework. "),
-  t("Hugh Owen argues that all arguments for an old earth assume a \u201Cnaturalistic-uniformitarian framework\u201D inherited from Enlightenment philosophers, which was rejected by all the Church Fathers. The Fathers instead embraced what Owen calls a \u201CCreation-Providence Framework,\u201D in which the entire work of creation was supernatural, and the natural order only began when creation was complete. Therefore, natural processes cannot be extrapolated backward to determine the age of creation. Owen rejects the label \u201CYoung Earth Creationist\u201D in favor of \u201CDRAC\u201D\u2014\u201CDivinely-Revealed-Age-Catholic\u201D\u2014framing his position as the default Catholic position held by the Fathers, not a modern innovation.")
+  t("Hugh Owen, founder and director of the Kolbe Center for the Study of Creation, argues that all arguments for an old earth assume a \u201Cnaturalistic-uniformitarian framework\u201D inherited from Enlightenment philosophers, which was rejected by all the Church Fathers. The Fathers instead embraced what Owen calls a \u201CCreation-Providence Framework,\u201D in which the entire work of creation was supernatural, and the natural order only began when creation was complete. Therefore, natural processes cannot be extrapolated backward to determine the age of creation. Owen rejects the label \u201CYoung Earth Creationist\u201D in favor of \u201CDRAC\u201D\u2014\u201CDivinely-Revealed-Age-Catholic\u201D\u2014framing his position as the default Catholic position held by the Fathers, not a modern innovation.")
 ]));
 
 content.push(para([
   tb("The Cana Wine Analogy. "),
-  t("The Kolbe Center draws a parallel to Jesus turning water into wine at Cana (John 2:1\u201311). The wine had all the chemical markers of having gone through a long natural process of fermentation and aging\u2014yet it was created instantaneously by divine power. Just as we can only know the true age of the Cana wine from the testimony of Scripture (not from chemical analysis), we can only know the true age of the cosmos from Genesis. This is essentially a more theologically grounded version of the Omphalos argument.")
+  t("The Kolbe Center draws a parallel to Jesus turning water into wine at Cana (RSV-CE Jn 2:1\u201311). The wine had all the chemical markers of having gone through a long natural process of fermentation and aging\u2014yet it was created instantaneously by divine power. Just as we can only know the true age of the Cana wine from the testimony of Scripture (not from chemical analysis), we can only know the true age of the cosmos from Genesis. This is essentially a more theologically grounded version of the Omphalos argument.")
 ]));
 
 content.push(para([
@@ -391,7 +393,7 @@ content.push(para([
 content.push(pageBreak());
 
 // ===== CHAPTER 3: THE CRUX =====
-content.push(heading1("Chapter 3: The Crux\u2014Why the Young Earth Position, Though Permitted, Is Untenable"));
+content.push(heading1("Chapter 3: The Crux\u2014Why This Document Parts Ways with the Young Earth Position"));
 
 content.push(para([
   t("The previous chapter stated the case for a young earth as fairly and fully as we could. This chapter explains why, despite the strength of those arguments, we believe the young earth position faces difficulties it cannot resolve\u2014not primarily because of the scientific evidence (though the evidence is substantial), but because it collides with a dogmatic teaching of the Catholic Church that its proponents rarely address.")
@@ -405,7 +407,7 @@ content.push(heading2("Can a Catholic Hold a Young Earth Position?"));
 
 content.push(para([
   tb("Yes."),
-  t(" The Catholic Church does not require belief in an old earth, and a Catholic who holds a young earth position is not in heresy. This must be stated clearly, because intellectual honesty demands it. The question of the earth\u2019s age is not defined by any ecumenical council, papal encyclical, or ex cathedra statement. Ludwig Ott\u2019s "),
+  t(" The Catholic Church does not require belief in an old earth, and a Catholic who holds a young earth position is not in heresy. This must be stated clearly, because intellectual honesty demands it. The question of the earth\u2019s age is not defined by any ecumenical council (a formal assembly of bishops from the entire Church, whose doctrinal decrees carry the highest authority), papal encyclical (an official letter from the pope addressed to the whole Church on matters of doctrine or discipline), or ex cathedra statement (a solemn papal definition made \u201Cfrom the chair\u201D of Peter, invoking full papal authority on a matter of faith or morals, which Catholics hold to be infallible). Ludwig Ott\u2019s "),
   ti("Fundamentals of Catholic Dogma"),
   t(" (1952)\u2014the standard reference manual used in Catholic seminaries for decades, which systematically catalogs every defined doctrine of the Catholic Church, classifies each by its level of authority, and cites the specific councils, encyclicals, and Scripture passages that define them (Ott does not invent doctrine; he organizes and cites what the Church has officially taught)\u2014does not list the earth\u2019s age among the "),
   ti("de fide"),
@@ -426,12 +428,10 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("Our argument is not that the young earth position is heretical. It is that it is "),
-  ti("untenable"),
-  t("\u2014that it requires accepting consequences that contradict other things the Church teaches, and that the weight of evidence\u2014both scientific and theological\u2014points decisively in the other direction. The distinction between \u201Cpermitted\u201D and \u201Cwise\u201D matters here, and it is a distinction that honest inquiry demands we take seriously.")
+  t("Our argument is not that the young earth position is heretical\u2014it plainly is not. It is that it faces serious difficulties, both scientific and theological, that we have been unable to resolve. The reader who can resolve them may reasonably remain a young earth Catholic in good standing. What follows is our honest account of why we could not.")
 ]));
 
-content.push(heading2("The Scientific Evidence: Why Deep Time Is Overwhelming"));
+content.push(heading2("The Scientific Evidence: Why Deep Time Is Difficult to Set Aside"));
 
 content.push(para([
   t("Before turning to the theological argument that challenges the young earth position most directly, it is worth noting that the scientific evidence for deep time extends far beyond starlight and radiometric dating. Multiple independent lines of evidence converge on deep time, each using different physical processes, and their agreement is what makes the case so difficult to set aside.")
@@ -534,7 +534,7 @@ content.push(para([
   t("What makes the case for deep time compelling is not any single line of evidence but the convergence of all of them. Ice cores, tree rings, coral growth, radiometric dating (using multiple independent isotope systems\u2014uranium-lead, potassium-argon, rubidium-strontium, each based on different elements with different decay rates), continental drift, ocean floor magnetic striping, amino acid racemization (the slow, measurable chemical change in protein molecules after an organism dies, which acts as a molecular clock), luminescence dating (which measures how long it has been since mineral grains were last exposed to sunlight, based on the accumulation of trapped electrons in crystal lattices), and cosmological observation all independently point to the same timescales. For all of these to be wrong, they would all have to be wrong in exactly the same way, by exactly the same amount. This is the question every reader must weigh honestly: is it more reasonable to accept the convergence, or to believe that every one of these independent methods is mistaken in precisely the same direction?")
 ]));
 
-content.push(heading2("The Problem That Unhinges the Argument"));
+content.push(heading2("The Theological Difficulty: Omphalos and the First Vatican Council"));
 
 content.push(para([
   t("The Omphalos hypothesis is philosophically consistent but theologically problematic\u2014and this is the difficulty its proponents must address. The problem is not merely that it makes God a deceiver. The problem is that it contradicts the dogmatic teaching of an ecumenical council and undermines the very foundation by which Catholic theology says we can know that God exists.")
@@ -559,7 +559,7 @@ content.push(para([
   cite('DEI_FILIUS'),
   t(" The Council taught: \u201CThe same Holy Mother Church holds and teaches that God, the beginning and end of all things, can be known with certainty by the natural light of human reason from created things.\u201D The Council then issued its teaching under anathema\u2014the strongest language available to an ecumenical council, meaning that the condemned position is formally incompatible with Catholic faith. In the early Church, anathema meant complete excommunication; by the time of the great councils, it functioned as a declaration that the rejected view constitutes heresy, and that a Catholic who knowingly and obstinately holds it has placed himself outside the faith on that point. It does not mean automatic damnation\u2014that judgment belongs to God alone\u2014but it means the Church has drawn a line and will not move it. The canon reads: \u201CIf anyone says that the one, true God, our creator and lord, cannot be known with certainty from the things that have been made, by the natural light of human reason: let him be anathema.\u201D The Catechism of the Catholic Church repeats this at \u00A736:"),
   cite('CCC'),
-  t(" God \u201Ccan be known with certainty from the created world by the natural light of human reason.\u201D And the Council cited Romans 1:20: \u201CFor the invisible things of him, from the creation of the world, are clearly seen, being understood by the things that are made.\u201D")
+  t(" God \u201Ccan be known with certainty from the created world by the natural light of human reason.\u201D And the Council cited Romans 1:20: \u201CFor the invisible things of him, from the creation of the world, are clearly seen, being understood by the things that are made\u201D (DR Rom 1:20).")
 ]));
 
 content.push(para([
@@ -611,7 +611,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("The phrase in Genesis 2:7\u2014\u201Cthen the Lord God formed man from the dust of the ground\u201D\u2014takes on a resonance the ancient authors could not have imagined. The \u201Cdust of the ground\u201D is star-stuff. The ground itself is the product of billions of years of cosmic engineering. And the process of making it required a universe of 200 billion galaxies operating across 13.8 billion years.")
+  t("The phrase in Genesis 2:7\u2014\u201Cthen the Lord God formed man of dust from the ground\u201D (RSV-CE Gn 2:7)\u2014takes on a resonance the ancient authors could not have imagined. The \u201Cdust of the ground\u201D is star-stuff. The ground itself is the product of billions of years of cosmic engineering. And the process of making it required a universe of 200 billion galaxies operating across 13.8 billion years.")
 ]));
 
 content.push(para([
@@ -623,7 +623,7 @@ content.push(heading2("The Text Itself Signals Something Other Than Literal Days
 content.push(para([
   t("The case against a literal six-day creation does not rest solely on science. The text of Genesis itself provides internal evidence that \u201Cday\u201D ("),
   ti("yom"),
-  t(" in Hebrew) is not being used as a twenty-four-hour solar period. The most obvious indicator is that the sun is not created until Day Four (Genesis 1:14\u201319). A \u201Cday\u201D defined by solar rotation cannot exist before the sun exists. The text signals from its opening verses that it operates on a different kind of timescale.")
+  t(" in Hebrew) is not being used as a twenty-four-hour solar period. The most obvious indicator is that the sun is not created until Day Four (RSV-CE Gn 1:14\u201319). A \u201Cday\u201D defined by solar rotation cannot exist before the sun exists. The text signals from its opening verses that it operates on a different kind of timescale.")
 ]));
 
 content.push(para([
@@ -676,7 +676,7 @@ content.push(para([
   ti("Dei Filius"),
   t(", Chapter 1). God keeps all created things in existence and guides them through His Providence ("),
   ti("Dei Filius"),
-  t(", Chapter 1). The first man was created by God (Genesis 1:27; CCC \u00A7356). Man consists of a material body and a spiritual soul (CCC \u00A7362\u2013368). The rational soul is the essential form of the body (Council of Vienne, 1312)."),
+  t(", Chapter 1). The first man was created by God (RSV-CE Gn 1:27; CCC \u00A7356). Man consists of a material body and a spiritual soul (CCC \u00A7362\u2013368). The rational soul is the essential form of the body (Council of Vienne, 1312)."),
   cite('VIENNE'),
   t(" Every human soul is directly created by God ("),
   ti("Humani Generis"),
@@ -686,7 +686,7 @@ content.push(para([
   ti("Humani Generis"),
   t(", \u00A737; Council of Trent, Session V, Canons 1\u20134)."),
   cite('TRENT_V'),
-  t(" Creation reveals God\u2019s existence and attributes to human reason (Romans 1:19\u201320; "),
+  t(" Creation reveals God\u2019s existence and attributes to human reason (DR Rom 1:19\u201320; "),
   ti("Dei Filius"),
   t(", Chapter 2, Canon 1; CCC \u00A736). The Genesis account, while using \u201Cfigurative language\u201D (CCC \u00A7390), \u201Caffirms a primeval event, a deed that took place at the beginning of the history of man.\u201D")
 ]));
@@ -744,7 +744,7 @@ content.push(para([
 content.push(pageBreak());
 
 // ===== CHAPTER 4: EXISTING MODELS =====
-content.push(heading1("Chapter 4: Existing Models and Why They Fall Short"));
+content.push(heading1("Chapter 4: Existing Models\u2014Their Strengths and Limitations"));
 
 content.push(para([
   t("Before presenting our synthesis, it is worth surveying the major models that Catholic thinkers have proposed to reconcile Adam and Eve with modern science. Each has real strengths. Each also has significant weaknesses that our framework attempts to address.")
@@ -787,17 +787,17 @@ content.push(para([
 content.push(para([
   t("The weakness is the one that strikes most people immediately: the \u201Csoulless twin\u201D problem. In Kemp\u2019s model, the beings surrounding Adam and Eve are "),
   ti("biologically identical"),
-  t(" to them. They look the same, act the same, and presumably suffer the same. The only difference is an invisible metaphysical property\u2014the rational soul. Calling biologically identical beings \u201Cnon-human\u201D solely on the basis of an undetectable spiritual quality is philosophically uncomfortable and scientifically meaningless. As one of Kemp\u2019s critics pointed out, if these beings are not rational, they should not be called \u201Cbiologically human\u201D at all\u2014but if they are indistinguishable from humans in every observable way, the distinction feels arbitrary.")
+  t(" to them. They look the same, act the same, and presumably suffer the same. The only difference is an invisible metaphysical property\u2014the rational soul. Calling biologically identical beings \u201Cnon-human\u201D solely on the basis of an undetectable spiritual quality is philosophically uncomfortable and scientifically meaningless. As critics of Kemp\u2019s model have pointed out (a concern raised by, among others, Dennis Bonnette in his review of Kemp\u2019s approach), if these beings are not rational, they should not be called \u201Cbiologically human\u201D at all\u2014but if they are indistinguishable from humans in every observable way, the distinction feels arbitrary.")
 ]));
 
 content.push(para([
-  t("There is also the moral problem. Dennis Bonnette, a Catholic philosopher at Niagara University, has argued that interbreeding between ensouled humans and non-ensouled hominids constitutes bestiality\u2014\u201Ca grossly perverse use of the sexual faculties\u201D and \u201Cthe worst of the unnatural sexual sins.\u201D While defenders of the Kemp model (including Thomist philosopher Edward Feser) have pushed back on this characterization, the objection has force. If these beings are truly non-rational animals, mating with them is a grave moral disorder, regardless of their physical appearance.")
+  t("There is also the moral problem. Dennis Bonnette, a Catholic philosopher at Niagara University, has argued that interbreeding between ensouled humans and non-ensouled hominids constitutes bestiality\u2014\u201Ca grossly perverse use of the sexual faculties\u201D and \u201Cthe worst of the unnatural sexual sins.\u201D While defenders of the Kemp model (including Thomist philosopher Edward Feser of Pasadena City College) have pushed back on this characterization, the objection has force. If these beings are truly non-rational animals, mating with them is a grave moral disorder, regardless of their physical appearance.")
 ]));
 
 content.push(heading2("The Craig/Bonnette Model: Pushing Adam Deep Into the Past"));
 
 content.push(para([
-  t("William Lane Craig, in his 2021 book "),
+  t("William Lane Craig, an analytic philosopher and Christian apologist at Houston Christian University, in his 2021 book "),
   ti("In Quest of the Historical Adam"),
   t(", and Dennis Bonnette in several articles,"),
   cite('CRAIG'),
@@ -877,7 +877,7 @@ content.push(para([
 content.push(heading3("Stage One: The First Moments (0 to 380,000 Years)"));
 
 content.push(para([
-  t("At the instant of the Big Bang\u201413.8 billion years ago\u2014all matter, energy, space, and time come into existence. (A note on the scientific consensus: the standard model of cosmology holds that there was one Big Bang. Alternative models\u2014Roger Penrose\u2019s Conformal Cyclic Cosmology and Paul Steinhardt\u2019s cyclic/bouncing cosmology\u2014propose that the universe may undergo repeated cycles, but these remain minority positions. The 2024\u20132025 DESI data hinting that dark energy may be weakening has generated renewed interest in cyclic models, but the single-Big-Bang model remains the dominant scientific framework.) In the first fractions of a second, the four fundamental forces (gravity, electromagnetism, the strong nuclear force, and the weak nuclear force) separate from what physicists believe was a single unified force. Quarks form and combine into protons and neutrons. Within the first three minutes, a process called Big Bang nucleosynthesis\u2014confirmed by decades of observation and laboratory nuclear physics\u2014produces the lightest elements: roughly 75% hydrogen, 25% helium, and trace amounts of lithium and deuterium. These ratios are among the most precisely confirmed predictions in all of cosmology. Nothing heavier exists yet. No carbon, no oxygen, no iron\u2014none of the elements necessary for life or for solid planets.")
+  t("At the instant of the Big Bang\u201413.8 billion years ago\u2014all matter, energy, space, and time come into existence. (A note on the scientific consensus: the standard model of cosmology holds that there was one Big Bang. Alternative models\u2014Nobel laureate Roger Penrose\u2019s (Oxford) Conformal Cyclic Cosmology and Princeton physicist Paul Steinhardt\u2019s cyclic/bouncing cosmology\u2014propose that the universe may undergo repeated cycles, but these remain minority positions. The 2024\u20132025 DESI data hinting that dark energy may be weakening has generated renewed interest in cyclic models, but the single-Big-Bang model remains the dominant scientific framework.) In the first fractions of a second, the four fundamental forces (gravity, electromagnetism, the strong nuclear force, and the weak nuclear force) separate from what physicists believe was a single unified force. Quarks form and combine into protons and neutrons. Within the first three minutes, a process called Big Bang nucleosynthesis\u2014confirmed by decades of observation and laboratory nuclear physics\u2014produces the lightest elements: roughly 75% hydrogen, 25% helium, and trace amounts of lithium and deuterium. These ratios are among the most precisely confirmed predictions in all of cosmology. Nothing heavier exists yet. No carbon, no oxygen, no iron\u2014none of the elements necessary for life or for solid planets.")
 ]));
 
 content.push(para([
@@ -899,7 +899,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("This is the cosmic alchemy that makes life possible. Every atom of carbon in your body was forged in the core of a star that died before the sun was born. Every atom of iron in your blood was manufactured in a massive star\u2019s core and scattered by a supernova. Every atom of calcium in your bones, every atom of oxygen in your lungs, was built inside a star through nuclear fusion. And trace amounts of heavier elements\u2014the iodine in your thyroid, the cobalt in your vitamin B12\u2014may trace their origins to the cataclysmic collision of neutron stars. Genesis 2:7\u2019s image of God forming man from \u201Cthe dust of the ground\u201D is, read through the lens of modern astrophysics, literally true\u2014we are made of star-dust and merger-debris, and that dust had to be manufactured across billions of years of stellar life cycles and cosmic collisions.")
+  t("This is the cosmic alchemy that makes life possible. Every atom of carbon in your body was forged in the core of a star that died before the sun was born. Every atom of iron in your blood was manufactured in a massive star\u2019s core and scattered by a supernova. Every atom of calcium in your bones, every atom of oxygen in your lungs, was built inside a star through nuclear fusion. And trace amounts of heavier elements\u2014the iodine in your thyroid, the cobalt in your vitamin B12\u2014may trace their origins to the cataclysmic collision of neutron stars. Genesis 2:7 (RSV-CE)\u2019s image of God forming man from \u201Cthe dust of the ground\u201D is, read through the lens of modern astrophysics, literally true\u2014we are made of star-dust and merger-debris, and that dust had to be manufactured across billions of years of stellar life cycles and cosmic collisions.")
 ]));
 
 content.push(heading3("Stage Three: The Solar System and Earth (4.6 Billion Years Ago)"));
@@ -1001,7 +1001,7 @@ content.push(para([
   ti("Homo erectus"),
   t(", "),
   ti("Homo heidelbergensis"),
-  t(", and others\u2014is not a random accident but the unfolding of a divinely designed process. These creatures are not defective humans or accidental byproducts. They are the pinnacle of what nature can produce on its own\u2014the biological substrate that God has been preparing for the ultimate creative act: the ensoulment of the first true humans.")
+  t(", and others\u2014is not a random accident but the unfolding of a divinely designed process. These creatures are not defective humans or accidental byproducts. They are the pinnacle of what nature can produce on its own\u2014the biological substrate that God has been preparing for the ultimate creative act: the ensoulment\u2014the moment at which God directly creates and infuses a rational soul into a living body\u2014of the first true humans.")
 ]));
 
 content.push(para([
@@ -1018,7 +1018,7 @@ content.push(para([
   tb("Required: "),
   t("God is the Creator of all things visible and invisible (Nicene Creed). Creation is not an accident but an act of divine will and wisdom. The human soul cannot be a product of material processes\u2014it is directly created by God ("),
   ti("Humani Generis"),
-  t(", \u00A736; CCC \u00A7366). The created world reflects God\u2019s wisdom and can be known through reason (Romans 1:19\u201320; Vatican I, "),
+  t(", \u00A736; CCC \u00A7366). The created world reflects God\u2019s wisdom and can be known through reason (DR Rom 1:19\u201320; Vatican I, "),
   ti("Dei Filius"),
   t("). These are doctrinal givens.")
 ]));
@@ -1140,7 +1140,7 @@ content.push(heading2("Required vs. Open: What the Church Demands About Our Homi
 
 content.push(para([
   tb("Required: "),
-  t("Human beings are made in the image and likeness of God (Genesis 1:27; CCC \u00A7356; "),
+  t("Human beings are made in the image and likeness of God (RSV-CE Gn 1:27; CCC \u00A7356; "),
   ti("Gaudium et Spes"),
   t(", \u00A712: \u201CAccording to the almost unanimous opinion of believers and unbelievers alike, all things on earth should be related to man as their center and crown\u201D)."),
   cite('GAUDIUM'),
@@ -1200,7 +1200,7 @@ content.push(para([
 
 content.push(heading3("Stage Two: The Act of God (~750,000\u20131,000,000 Years Ago)"));
 content.push(para([
-  t("God acts directly. He takes material from this lineage\u2014\u201Cformed man from the dust of the ground\u201D (Genesis 2:7)\u2014and creates Adam. The \u201Cdust of the ground\u201D is the biological substrate that the entire creative process has been building toward. God is not working from nothing; He is completing what He has been preparing. The ensoulment is not just adding an invisible property to an unchanged body. Catholic teaching holds that the rational soul is the "),
+  t("God acts directly. He takes material from this lineage\u2014\u201Cformed man from the dust of the ground\u201D (RSV-CE Gn 2:7)\u2014and creates Adam. The \u201Cdust of the ground\u201D is the biological substrate that the entire creative process has been building toward. God is not working from nothing; He is completing what He has been preparing. The ensoulment is not just adding an invisible property to an unchanged body. Catholic teaching holds that the rational soul is the "),
   ti("form"),
   t(" of the body (Council of Vienne, 1312). It transforms the whole being. As William Lane Craig puts it, \u201CGod\u2019s creation of Adam and Eve plausibly required both biological and spiritual renovations, biological to equip their brains with the capacity to serve as instruments of rational thought and spiritual to furnish them with rational souls.\u201D")
 ]));
@@ -1233,7 +1233,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("Is such interbreeding bestiality? This is where the Abraham and Jacob precedent becomes crucial. Paul writes in Romans 5:13, \u201CSin is not counted where there is no law.\u201D Abraham, the \u201CFather in Faith,\u201D had children by Hagar and Keturah while married to Sarah. Jacob fathered the twelve tribes of Israel through four different women\u2014Leah, Rachel, Bilhah, and Zilpah. These arrangements are not presented as scandalous in the text; they are the normal way God\u2019s plan unfolds at that stage of salvation history. The Mosaic law against such arrangements had not yet been given.")
+  t("Is such interbreeding bestiality? This is where the Abraham and Jacob precedent becomes crucial. Paul writes in Romans 5:13 (RSV-CE), \u201CSin is not counted where there is no law.\u201D Abraham, the \u201CFather in Faith,\u201D had children by Hagar and Keturah while married to Sarah. Jacob fathered the twelve tribes of Israel through four different women\u2014Leah, Rachel, Bilhah, and Zilpah. These arrangements are not presented as scandalous in the text; they are the normal way God\u2019s plan unfolds at that stage of salvation history. The Mosaic law against such arrangements had not yet been given.")
 ]));
 
 content.push(para([
@@ -1344,11 +1344,11 @@ content.push(para([
 
 content.push(heading2("The Problem Stated"));
 content.push(para([
-  t("Two individuals can carry at most four versions (alleles) of any given gene. Modern human populations carry thousands of variants at many gene loci. The HLA immune system genes\u2014critical for disease resistance\u2014are among the most polymorphic in the human genome, with some variants that appear to predate the human-chimpanzee split (approximately 6\u20137 million years ago). In 1998, geneticist Francisco Ayala presented this evidence to the United States Catholic Bishops, arguing that the diversity at HLA loci was too great to have passed through a bottleneck as narrow as a single couple.")
+  t("Two individuals can carry at most four versions (alleles) of any given gene. Modern human populations carry thousands of variants at many gene loci. The HLA immune system genes\u2014critical for disease resistance\u2014are among the most polymorphic (existing in many different genetic variants across the population) in the human genome, with some variants that appear to predate the human-chimpanzee split (approximately 6\u20137 million years ago). In 1998, evolutionary geneticist Francisco Ayala (then at the University of California, Irvine, and a former Dominican priest) presented this evidence to the United States Catholic Bishops, arguing that the diversity at HLA loci was too great to have passed through a bottleneck as narrow as a single couple.")
 ]));
 
 content.push(para([
-  t("Some have proposed that Adam and Eve were created with enormous heterozygosity\u2014meaning God packed far more genetic variation into their DNA than any natural pair would carry, giving them many different versions of each gene rather than the usual two per person. This is the \u201Cfront-loaded genome\u201D hypothesis. It must be acknowledged honestly that this is scientifically very weak. Four alleles per locus cannot account for thousands of variants. And the "),
+  t("Some have proposed that Adam and Eve were created with enormous heterozygosity (possessing many different versions of each gene rather than the more limited set any natural pair would carry)\u2014meaning God packed far more genetic variation into their DNA than any natural pair would have, giving them many different versions of each gene rather than the usual two per person. This is the \u201Cfront-loaded genome\u201D hypothesis. It must be acknowledged honestly that this is scientifically very weak. Four alleles per locus cannot account for thousands of variants. And the "),
   ti("pattern"),
   t(" of diversity matters as much as the "),
   ti("amount"),
@@ -1421,7 +1421,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("In 1994, philosopher David Chalmers identified what he called the \u201Chard problem of consciousness.\u201D"),
+  t("In 1994, philosopher David Chalmers (now at New York University, one of the most influential philosophers of mind working today) identified what he called the \u201Chard problem of consciousness.\u201D"),
   cite('CHALMERS'),
   t(" The \u201Ceasy problems\u201D of consciousness\u2014how the brain integrates information, categorizes stimuli, focuses attention\u2014are amenable to standard neuroscience. They are difficult in practice but not in principle. The hard problem is different: even after all the relevant functional facts are explained, there remains a further question\u2014why is the performance of these functions accompanied by subjective "),
   ti("experience"),
@@ -1433,7 +1433,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("This is not a theological claim. It is a claim made by secular scientists and philosophers. The hard problem of consciousness is recognized across disciplines as potentially unsolvable within a purely materialist framework. Some philosophers (Daniel Dennett, for example) deny the problem exists; others (like Chalmers) argue it points to something fundamental about the relationship between mind and matter that our current science cannot explain.")
+  t("This is not a theological claim. It is a claim made by secular scientists and philosophers. The hard problem of consciousness is recognized across disciplines as potentially unsolvable within a purely materialist framework. Some philosophers (Daniel Dennett, the late Tufts University cognitive scientist and prominent atheist philosopher, for example) deny the problem exists; others (like Chalmers) argue it points to something fundamental about the relationship between mind and matter that our current science cannot explain.")
 ]));
 
 content.push(heading2("What This Means for Our Framework"));
@@ -1499,7 +1499,9 @@ content.push(para([
 content.push(para([
   t("The more defensible position, and one well-supported in the Catholic tradition, is that biological death was natural all along\u2014part of the created order for all living things, including the biological substrate from which God formed Adam. What the Fall introduced was "),
   ti("spiritual death"),
-  t("\u2014separation from God, the loss of sanctifying grace, the transformation of natural death from a safe passage (under the preternatural gift of bodily immortality that God offered) into something final and terrifying. As the Society of Catholic Scientists explains: \u201CThe traditional Catholic doctrine is that the first humans were offered bodily immortality for themselves and their descendants as a preternatural gift\u2014a gift that goes beyond what is natural\u2014on the condition that they would not transgress the commandment God had given them.\u201D Ecclesiastes 3:19 itself acknowledges: \u201CSurely the fate of human beings is like that of the animals; the same fate awaits them both. As one dies, so dies the other.\u201D")
+  t("\u2014separation from God, the loss of sanctifying grace, the transformation of natural death from a safe passage (under the preternatural gift of bodily immortality that God offered) into something final and terrifying. As the Society of Catholic Scientists explains: \u201CThe traditional Catholic doctrine is that the first humans were offered bodily immortality for themselves and their descendants as a preternatural gift\u2014a gift that goes beyond what is natural\u2014on the condition that they would not transgress the commandment God had given them.\u201D"),
+  cite('SCS'),
+  t(" Ecclesiastes 3:19 (NABRE) itself acknowledges: \u201CSurely the fate of human beings is like that of the animals; the same fate awaits them both. As one dies, so dies the other.\u201D")
 ]));
 
 content.push(heading2("Required vs. Open: What the Church Demands About Original Sin and the Fall"));
@@ -1597,7 +1599,9 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("The Catholic Answers apostolate summarizes the Church\u2019s position clearly: the Church \u201Cdoes not prohibit interpretations of Genesis 6\u20138 that include a worldwide flood, but neither does the Church require there to be a worldwide flood.\u201D Pius XII\u2019s own "),
+  t("The Catholic Answers apostolate (the largest Catholic apologetics organization in the English-speaking world) summarizes the Church\u2019s position clearly: the Church \u201Cdoes not prohibit interpretations of Genesis 6\u20138 that include a worldwide flood, but neither does the Church require there to be a worldwide flood.\u201D"),
+  cite('CA_YEC'),
+  t(" Pius XII\u2019s own "),
   ti("Humani Generis"),
   t(" (paragraph 38) described the first eleven chapters of Genesis as conveying principal truths fundamental for salvation in \u201Csimple and metaphorical language adapted to the mentality of a people but little cultured.\u201D")
 ]));
@@ -1607,13 +1611,14 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("The Catholic Encyclopedia\u2019s entry on the Deluge acknowledged that the question of whether the Flood narrative should be \u201Cconsidered as strictly historical throughout, or only in their outward form\u201D is legitimate. It noted that the view which preserves \u201Cunder the embroidery of poetical parlance, the memory of a fact handed down by a very old tradition\u201D could \u201Cbe readily accepted by a Catholic.\u201D")
+  t("The Catholic Encyclopedia\u2019s entry on the Deluge (authored by Francis E. Gigot, a Scripture scholar at St. Joseph\u2019s Seminary, Dunwoodie) acknowledged that the question of whether the Flood narrative should be \u201Cconsidered as strictly historical throughout, or only in their outward form\u201D is legitimate. It noted that the view which preserves \u201Cunder the embroidery of poetical parlance, the memory of a fact handed down by a very old tradition\u201D could \u201Cbe readily accepted by a Catholic.\u201D"),
+  cite('CE_DELUGE')
 ]));
 
 content.push(para([
   t("What the Church "),
   ti("does"),
-  t(" require regarding the Flood is this: the narrative conveys real theological truth. God judges sin. God saves the righteous. God offers new beginnings. The Fathers of the Church regarded the Ark and the Flood as types (prefigurations) of baptism and the Church, based on 1 Peter 3:20, and this typological significance belongs to matters of faith and morals. Jesus himself referred to Noah as a historical figure (Matthew 24:37\u201339, Luke 17:26\u201327). There must be "),
+  t(" require regarding the Flood is this: the narrative conveys real theological truth. God judges sin. God saves the righteous. God offers new beginnings. The Fathers of the Church regarded the Ark and the Flood as types (prefigurations) of baptism and the Church, based on 1 Peter 3:20\u201321 (RSV-CE), and this typological significance belongs to matters of faith and morals. Jesus himself referred to Noah as a historical figure (RSV-CE Mt 24:37\u201339; Lk 17:26\u201327). There must be "),
   ti("some"),
   t(" real event underlying the narrative\u2014but its scope, mechanism, exact number of survivors, and chronological placement are all open questions.")
 ]));
@@ -1655,7 +1660,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("The well-known \u201C50/500 rule\u201D in conservation biology suggests that a minimum of 50 individuals is needed to prevent inbreeding depression in the short term, and 500 to guard against genetic drift over the long term."),
+  t("The well-known \u201C50/500 rule\u201D in conservation biology suggests that a minimum of 50 individuals is needed to prevent inbreeding depression (the loss of health and fertility that occurs when closely related individuals reproduce, concentrating harmful genetic mutations) in the short term, and 500 to guard against genetic drift (random changes in gene frequency that occur in small populations, which can cause useful genetic variants to be lost by chance rather than by natural selection) over the long term."),
   cite('FRANKLIN'),
   t(" For mammals like humans, a minimum viable population generally ranges from 500 to 5,000 individuals.")
 ]));
@@ -1777,7 +1782,7 @@ content.push(para([
   ti("Humani Generis"),
   t(", \u00A737; CCC \u00A7\u00A7390, 404). Every human soul is directly created by God (CCC \u00A7366; "),
   ti("Humani Generis"),
-  t(", \u00A736). On the Flood, the Church requires that the narrative conveys real theological truth: God judges sin, God saves the righteous, God offers new beginnings. The Ark and the Flood are established types (prefigurations) of baptism and the Church (1 Peter 3:20\u201321; CCC \u00A71219). Jesus referred to Noah as a historical figure (Matthew 24:37\u201339; Luke 17:26\u201327). There must be some real event underlying the narrative.")
+  t(", \u00A736). On the Flood, the Church requires that the narrative conveys real theological truth: God judges sin, God saves the righteous, God offers new beginnings. The Ark and the Flood are established types (prefigurations) of baptism and the Church (RSV-CE 1 Pt 3:20\u201321; CCC \u00A71219). Jesus referred to Noah as a historical figure (RSV-CE Mt 24:37\u201339; Lk 17:26\u201327). There must be some real event underlying the narrative.")
 ]));
 
 content.push(para([
@@ -1813,7 +1818,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("The ensoulment claim itself. A methodological naturalist cannot accept \u201CGod breathed a rational soul into two hominids\u201D as a scientific explanation. But our document is not claiming to do science. It is claiming that the theological narrative is "),
+  t("The ensoulment claim itself. A methodological naturalist (a scientist who, for purposes of doing science, considers only natural causes and processes, setting aside supernatural explanations not because they are denied but because they fall outside what the scientific method can test) cannot accept \u201CGod breathed a rational soul into two hominids\u201D as a scientific explanation. But our document is not claiming to do science. It is claiming that the theological narrative is "),
   ti("compatible"),
   t(" with science\u2014that the two accounts do not contradict each other even if they operate in different domains.")
 ]));
@@ -1831,7 +1836,7 @@ content.push(para([
 
 content.push(heading2("The Bottom Line"));
 content.push(para([
-  t("A fair-minded non-believing scientist would probably say something like: \u201CThis is not science, and I do not accept the metaphysical claims. But I acknowledge that it does not contradict anything we know scientifically. The timeline is plausible. The mechanism of genetic diversity through interbreeding is consistent with what we observe. The claim that ensoulment is genetically invisible is logically coherent even if I find it unnecessary. And the prediction that all post-dispersal hominid groups should show rational behavior is interestingly consistent with the evidence. It is the most scientifically literate theological framework I have encountered on this topic, even if I think the theological layer is unnecessary.\u201D")
+  t("A fair-minded non-believing scientist might say something like: \u201CThis is not science, and I do not accept the metaphysical claims. But I acknowledge that it does not contradict anything we know scientifically. The timeline is plausible. The mechanism of genetic diversity through interbreeding is consistent with what we observe. The claim that ensoulment is genetically invisible is logically coherent even if I find it unnecessary. And the prediction that all post-dispersal hominid groups should show rational behavior is interestingly consistent with the evidence. It is a scientifically informed theological framework, even if I think the theological layer is unnecessary.\u201D")
 ]));
 
 content.push(para([
@@ -1879,7 +1884,7 @@ content.push(para([
 ]));
 content.push(para([
   tb("4. "),
-  t("In the earliest generations, Adam\u2019s descendants interbreed with biologically compatible but non-ensouled hominids. This is tolerated under the pre-law moral framework (Romans 5:13: \u201Csin is not counted where there is no law\u201D), just as sibling marriage was tolerated in the first generation. Every child of such a union receives a rational soul from God through descent from Adam. Genetic diversity enters the human lineage through this interbreeding.")
+  t("In the earliest generations, Adam\u2019s descendants interbreed with biologically compatible but non-ensouled hominids. This is tolerated under the pre-law moral framework (RSV-CE Rom 5:13: \u201Csin is not counted where there is no law\u201D), just as sibling marriage was tolerated in the first generation. Every child of such a union receives a rational soul from God through descent from Adam. Genetic diversity enters the human lineage through this interbreeding.")
 ]));
 content.push(para([
   tb("5. "),
