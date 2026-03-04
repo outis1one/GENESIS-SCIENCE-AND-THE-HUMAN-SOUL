@@ -82,7 +82,9 @@ const MAGISTERIAL_URLS = {
   FIDES_ET_RATIO: 'https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html',
   GAUDIUM_ET_SPES: 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html',
   TRENT_V: 'https://www.ewtn.com/catholicism/library/decree-concerning-original-sin-1503',
-  PROVIDENTISSIMUS: 'https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_18111893_providentissimus-deus.html'
+  PROVIDENTISSIMUS: 'https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_18111893_providentissimus-deus.html',
+  SUMMA: 'https://www.newadvent.org/summa/1002.htm#article3',
+  DE_GENESI: 'https://www.newadvent.org/fathers/1407.htm'
 };
 
 // Magisterial document section link (italic text, hyperlinked)
@@ -389,7 +391,7 @@ content.push(para([
 content.push(para([
   tb("The Church Fathers Argument. "),
   t("The Kolbe Center argues that every Apostle, Father, and Doctor of the Church upheld a young earth chronology derived from Genesis. They challenge opponents to \u201Cshow us a single statement from a Church Father who taught that God used long periods of time in the creation of the material universe.\u201D This matters because the First Vatican Council, "),
-  ti("Dei Filius"),
+  magLink("Dei Filius", 'DEI_FILIUS'),
   t(", Chapter 2, teaches that Scripture must be interpreted \u201Caccording to that sense which Holy Mother Church has held and holds\u201D and \u201Cin accordance with the unanimous consent of the Fathers.\u201D"),
   cite('DEI_FILIUS'),
   t(" If the Fathers unanimously taught a young earth, a Catholic might be bound to accept it.")
@@ -397,7 +399,7 @@ content.push(para([
 
 content.push(para([
   t("However, this argument has a critical weakness: the Fathers were not, in fact, unanimous on this point. Saint Augustine, in "),
-  ti("De Genesi ad Litteram"),
+  magLink("De Genesi ad Litteram", 'DE_GENESI'),
   t(" (circa 415 AD), explicitly argued that the \u201Cdays\u201D of Genesis were not ordinary days but a literary framework whose actual duration was unknown."),
   cite('AUGUSTINE'),
   t(" Augustine wrote that the creation narrative was arranged not according to temporal sequence but according to a logical order. Saint Basil of Caesarea, while defending the days as real periods, acknowledged that the first day was called \u201Cone\u201D rather than \u201Cfirst\u201D to indicate its special character. The very existence of disagreement among the Fathers means the \u201Cunanimous consent\u201D rule does not apply to the specific question of the earth\u2019s age.")
@@ -596,7 +598,7 @@ content.push(para([
 
 content.push(para([
   t("Thomas Aquinas, in the "),
-  ti("Summa Theologica"),
+  magLink("Summa Theologica", 'SUMMA'),
   t(" (Prima Pars, Question 2, Article 3), presented five demonstrations of God\u2019s existence\u2014the famous Five Ways."),
   cite('AQUINAS'),
   t(" All five proceed "),
@@ -608,7 +610,7 @@ content.push(para([
 
 content.push(para([
   t("The First Vatican Council (1870), in its dogmatic constitution "),
-  ti("Dei Filius"),
+  magLink("Dei Filius", 'DEI_FILIUS'),
   t(", elevated this principle to the level of dogma."),
   cite('DEI_FILIUS'),
   t(" The Council taught: \u201CThe same Holy Mother Church holds and teaches that God, the beginning and end of all things, can be known with certainty by the natural light of human reason from created things.\u201D The Council then issued its teaching under anathema\u2014the strongest language available to an ecumenical council, meaning that the condemned position is formally incompatible with Catholic faith. In the early Church, anathema meant complete excommunication; by the time of the great councils, it functioned as a declaration that the rejected view constitutes heresy, and that a Catholic who knowingly and obstinately holds it has placed himself outside the faith on that point. It does not mean automatic damnation\u2014that judgment belongs to God alone\u2014but it means the Church has drawn a line and will not move it. The canon reads: \u201CIf anyone says that the one, true God, our creator and lord, cannot be known with certainty from the things that have been made, by the natural light of human reason: let him be anathema.\u201D The Catechism of the Catholic Church repeats this at \u00A736:"),
@@ -648,7 +650,7 @@ content.push(para([
 
 content.push(para([
   t("The Omphalos hypothesis, then, does not merely make God a deceiver in some abstract philosophical sense. It undermines the very foundation by which Catholic dogma says we can know that God exists. It contradicts an anathematized canon of an ecumenical council. It renders the Five Ways of Aquinas inoperable. And it pits creation against revelation in precisely the way "),
-  ti("Dei Filius"),
+  magLink("Dei Filius", 'DEI_FILIUS'),
   t(" says is impossible. This is not a minor theological difficulty. It is a deep internal tension for any Catholic who holds this position, and one that deserves honest examination.")
 ]));
 
@@ -690,7 +692,7 @@ content.push(para([
 
 content.push(para([
   t("This is not a modern interpretation imposed on the text by contemporary science. Saint Augustine of Hippo, writing in the fifth century\u2014long before anyone had a scientific reason to question a young earth\u2014argued that the \u201Cdays\u201D of Genesis were not ordinary days but a framework for divine creative acts whose actual duration was unknown to us. Augustine\u2019s "),
-  ti("De Genesi ad Litteram"),
+  magLink("De Genesi ad Litteram", 'DE_GENESI'),
   t(" ("),
   ti("The Literal Meaning of Genesis"),
   t(") explicitly warned against Christians making claims about the natural world that contradicted well-established knowledge, lest they bring the faith into disrepute. This warning was issued sixteen centuries ago and has never been more relevant.")
@@ -790,7 +792,7 @@ content.push(para([
   t("In 1948, the Pontifical Biblical Commission sent a letter to Cardinal Suhard of Paris, effectively clarifying the scope of its 1909 responses: \u201CThese literary forms do not correspond exactly with any classical category\u201D and the \u201Chistoricity can neither be denied nor affirmed simply.\u201D"),
   cite('PBC_1948'),
   t(" Pope Pius XII, in "),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   t(" (1950), \u00A736, explicitly permitted Catholics to investigate evolution as it pertains to the human body."),
   cite('HUMANI'),
   t(" The International Theological Commission, in its 2004 document \u201CCommunion and Stewardship,\u201D approved by the Congregation for the Doctrine of the Faith (then headed by Cardinal Ratzinger), stated that \u201Cthe story of human origins is complex and subject to revision.\u201D"),
@@ -799,7 +801,7 @@ content.push(para([
 
 content.push(para([
   t("Saint Augustine, in "),
-  ti("De Genesi ad Litteram"),
+  magLink("De Genesi ad Litteram", 'DE_GENESI'),
   t(" (circa 415 AD), argued that the \u201Cdays\u201D of Genesis were not ordinary days but a literary framework whose actual duration was unknown\u2014and was not condemned for this view. The Pontifical Academy of Sciences, established by Pope Pius XI in 1936, operates on the assumption of deep time and modern cosmology. Cardinal Paul Poupard, then President of the Pontifical Council for Culture, stated that \u201Cthe faithful have the obligation to listen to that which secular modern science has to offer,\u201D warning of \u201Cthe dangers of a religion that severs its links with reason.\u201D")
 ]));
 
@@ -844,7 +846,7 @@ content.push(para([
 
 content.push(para([
   t("The weakness, for Catholic purposes, is significant. Swamidass\u2019s model requires the existence of fully human beings who are not descended from Adam and Eve\u2014at least initially. This is difficult to reconcile with the Catholic requirement (expressed in "),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   t(") that all true humans descend from Adam. It also raises the question of the moral and spiritual status of these non-Adamic humans. Do they have souls? Do they bear original sin? Swamidass himself acknowledges this as a theological question his model does not resolve.")
 ]));
 
@@ -914,7 +916,7 @@ content.push(heading2("Required vs. Open: What the Church Demands of Any Model")
 content.push(para([
   tb("Required: "),
   t("Any Catholic model of human origins must affirm that Adam and Eve were real, historical individuals\u2014not symbols, not a \u201Ccertain number of first parents\u201D ("),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   magSectionLink(", \u00A737", 'HUMANI_GENERIS'),
   t("). All true humans must descend from them biologically. Original sin must be transmitted through generation, not imitation ("),
   magSectionLink("Council of Trent, Session V", 'TRENT_V'),
@@ -1254,9 +1256,9 @@ content.push(para([
 content.push(para([
   tb("Open: "),
   t("The Church has issued no definitive teaching on the spiritual status of Neanderthals, Denisovans, "),
-  ti("Homo erectus"),
+  ti("Homo erectus"),  // species name — not a document link
   t(", or any other hominid group. The International Theological Commission\u2019s 2004 document \u201CCommunion and Stewardship\u201D acknowledges \u201Cthe emergence of the first members of the human species (whether as individuals or in populations)\u201D without specifying which fossil species counts as human. Pope Pius XII, in "),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   t(", \u00A736, permitted investigation of bodily evolution from pre-existing living matter but made no pronouncement on which ancestral forms qualify. Whether Neanderthals and Denisovans possessed rational souls, whether they are descendants of Adam, and how they relate to the ensoulment event are all questions of legitimate inquiry. Our framework proposes that all hominid groups showing evidence of symbolic, rational behavior are ensouled descendants of Adam\u2014but this is a theological interpretation, not a dogmatic requirement. A Catholic could coherently hold different views on the spiritual status of Neanderthals without contradicting any defined teaching.")
 ]));
 
@@ -1377,7 +1379,7 @@ content.push(heading2("Required vs. Open: What the Church Demands of This Synthe
 content.push(para([
   tb("Required: "),
   t("The dogmatic requirements constraining this synthesis are drawn from the highest levels of Church authority. Adam and Eve must be real, historical individuals ("),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   magSectionLink(", \u00A737", 'HUMANI_GENERIS'),
   t(": the faithful \u201Ccannot embrace that opinion which maintains\u2026 that Adam represents a certain number of first parents\u201D). All humans must descend from them through biological generation ("),
   magSectionLink("Council of Trent, Session V, Canon 3", 'TRENT_V'),
@@ -1394,7 +1396,7 @@ content.push(para([
   t("The specific date of ensoulment (our proposal of 750,000 to 1,000,000 years ago), the identification of Adam with "),
   ti("Homo heidelbergensis"),
   t(", the mechanism of early interbreeding, the exact timeline of dispersal, and the claim that all post-dispersal hominid groups are ensouled\u2014these are all interpretive proposals operating within the open space Catholic theology permits. The International Theological Commission (2004) acknowledged that \u201Cthe story of human origins is complex and subject to revision,\u201D and "),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   t(", \u00A736, permits inquiry into bodily evolution \u201Cin as far as it inquires into the origin of the human body as coming from pre-existent and living matter.\u201D The Pontifical Biblical Commission (1909) confirmed that Catholics may interpret the \u201Cdays\u201D of Genesis as periods of time. A Catholic could accept our framework\u2019s dogmatic foundations while differing on its specific scientific and historical claims. The synthesis is offered as a coherent possibility, not as a binding interpretation.")
 ]));
 
@@ -1504,7 +1506,7 @@ content.push(heading2("Required vs. Open: What the Church Demands About Genetic 
 content.push(para([
   tb("Required: "),
   t("Monogenism\u2014all humans descend from one original pair. This is stated clearly in "),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   t(" \u00A737 and is grounded in the Council of Trent\u2019s teaching that original sin is \u201Cin its origin one\u201D and is transmitted \u201Cby propagation, not by imitation.\u201D The framework must account for universal descent from Adam and Eve.")
 ]));
 
@@ -1649,7 +1651,7 @@ content.push(para([
 
 content.push(para([
   t("Pope Pius XII, in "),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   t(" (1950), paragraph 37, made this even more explicit: \u201CThe faithful cannot embrace that opinion which maintains that either after Adam there existed on this earth true men who did not take their origin through natural generation from him as from the first parent of all, or that Adam represents a certain number of first parents. Now it is in no way apparent how such an opinion can be reconciled with that which the sources of revealed truth and the documents of the Teaching Authority of the Church propose with regard to original sin, which proceeds from a sin actually committed by an individual Adam and which, through generation, is passed on to all and is in everyone as his own.\u201D")
 ]));
 
@@ -1680,7 +1682,7 @@ content.push(para([
 content.push(para([
   tb("5. "),
   t("The human body may have evolved from pre-existing living matter, but the soul cannot have evolved\u2014it is directly created by God ("),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   t(", paragraph 36).")
 ]));
 
@@ -1710,7 +1712,7 @@ content.push(para([
   t("The Catholic Answers apostolate (the largest Catholic apologetics organization in the English-speaking world) summarizes the Church\u2019s position clearly: the Church \u201Cdoes not prohibit interpretations of Genesis 6\u20138 that include a worldwide flood, but neither does the Church require there to be a worldwide flood.\u201D"),
   cite('CA_YEC'),
   t(" Pius XII\u2019s own "),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   t(" (paragraph 38) described the first eleven chapters of Genesis as conveying principal truths fundamental for salvation in \u201Csimple and metaphorical language adapted to the mentality of a people but little cultured.\u201D")
 ]));
 
@@ -1912,7 +1914,7 @@ content.push(para([
 content.push(para([
   tb("Open: "),
   t("Whether the Flood was global or regional, whether the ark was a literal vessel or a narrative vehicle, whether Noah\u2019s family numbered literally eight or represents a compressed account of a larger remnant\u2014these are all open questions. The Pontifical Biblical Commission\u2019s 1948 letter to Cardinal Suhard granted \u201Cconsiderable liberty\u201D regarding \u201Cthe literary genre of the first eleven chapters of Genesis.\u201D Pope Pius XII in "),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   t(", \u00A738, described these chapters as using \u201Csimple and metaphorical language adapted to the mentality of a people but little cultured.\u201D The Catholic Encyclopedia\u2019s article on the Deluge acknowledged that viewing the Flood as preserving \u201Cunder the embroidery of poetical parlance, the memory of a fact handed down by a very old tradition\u201D could \u201Cbe readily accepted by a Catholic.\u201D The connection between the 800,000\u2013900,000-year bottleneck (Hu et al., "),
   ti("Science"),
   t(", 2023) and the Genesis Flood is a speculative proposal within this open space\u2014not a dogmatic claim.")
@@ -2131,7 +2133,7 @@ content.push(para([
 content.push(para([
   tb("Open: "),
   t("All six weaknesses acknowledged above operate within the open space of Catholic theology. The early interbreeding question involves a moral judgment about pre-law conditions\u2014a matter on which the Church has issued no definitive ruling. The fuzzy transition point is shared by every competing model. The metaphorical reading of \u201Cdust of the ground\u201D is permitted by "),
-  ti("Humani Generis"),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
   t(", \u00A736, which allows that the human body may derive from \u201Cpre-existing and living matter.\u201D The genetic challenge to monogenism is addressed by our mechanisms but not fully resolved\u2014a candor the Church\u2019s own International Theological Commission (2004) models when it acknowledges that the science of human origins is \u201Ccomplex and subject to revision.\u201D The Augros/Stanciu mechanism is a philosophical proposal, not a doctrinal commitment. And the unfalsifiability of ensoulment is a necessary feature of any claim about an immaterial reality acting on a material world\u2014a feature shared by every Catholic doctrine about the soul.")
 ]));
 
