@@ -57,6 +57,46 @@ const sLink = (text, url) => new ExternalHyperlink({
   link: url
 });
 
+// Catechism paragraph link — links to scborromeo.org per-paragraph pages
+const cccLink = (para) => new ExternalHyperlink({
+  children: [new TextRun({ text: `CCC \u00A7${para}`, size: 24, font: "Georgia", color: "0563C1", underline: { type: "single" } })],
+  link: `http://www.scborromeo.org/ccc/para/${para}.htm`
+});
+
+// Catechism paragraph range link — links to the first paragraph's page
+const cccRangeLink = (start, end) => new ExternalHyperlink({
+  children: [new TextRun({ text: `CCC \u00A7${start}\u2013${end}`, size: 24, font: "Georgia", color: "0563C1", underline: { type: "single" } })],
+  link: `http://www.scborromeo.org/ccc/para/${start}.htm`
+});
+
+// Catechism multi-paragraph link (e.g., "CCC §§388–389, 402–405")
+const cccMultiLink = (text, firstPara) => new ExternalHyperlink({
+  children: [new TextRun({ text, size: 24, font: "Georgia", color: "0563C1", underline: { type: "single" } })],
+  link: `http://www.scborromeo.org/ccc/para/${firstPara}.htm`
+});
+
+// Magisterial document link helpers
+const MAGISTERIAL_URLS = {
+  HUMANI_GENERIS: 'https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html',
+  DEI_FILIUS: 'https://www.ewtn.com/catholicism/teachings/vatican-i-dogmatic-constitution-dei-filius-on-the-catholic-faith-241',
+  FIDES_ET_RATIO: 'https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html',
+  GAUDIUM_ET_SPES: 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html',
+  TRENT_V: 'https://www.ewtn.com/catholicism/library/decree-concerning-original-sin-1503',
+  PROVIDENTISSIMUS: 'https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_18111893_providentissimus-deus.html'
+};
+
+// Magisterial document section link (italic text, hyperlinked)
+const magLink = (text, docKey) => new ExternalHyperlink({
+  children: [new TextRun({ text, size: 24, font: "Georgia", italics: true, color: "0563C1", underline: { type: "single" } })],
+  link: MAGISTERIAL_URLS[docKey]
+});
+
+// Magisterial document section link (non-italic, for section numbers)
+const magSectionLink = (text, docKey) => new ExternalHyperlink({
+  children: [new TextRun({ text, size: 24, font: "Georgia", color: "0563C1", underline: { type: "single" } })],
+  link: MAGISTERIAL_URLS[docKey]
+});
+
 const pageBreak = () => new Paragraph({ children: [new PageBreak()] });
 
 // Build all content
@@ -600,8 +640,10 @@ content.push(para([
 
 content.push(para([
   t("Furthermore, "),
-  ti("Dei Filius"),
-  t(" Chapter 4 teaches: \u201CSince the same God who reveals mysteries and infuses faith has bestowed the light of reason on the human mind, God cannot deny himself, nor can truth ever contradict truth.\u201D If creation and revelation are both from the same God, and God cannot contradict Himself, then the evidence of creation and the truth of revelation must be compatible. A creation that bears false witness about its own history contradicts truth\u2014and thereby contradicts God Himself.")
+  magLink("Dei Filius", 'DEI_FILIUS'),
+  t(" "),
+  magSectionLink("Chapter 4", 'DEI_FILIUS'),
+  t(" teaches: \u201CSince the same God who reveals mysteries and infuses faith has bestowed the light of reason on the human mind, God cannot deny himself, nor can truth ever contradict truth.\u201D If creation and revelation are both from the same God, and God cannot contradict Himself, then the evidence of creation and the truth of revelation must be compatible. A creation that bears false witness about its own history contradicts truth\u2014and thereby contradicts God Himself.")
 ]));
 
 content.push(para([
@@ -687,32 +729,44 @@ content.push(para([
   t("The following teachings about creation are classified by Ott as "),
   ti("de fide"),
   t("\u2014divinely revealed truths whose denial constitutes heresy: All that exists outside God was, in its whole substance, produced out of nothing by God (Fourth Lateran Council; Vatican I, "),
-  ti("Dei Filius"),
-  t(", Chapter 1, Canon 5). God was moved by His goodness to create the world (Vatican I, "),
-  ti("Dei Filius"),
-  t(", Chapter 1, Canon 2). The world had a beginning in time ("),
-  ti("Dei Filius"),
-  t(", Chapter 1, Canon 5: \u201CIf anyone does not confess that the world and all things which are contained in it, both spiritual and material, as regards their whole substance, have been produced by God from nothing\u2026 let him be anathema\u201D). God alone created the world ("),
-  ti("Dei Filius"),
-  t(", Chapter 1). God keeps all created things in existence and guides them through His Providence ("),
-  ti("Dei Filius"),
-  t(", Chapter 1). The first man was created by God ("),
+  magLink("Dei Filius", 'DEI_FILIUS'),
+  magSectionLink(", Chapter 1, Canon 5", 'DEI_FILIUS'),
+  t("). God was moved by His goodness to create the world (Vatican I, "),
+  magLink("Dei Filius", 'DEI_FILIUS'),
+  magSectionLink(", Chapter 1, Canon 2", 'DEI_FILIUS'),
+  t("). The world had a beginning in time ("),
+  magLink("Dei Filius", 'DEI_FILIUS'),
+  magSectionLink(", Chapter 1, Canon 5", 'DEI_FILIUS'),
+  t(": \u201CIf anyone does not confess that the world and all things which are contained in it, both spiritual and material, as regards their whole substance, have been produced by God from nothing\u2026 let him be anathema\u201D). God alone created the world ("),
+  magLink("Dei Filius", 'DEI_FILIUS'),
+  magSectionLink(", Chapter 1", 'DEI_FILIUS'),
+  t("). God keeps all created things in existence and guides them through His Providence ("),
+  magLink("Dei Filius", 'DEI_FILIUS'),
+  magSectionLink(", Chapter 1", 'DEI_FILIUS'),
+  t("). The first man was created by God ("),
   sLink("NABRE Gn 1:27", "https://www.biblegateway.com/passage/?search=Genesis+1:27&version=NABRE"),
-  t("; CCC \u00A7356). Man consists of a material body and a spiritual soul (CCC \u00A7362\u2013368). The rational soul is the essential form of the body (Council of Vienne, 1312)."),
+  t("; "), cccLink(356),
+  t("). Man consists of a material body and a spiritual soul ("), cccRangeLink(362, 368),
+  t("). The rational soul is the essential form of the body (Council of Vienne, 1312)."),
   cite('VIENNE'),
   t(" Every human soul is directly created by God ("),
-  ti("Humani Generis"),
-  t(", \u00A736; CCC \u00A7366)."),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  magSectionLink(", \u00A736", 'HUMANI_GENERIS'),
+  t("; "), cccLink(366), t(")."),
   cite('HUMANI'),
   t(" Adam and Eve are real, historical individuals from whom all humans descend ("),
-  ti("Humani Generis"),
-  t(", \u00A737; Council of Trent, Session V, Canons 1\u20134)."),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  magSectionLink(", \u00A737", 'HUMANI_GENERIS'),
+  t("; "), magSectionLink("Council of Trent, Session V, Canons 1\u20134", 'TRENT_V'), t(")."),
   cite('TRENT_V'),
   t(" Creation reveals God\u2019s existence and attributes to human reason ("),
   sLink("DR Rom 1:19\u201320", "https://www.drbo.org/chapter/52001.htm"),
   t("; "),
-  ti("Dei Filius"),
-  t(", Chapter 2, Canon 1; CCC \u00A736). The Genesis account, while using \u201Cfigurative language\u201D (CCC \u00A7390), \u201Caffirms a primeval event, a deed that took place at the beginning of the history of man.\u201D")
+  magLink("Dei Filius", 'DEI_FILIUS'),
+  magSectionLink(", Chapter 2, Canon 1", 'DEI_FILIUS'),
+  t("; "), cccLink(36),
+  t("). The Genesis account, while using \u201Cfigurative language\u201D ("), cccLink(390),
+  t("), \u201Caffirms a primeval event, a deed that took place at the beginning of the history of man.\u201D")
 ]));
 
 content.push(para([
@@ -850,7 +904,9 @@ content.push(para([
 content.push(heading2("The Suarez Variation: Mass Ensoulment at the Fall"));
 
 content.push(para([
-  t("Antoine Suarez, a physicist and philosopher, has proposed a variation in which God ensouled Adam and Eve as the first rational humans, and then, at the moment of the Fall, simultaneously raised all non-rational biological humans to the status of rational beings. This avoids the interbreeding problem entirely\u2014everyone becomes human at the same moment\u2014but it creates its own theological difficulty: original sin would need to spread instantaneously to beings who did not commit it and were not descended from those who did, which is hard to square with the Catholic doctrine that original sin is transmitted \u201Cthrough generation\u201D (Council of Trent, Session V).")
+  t("Antoine Suarez, a physicist and philosopher, has proposed a variation in which God ensouled Adam and Eve as the first rational humans, and then, at the moment of the Fall, simultaneously raised all non-rational biological humans to the status of rational beings. This avoids the interbreeding problem entirely\u2014everyone becomes human at the same moment\u2014but it creates its own theological difficulty: original sin would need to spread instantaneously to beings who did not commit it and were not descended from those who did, which is hard to square with the Catholic doctrine that original sin is transmitted \u201Cthrough generation\u201D ("),
+  magSectionLink("Council of Trent, Session V", 'TRENT_V'),
+  t(").")
 ]));
 
 content.push(heading2("Required vs. Open: What the Church Demands of Any Model"));
@@ -859,7 +915,11 @@ content.push(para([
   tb("Required: "),
   t("Any Catholic model of human origins must affirm that Adam and Eve were real, historical individuals\u2014not symbols, not a \u201Ccertain number of first parents\u201D ("),
   ti("Humani Generis"),
-  t(", \u00A737). All true humans must descend from them biologically. Original sin must be transmitted through generation, not imitation (Council of Trent, Session V). The human soul must be directly created by God in each individual (CCC \u00A7366). These are non-negotiable dogmatic commitments. Any model that violates them is not a Catholic option, however scientifically elegant it may be.")
+  magSectionLink(", \u00A737", 'HUMANI_GENERIS'),
+  t("). All true humans must descend from them biologically. Original sin must be transmitted through generation, not imitation ("),
+  magSectionLink("Council of Trent, Session V", 'TRENT_V'),
+  t("). The human soul must be directly created by God in each individual ("), cccLink(366),
+  t("). These are non-negotiable dogmatic commitments. Any model that violates them is not a Catholic option, however scientifically elegant it may be.")
 ]));
 
 content.push(para([
@@ -1043,11 +1103,13 @@ content.push(heading2("Required vs. Open: What the Church Demands About Creation
 content.push(para([
   tb("Required: "),
   t("God is the Creator of all things visible and invisible (Nicene Creed). Creation is not an accident but an act of divine will and wisdom. The human soul cannot be a product of material processes\u2014it is directly created by God ("),
-  ti("Humani Generis"),
-  t(", \u00A736; CCC \u00A7366). The created world reflects God\u2019s wisdom and can be known through reason ("),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  magSectionLink(", \u00A736", 'HUMANI_GENERIS'),
+  t("; "), cccLink(366),
+  t("). The created world reflects God\u2019s wisdom and can be known through reason ("),
   sLink("DR Rom 1:19\u201320", "https://www.drbo.org/chapter/52001.htm"),
   t("; Vatican I, "),
-  ti("Dei Filius"),
+  magLink("Dei Filius", 'DEI_FILIUS'),
   t("). These are doctrinal givens.")
 ]));
 
@@ -1170,19 +1232,23 @@ content.push(para([
   tb("Required: "),
   t("Human beings are made in the image and likeness of God ("),
   sLink("NABRE Gn 1:27", "https://www.biblegateway.com/passage/?search=Genesis+1:27&version=NABRE"),
-  t("; CCC \u00A7356; "),
-  ti("Gaudium et Spes"),
-  t(", \u00A712: \u201CAccording to the almost unanimous opinion of believers and unbelievers alike, all things on earth should be related to man as their center and crown\u201D)."),
+  t("; "), cccLink(356), t("; "),
+  magLink("Gaudium et Spes", 'GAUDIUM_ET_SPES'),
+  magSectionLink(", \u00A712", 'GAUDIUM_ET_SPES'),
+  t(": \u201CAccording to the almost unanimous opinion of believers and unbelievers alike, all things on earth should be related to man as their center and crown\u201D)."),
   cite('GAUDIUM'),
-  t(" The human soul is directly created by God and is not the product of material evolution (CCC \u00A7366; "),
-  ti("Humani Generis"),
-  t(", \u00A736: \u201Cthe Catholic faith obliges us to hold that souls are immediately created by God\u201D). The soul is the substantial form of the body (Council of Vienne, 1312, "),
+  t(" The human soul is directly created by God and is not the product of material evolution ("), cccLink(366), t("; "),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  magSectionLink(", \u00A736", 'HUMANI_GENERIS'),
+  t(": \u201Cthe Catholic faith obliges us to hold that souls are immediately created by God\u201D). The soul is the substantial form of the body (Council of Vienne, 1312, "),
   ti("Fidei Catholicae"),
   t("; Fifth Lateran Council, 1513, "),
   ti("Apostolici Regiminis"),
-  t("; CCC \u00A7365). All true human beings\u2014those possessing rational souls\u2014descend from Adam and Eve ("),
-  ti("Humani Generis"),
-  t(", \u00A737).")
+  t("; "), cccLink(365),
+  t("). All true human beings\u2014those possessing rational souls\u2014descend from Adam and Eve ("),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  magSectionLink(", \u00A737", 'HUMANI_GENERIS'),
+  t(").")
 ]));
 
 content.push(para([
@@ -1312,9 +1378,15 @@ content.push(para([
   tb("Required: "),
   t("The dogmatic requirements constraining this synthesis are drawn from the highest levels of Church authority. Adam and Eve must be real, historical individuals ("),
   ti("Humani Generis"),
-  t(", \u00A737: the faithful \u201Ccannot embrace that opinion which maintains\u2026 that Adam represents a certain number of first parents\u201D). All humans must descend from them through biological generation (Council of Trent, Session V, Canon 3: original sin \u201Cin its origin is one, and being transfused into all by propagation, not by imitation\u201D). The soul must be directly created by God in each individual (CCC \u00A7366; "),
-  ti("Humani Generis"),
-  t(", \u00A736). The soul is the form of the body, transforming the whole being (Council of Vienne, 1312). The Fall was a real event with real consequences for all humanity (CCC \u00A7390; Council of Trent, Session V, Canons 1\u20132). Our framework is constructed specifically to satisfy every one of these requirements.")
+  magSectionLink(", \u00A737", 'HUMANI_GENERIS'),
+  t(": the faithful \u201Ccannot embrace that opinion which maintains\u2026 that Adam represents a certain number of first parents\u201D). All humans must descend from them through biological generation ("),
+  magSectionLink("Council of Trent, Session V, Canon 3", 'TRENT_V'),
+  t(": original sin \u201Cin its origin is one, and being transfused into all by propagation, not by imitation\u201D). The soul must be directly created by God in each individual ("), cccLink(366), t("; "),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  magSectionLink(", \u00A736", 'HUMANI_GENERIS'),
+  t("). The soul is the form of the body, transforming the whole being (Council of Vienne, 1312). The Fall was a real event with real consequences for all humanity ("), cccLink(390), t("; "),
+  magSectionLink("Council of Trent, Session V, Canons 1\u20132", 'TRENT_V'),
+  t("). Our framework is constructed specifically to satisfy every one of these requirements.")
 ]));
 
 content.push(para([
@@ -1820,11 +1892,15 @@ content.push(heading2("Required vs. Open: Summary for the Bottleneck and the Flo
 
 content.push(para([
   tb("Required: "),
-  t("On Adam, the requirements are dogmatic and non-negotiable: Adam was a real, historical individual who committed an actual sin, and all humans descend from him through generation (Council of Trent, Session V, Canons 1\u20134; "),
-  ti("Humani Generis"),
-  t(", \u00A737; CCC \u00A7\u00A7390, 404). Every human soul is directly created by God (CCC \u00A7366; "),
-  ti("Humani Generis"),
-  t(", \u00A736). On the Flood, the Church requires that the narrative conveys real theological truth: God judges sin, God saves the righteous, God offers new beginnings. The Ark and the Flood are established types (prefigurations) of baptism and the Church ("),
+  t("On Adam, the requirements are dogmatic and non-negotiable: Adam was a real, historical individual who committed an actual sin, and all humans descend from him through generation ("),
+  magSectionLink("Council of Trent, Session V, Canons 1\u20134", 'TRENT_V'), t("; "),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  magSectionLink(", \u00A737", 'HUMANI_GENERIS'), t("; "),
+  cccMultiLink("CCC \u00A7\u00A7390, 404", 390),
+  t("). Every human soul is directly created by God ("), cccLink(366), t("; "),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  magSectionLink(", \u00A736", 'HUMANI_GENERIS'),
+  t("). On the Flood, the Church requires that the narrative conveys real theological truth: God judges sin, God saves the righteous, God offers new beginnings. The Ark and the Flood are established types (prefigurations) of baptism and the Church ("),
   sLink("1 Pt 3:20\u201321", "https://www.biblegateway.com/passage/?search=1+Peter+3:20-21&version=NABRE"),
   t("; CCC \u00A71219). Jesus referred to Noah as a historical figure ("),
   sLink("Mt 24:37\u201339", "https://www.biblegateway.com/passage/?search=Matthew+24:37-39&version=NABRE"),
@@ -1896,9 +1972,12 @@ content.push(heading2("Required vs. Open: What the Church Demands About the Rela
 content.push(para([
   tb("Required: "),
   t("Faith and reason cannot contradict each other. The First Vatican Council, "),
-  ti("Dei Filius"),
-  t(", Chapter 4, teaches: \u201CSince the same God who reveals mysteries and infuses faith has bestowed the light of reason on the human mind, God cannot deny himself, nor can truth ever contradict truth.\u201D The same document (Chapter 2, Canon 1) defines under anathema that God \u201Ccan be known with certainty from the things that have been made, by the natural light of human reason.\u201D Pope St. John Paul II, in "),
-  ti("Fides et Ratio"),
+  magLink("Dei Filius", 'DEI_FILIUS'),
+  magSectionLink(", Chapter 4", 'DEI_FILIUS'),
+  t(", teaches: \u201CSince the same God who reveals mysteries and infuses faith has bestowed the light of reason on the human mind, God cannot deny himself, nor can truth ever contradict truth.\u201D The same document ("),
+  magSectionLink("Chapter 2, Canon 1", 'DEI_FILIUS'),
+  t(") defines under anathema that God \u201Ccan be known with certainty from the things that have been made, by the natural light of human reason.\u201D Pope St. John Paul II, in "),
+  magLink("Fides et Ratio", 'FIDES_ET_RATIO'),
   t(" (1998), \u00A7\u00A713\u201316, affirmed that faith and reason are \u201Clike two wings on which the human spirit rises to the contemplation of truth\u201D and that reason retains its proper autonomy within its own domain."),
   cite('FIDES'),
   t(" The Pontifical Academy of Sciences, established by Pope Pius XI in 1936 and renewed by John Paul II in 1986, exists precisely to honor the Church\u2019s commitment to genuine scientific inquiry.")
@@ -1970,12 +2049,22 @@ content.push(para([
 content.push(para([
   tb("Dogmatic (Required): "),
   t("God is Creator of all things (Nicene Creed; Fourth Lateran Council, 1215; First Vatican Council, "),
-  ti("Dei Filius"),
-  t(", Chapter 1). Adam and Eve are real, historical individuals ("),
-  ti("Humani Generis"),
-  t(", \u00A737). All humans descend from them through generation (Council of Trent, Session V, Canon 3: original sin is \u201Ctransfused into all by propagation, not by imitation\u201D). The Fall was a real, historical event (CCC \u00A7390). Original sin is transmitted to all descendants (Council of Trent, Session V, Canons 1\u20134). Every human soul is directly created by God (CCC \u00A7366; "),
-  ti("Humani Generis"),
-  t(", \u00A736). The soul is the form of the body (Council of Vienne, 1312; CCC \u00A7365). Redemption comes through Christ alone (Council of Trent, Session VI, Chapter 3; CCC \u00A7\u00A7388\u2013389, 402\u2013405).")
+  magLink("Dei Filius", 'DEI_FILIUS'),
+  magSectionLink(", Chapter 1", 'DEI_FILIUS'),
+  t("). Adam and Eve are real, historical individuals ("),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  magSectionLink(", \u00A737", 'HUMANI_GENERIS'),
+  t("). All humans descend from them through generation ("),
+  magSectionLink("Council of Trent, Session V, Canon 3", 'TRENT_V'),
+  t(": original sin is \u201Ctransfused into all by propagation, not by imitation\u201D). The Fall was a real, historical event ("), cccLink(390),
+  t("). Original sin is transmitted to all descendants ("),
+  magSectionLink("Council of Trent, Session V, Canons 1\u20134", 'TRENT_V'),
+  t("). Every human soul is directly created by God ("), cccLink(366), t("; "),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  magSectionLink(", \u00A736", 'HUMANI_GENERIS'),
+  t("). The soul is the form of the body (Council of Vienne, 1312; "), cccLink(365),
+  t("). Redemption comes through Christ alone (Council of Trent, Session VI, Chapter 3; "),
+  cccMultiLink("CCC \u00A7\u00A7388\u2013389, 402\u2013405", 388), t(").")
 ]));
 
 content.push(para([
@@ -2031,10 +2120,12 @@ content.push(heading2("Required vs. Open: Why Acknowledging Weakness Is Itself a
 content.push(para([
   tb("Required: "),
   t("Intellectual honesty is a theological obligation, not merely a rhetorical strategy. The First Vatican Council, "),
-  ti("Dei Filius"),
-  t(", Chapter 4, teaches that \u201Creason, illuminated by faith, when it seeks earnestly, piously and calmly, attains by a gift from God some understanding, and that a most fruitful one, of mysteries.\u201D The word \u201Csome\u201D is significant\u2014the Council explicitly acknowledges the limits of human understanding even when aided by faith. The same document warns against \u201Cthat false appearance of knowledge\u201D which presents speculation as certainty. Pope St. John Paul II, in "),
-  ti("Fides et Ratio"),
-  t(", \u00A74, insisted that philosophy and theology must maintain \u201Ca legitimate autonomy\u201D and that faith \u201Cdoes not fear reason, but seeks it out and has trust in it.\u201D Acknowledging weaknesses in a theological framework is not a failure of faith; it is fidelity to the Church\u2019s own teaching about the limits of human reasoning.")
+  magLink("Dei Filius", 'DEI_FILIUS'),
+  magSectionLink(", Chapter 4", 'DEI_FILIUS'),
+  t(", teaches that \u201Creason, illuminated by faith, when it seeks earnestly, piously and calmly, attains by a gift from God some understanding, and that a most fruitful one, of mysteries.\u201D The word \u201Csome\u201D is significant\u2014the Council explicitly acknowledges the limits of human understanding even when aided by faith. The same document warns against \u201Cthat false appearance of knowledge\u201D which presents speculation as certainty. Pope St. John Paul II, in "),
+  magLink("Fides et Ratio", 'FIDES_ET_RATIO'),
+  magSectionLink(", \u00A74", 'FIDES_ET_RATIO'),
+  t(", insisted that philosophy and theology must maintain \u201Ca legitimate autonomy\u201D and that faith \u201Cdoes not fear reason, but seeks it out and has trust in it.\u201D Acknowledging weaknesses in a theological framework is not a failure of faith; it is fidelity to the Church\u2019s own teaching about the limits of human reasoning.")
 ]));
 
 content.push(para([
