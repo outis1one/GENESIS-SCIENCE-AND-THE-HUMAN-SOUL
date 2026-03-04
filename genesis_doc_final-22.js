@@ -278,7 +278,7 @@ content.push(para([
   t("First, the most natural reading of Genesis 1 describes six days of creation. The Hebrew word "),
   ti("yom"),
   t(" is used with the formula \u201Cthere was evening and there was morning, the Xth day\u201D\u2014a construction that, everywhere else in the Old Testament, refers to an ordinary calendar day. "),
-  sLink("Exodus 20:11 (NABRE)", "https://www.bible.com/bible/463/EXO.20.11.NABRE"),
+  sLink("Exodus 20:11 (NABRE)", "https://www.biblegateway.com/passage/?search=Exodus+20:11&version=NABRE"),
   t(" grounds the Sabbath commandment in this six-day pattern: \u201CFor in six days the Lord made heaven and earth, the sea, and all that is in them, and rested on the seventh day.\u201D Young earth advocates argue that if the days of Genesis are not literal days, this commandment loses its grounding\u2014the pattern of six days of work followed by one day of rest only makes sense, they contend, if God actually worked for six ordinary days and rested on the seventh. Those who hold a non-literal view of the days respond that the commandment\u2019s force lies in the pattern of work and rest itself\u2014six units of labor followed by one of rest\u2014and that this pattern retains its meaning whether the original \u201Cdays\u201D were twenty-four hours, ages, or a literary framework. The reader must weigh both arguments.")
 ]));
 
@@ -288,9 +288,9 @@ content.push(para([
 
 content.push(para([
   t("Third, Jesus himself spoke of the creation of humanity at \u201Cthe beginning\u201D ("),
-  sLink("Mk 10:6", "https://www.bible.com/bible/463/MRK.10.6.NABRE"),
+  sLink("Mk 10:6", "https://www.biblegateway.com/passage/?search=Mark+10:6&version=NABRE"),
   t("; "),
-  sLink("13:19", "https://www.bible.com/bible/463/MRK.13.19.NABRE"),
+  sLink("13:19", "https://www.biblegateway.com/passage/?search=Mark+13:19&version=NABRE"),
   t(", NABRE), which young earth advocates argue is difficult to reconcile with humanity appearing only in the last fraction of a percent of cosmic history. If humans arrived 13.8 billion years into a 13.8-billion-year-old universe, that is not \u201Cthe beginning\u201D in any natural sense of the word.")
 ]));
 
@@ -394,7 +394,7 @@ content.push(para([
 content.push(para([
   tb("The Cana Wine Analogy. "),
   t("The Kolbe Center draws a parallel to Jesus turning water into wine at Cana ("),
-  sLink("Jn 2:1\u201311", "https://www.bible.com/bible/463/JHN.2.1-11.NABRE"),
+  sLink("Jn 2:1\u201311", "https://www.biblegateway.com/passage/?search=John+2:1-11&version=NABRE"),
   t(", NABRE). The wine had all the chemical markers of having gone through a long natural process of fermentation and aging\u2014yet it was created instantaneously by divine power. Just as we can only know the true age of the Cana wine from the testimony of Scripture (not from chemical analysis), we can only know the true age of the cosmos from Genesis. This is essentially a more theologically grounded version of the Omphalos argument.")
 ]));
 
@@ -628,7 +628,7 @@ content.push(para([
 
 content.push(para([
   t("The phrase in Genesis 2:7\u2014\u201Cthen the Lord God formed man of dust from the ground\u201D ("),
-  sLink("NABRE Gn 2:7", "https://www.bible.com/bible/463/GEN.2.7.NABRE"),
+  sLink("NABRE Gn 2:7", "https://www.biblegateway.com/passage/?search=Genesis+2:7&version=NABRE"),
   t(")\u2014takes on a resonance the ancient authors could not have imagined. The \u201Cdust of the ground\u201D is star-stuff. The ground itself is the product of billions of years of cosmic engineering. And the process of making it required a universe of 200 billion galaxies operating across 13.8 billion years.")
 ]));
 
@@ -642,7 +642,7 @@ content.push(para([
   t("The case against a literal six-day creation does not rest solely on science. The text of Genesis itself provides internal evidence that \u201Cday\u201D ("),
   ti("yom"),
   t(" in Hebrew) is not being used as a twenty-four-hour solar period. The most obvious indicator is that the sun is not created until Day Four ("),
-  sLink("NABRE Gn 1:14\u201319", "https://www.bible.com/bible/463/GEN.1.14-19.NABRE"),
+  sLink("NABRE Gn 1:14\u201319", "https://www.biblegateway.com/passage/?search=Genesis+1:14-19&version=NABRE"),
   t("). A \u201Cday\u201D defined by solar rotation cannot exist before the sun exists. The text signals from its opening verses that it operates on a different kind of timescale.")
 ]));
 
@@ -697,7 +697,7 @@ content.push(para([
   t(", Chapter 1). God keeps all created things in existence and guides them through His Providence ("),
   ti("Dei Filius"),
   t(", Chapter 1). The first man was created by God ("),
-  sLink("NABRE Gn 1:27", "https://www.bible.com/bible/463/GEN.1.27.NABRE"),
+  sLink("NABRE Gn 1:27", "https://www.biblegateway.com/passage/?search=Genesis+1:27&version=NABRE"),
   t("; CCC \u00A7356). Man consists of a material body and a spiritual soul (CCC \u00A7362\u2013368). The rational soul is the essential form of the body (Council of Vienne, 1312)."),
   cite('VIENNE'),
   t(" Every human soul is directly created by God ("),
@@ -924,7 +924,7 @@ content.push(para([
 
 content.push(para([
   t("This is the cosmic alchemy that makes life possible. Every atom of carbon in your body was forged in the core of a star that died before the sun was born. Every atom of iron in your blood was manufactured in a massive star\u2019s core and scattered by a supernova. Every atom of calcium in your bones, every atom of oxygen in your lungs, was built inside a star through nuclear fusion. And trace amounts of heavier elements\u2014the iodine in your thyroid, the cobalt in your vitamin B12\u2014may trace their origins to the cataclysmic collision of neutron stars. "),
-  sLink("Genesis 2:7 (NABRE)", "https://www.bible.com/bible/463/GEN.2.7.NABRE"),
+  sLink("Genesis 2:7 (NABRE)", "https://www.biblegateway.com/passage/?search=Genesis+2:7&version=NABRE"),
   t("\u2019s image of God forming man from \u201Cthe dust of the ground\u201D is, read through the lens of modern astrophysics, literally true\u2014we are made of star-dust and merger-debris, and that dust had to be manufactured across billions of years of stellar life cycles and cosmic collisions.")
 ]));
 
@@ -1169,7 +1169,7 @@ content.push(heading2("Required vs. Open: What the Church Demands About Our Homi
 content.push(para([
   tb("Required: "),
   t("Human beings are made in the image and likeness of God ("),
-  sLink("NABRE Gn 1:27", "https://www.bible.com/bible/463/GEN.1.27.NABRE"),
+  sLink("NABRE Gn 1:27", "https://www.biblegateway.com/passage/?search=Genesis+1:27&version=NABRE"),
   t("; CCC \u00A7356; "),
   ti("Gaudium et Spes"),
   t(", \u00A712: \u201CAccording to the almost unanimous opinion of believers and unbelievers alike, all things on earth should be related to man as their center and crown\u201D)."),
@@ -1231,7 +1231,7 @@ content.push(para([
 content.push(heading3("Stage Two: The Act of God (~750,000\u20131,000,000 Years Ago)"));
 content.push(para([
   t("God acts directly. He takes material from this lineage\u2014\u201Cformed man from the dust of the ground\u201D ("),
-  sLink("NABRE Gn 2:7", "https://www.bible.com/bible/463/GEN.2.7.NABRE"),
+  sLink("NABRE Gn 2:7", "https://www.biblegateway.com/passage/?search=Genesis+2:7&version=NABRE"),
   t(")\u2014and creates Adam. The \u201Cdust of the ground\u201D is the biological substrate that the entire creative process has been building toward. God is not working from nothing; He is completing what He has been preparing. The ensoulment is not just adding an invisible property to an unchanged body. Catholic teaching holds that the rational soul is the "),
   ti("form"),
   t(" of the body (Council of Vienne, 1312). It transforms the whole being. As William Lane Craig puts it, \u201CGod\u2019s creation of Adam and Eve plausibly required both biological and spiritual renovations, biological to equip their brains with the capacity to serve as instruments of rational thought and spiritual to furnish them with rational souls.\u201D")
@@ -1266,7 +1266,7 @@ content.push(para([
 
 content.push(para([
   t("Is such interbreeding bestiality? This is where the Abraham and Jacob precedent becomes crucial. Paul writes in "),
-  sLink("Romans 5:13 (NABRE)", "https://www.bible.com/bible/463/ROM.5.13.NABRE"),
+  sLink("Romans 5:13 (NABRE)", "https://www.biblegateway.com/passage/?search=Romans+5:13&version=NABRE"),
   t(", \u201CSin is not counted where there is no law.\u201D Abraham, the \u201CFather in Faith,\u201D had children by Hagar and Keturah while married to Sarah. Jacob fathered the twelve tribes of Israel through four different women\u2014Leah, Rachel, Bilhah, and Zilpah. These arrangements are not presented as scandalous in the text; they are the normal way God\u2019s plan unfolds at that stage of salvation history. The Mosaic law against such arrangements had not yet been given.")
 ]));
 
@@ -1536,7 +1536,7 @@ content.push(para([
   t("\u2014separation from God, the loss of sanctifying grace, the transformation of natural death from a safe passage (under the preternatural gift of bodily immortality that God offered) into something final and terrifying. As the Society of Catholic Scientists explains: \u201CThe traditional Catholic doctrine is that the first humans were offered bodily immortality for themselves and their descendants as a preternatural gift\u2014a gift that goes beyond what is natural\u2014on the condition that they would not transgress the commandment God had given them.\u201D"),
   cite('SCS'),
   t(" "),
-  sLink("Ecclesiastes 3:19 (NABRE)", "https://www.bible.com/bible/463/ECC.3.19.NABRE"),
+  sLink("Ecclesiastes 3:19 (NABRE)", "https://www.biblegateway.com/passage/?search=Ecclesiastes+3:19&version=NABRE"),
   t(" itself acknowledges: \u201CSurely the fate of human beings is like that of the animals; the same fate awaits them both. As one dies, so dies the other.\u201D")
 ]));
 
@@ -1655,11 +1655,11 @@ content.push(para([
   t("What the Church "),
   ti("does"),
   t(" require regarding the Flood is this: the narrative conveys real theological truth. God judges sin. God saves the righteous. God offers new beginnings. The Fathers of the Church regarded the Ark and the Flood as types (prefigurations) of baptism and the Church, based on "),
-  sLink("1 Peter 3:20\u201321 (NABRE)", "https://www.bible.com/bible/463/1PE.3.20-21.NABRE"),
+  sLink("1 Peter 3:20\u201321 (NABRE)", "https://www.biblegateway.com/passage/?search=1+Peter+3:20-21&version=NABRE"),
   t(", and this typological significance belongs to matters of faith and morals. Jesus himself referred to Noah as a historical figure ("),
-  sLink("Mt 24:37\u201339", "https://www.bible.com/bible/463/MAT.24.37-39.NABRE"),
+  sLink("Mt 24:37\u201339", "https://www.biblegateway.com/passage/?search=Matthew+24:37-39&version=NABRE"),
   t("; "),
-  sLink("Lk 17:26\u201327", "https://www.bible.com/bible/463/LUK.17.26-27.NABRE"),
+  sLink("Lk 17:26\u201327", "https://www.biblegateway.com/passage/?search=Luke+17:26-27&version=NABRE"),
   t(", NABRE). There must be "),
   ti("some"),
   t(" real event underlying the narrative\u2014but its scope, mechanism, exact number of survivors, and chronological placement are all open questions.")
@@ -1825,11 +1825,11 @@ content.push(para([
   t(", \u00A737; CCC \u00A7\u00A7390, 404). Every human soul is directly created by God (CCC \u00A7366; "),
   ti("Humani Generis"),
   t(", \u00A736). On the Flood, the Church requires that the narrative conveys real theological truth: God judges sin, God saves the righteous, God offers new beginnings. The Ark and the Flood are established types (prefigurations) of baptism and the Church ("),
-  sLink("1 Pt 3:20\u201321", "https://www.bible.com/bible/463/1PE.3.20-21.NABRE"),
+  sLink("1 Pt 3:20\u201321", "https://www.biblegateway.com/passage/?search=1+Peter+3:20-21&version=NABRE"),
   t("; CCC \u00A71219). Jesus referred to Noah as a historical figure ("),
-  sLink("Mt 24:37\u201339", "https://www.bible.com/bible/463/MAT.24.37-39.NABRE"),
+  sLink("Mt 24:37\u201339", "https://www.biblegateway.com/passage/?search=Matthew+24:37-39&version=NABRE"),
   t("; "),
-  sLink("Lk 17:26\u201327", "https://www.bible.com/bible/463/LUK.17.26-27.NABRE"),
+  sLink("Lk 17:26\u201327", "https://www.biblegateway.com/passage/?search=Luke+17:26-27&version=NABRE"),
   t("). There must be some real event underlying the narrative.")
 ]));
 
@@ -1933,7 +1933,7 @@ content.push(para([
 content.push(para([
   tb("4. "),
   t("In the earliest generations, Adam\u2019s descendants interbreed with biologically compatible but non-ensouled hominids. This is tolerated under the pre-law moral framework ("),
-  sLink("Rom 5:13", "https://www.bible.com/bible/463/ROM.5.13.NABRE"),
+  sLink("Rom 5:13", "https://www.biblegateway.com/passage/?search=Romans+5:13&version=NABRE"),
   t(", NABRE: \u201Csin is not counted where there is no law\u201D), just as sibling marriage was tolerated in the first generation. Every child of such a union receives a rational soul from God through descent from Adam. Genetic diversity enters the human lineage through this interbreeding.")
 ]));
 content.push(para([
