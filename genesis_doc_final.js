@@ -2,7 +2,7 @@ const fs = require("fs");
 const {
   Document, Packer, Paragraph, TextRun, Header, Footer,
   AlignmentType, HeadingLevel, PageBreak, PageNumber,
-  TableOfContents, BorderStyle, TabStopType, TabStopPosition,
+  BorderStyle, TabStopType, TabStopPosition,
   PositionalTab, PositionalTabAlignment, PositionalTabRelativeTo, PositionalTabLeader,
   LevelFormat, ExternalHyperlink
 } = require("docx");
@@ -78,10 +78,37 @@ content.push(new Paragraph({
   spacing: { after: 400 },
   children: [new TextRun({ text: "TABLE OF CONTENTS", size: 32, bold: true, font: "Georgia" })]
 }));
-content.push(new TableOfContents("Table of Contents", {
-  hyperlink: true,
-  headingStyleRange: "1-3"
-}));
+
+const tocEntries = [
+  "Chapter 1: The Problem and the Promise",
+  "Chapter 2: The Case for a Young Earth\u2014Stated Fairly and Fully",
+  "Chapter 3: The Crux\u2014Why the Young Earth Position, Though Permitted, Is Untenable",
+  "Chapter 4: Existing Models and Why They Fall Short",
+  "Chapter 5: Augros and Stanciu\u2014The New Biology and Latent Potential",
+  "Chapter 6: The Hominid Family Tree\u2014Who Are These Cousins?",
+  "Chapter 7: The Synthesis\u2014A Proposed Framework",
+  "Chapter 8: The Cain and Abel Problem",
+  "Chapter 9: The Genetic Diversity Problem\u2014Honestly Addressed",
+  "Chapter 10: The Hard Problem of Consciousness\u2014The Strongest Argument",
+  "Chapter 11: Original Sin and the Nature of the Fall",
+  "Chapter 12: The Bottleneck, the Flood, and the Memory of Near-Extinction",
+  "Chapter 13: What a Scientist Would Say\u2014An Honest Assessment",
+  "Chapter 14: The Framework Summarized",
+  "Chapter 15: Acknowledged Weaknesses and Open Questions",
+  "References and Further Reading",
+  "Index of Key Terms and Persons"
+];
+
+tocEntries.forEach(title => {
+  content.push(new Paragraph({
+    spacing: { before: 80, after: 80 },
+    indent: { left: 360 },
+    children: [
+      new TextRun({ text: title, font: "Georgia", size: 24 })
+    ]
+  }));
+});
+
 content.push(pageBreak());
 
 // ===== INTRODUCTION =====
@@ -155,34 +182,6 @@ content.push(para([
 
 content.push(para([
   t("Seventh, some young earth advocates point to \u201Cpolystrate fossils\u201D\u2014tree trunks and other structures that extend vertically through multiple geological strata. If each stratum represents millions of years of deposition, how could a tree trunk remain upright and intact while being slowly buried over eons? This, they argue, suggests rapid deposition consistent with a global flood rather than gradual accumulation over millions of years.")
-]));
-
-content.push(heading2("Young Earth Resources: The Educational Ecosystem"));
-
-content.push(para([
-  t("It is worth noting that the young earth position is not merely a set of isolated arguments but is supported by a substantial educational ecosystem. Two publishers in particular have shaped how millions of Christian homeschool students learn science.")
-]));
-
-content.push(para([
-  tb("Apologia Educational Ministries"),
-  t(", founded by Dr. Jay L. Wile (PhD in nuclear chemistry, University of Rochester), publishes the widely used "),
-  ti("Exploring Creation"),
-  t(" series, which covers general science, biology, chemistry, physics, and earth science for middle and high school students. Originally written by Dr. Wile himself, the curriculum teaches science from a creation-based perspective. The series frames uniformitarianism as requiring \u201Cfaith that the Bible is not literally true,\u201D presents the fossil record as better explained by catastrophism consistent with a global flood, and critiques Darwinian evolution from within a Christian worldview. Apologia\u2019s earth science curriculum covers radiometric dating, geological strata, and the age question, generally favoring the young earth position while noting the debate. After Dr. Wile sold the company in 2008 to Davis Carman, the curriculum became more explicitly aligned with young earth creationism.")
-]));
-
-content.push(para([
-  tb("Berean Builders"),
-  t(", also founded by Dr. Jay Wile, publishes two science curriculum series. The elementary "),
-  ti("Science in History"),
-  t(" series (grades K\u20136) includes titles such as "),
-  ti("Science in the Beginning"),
-  t(" (2013), which uses the days of creation as an organizing framework for teaching scientific concepts. The high school "),
-  ti("Discovering Design"),
-  t(" series includes courses in earth science, biology, chemistry, and physics. While Dr. Wile writes from a young earth creationist perspective, Berean Builders is notably more irenic than many YEC publishers: it presents both young earth and old earth positions, acknowledges that serious Christians hold different views on the age of the earth, and does not treat the old earth position as inherently unbiblical. Dr. Wile\u2019s approach demonstrates that one can hold the young earth position with intellectual honesty and respect for scientific evidence\u2014a quality not always present in YEC literature.")
-]));
-
-content.push(para([
-  t("These curricula matter because they represent the primary science education for a significant portion of homeschooled Christians. Their arguments are the ones many young Catholics and Protestants encounter first. Understanding them is essential for engaging the young earth position fairly.")
 ]));
 
 content.push(heading2("Why Some Catholics Argue Young Earth Belief Is Required"));
@@ -1751,8 +1750,6 @@ const refs = [
   { text: "Ott, Ludwig. Fundamentals of Catholic Dogma. Translated by Patrick Lynch. Edited by James Canon Bastible. Baronius Press, 2018 (orig. 1952).", url: "https://www.baronius.com/fundamentals-of-catholic-dogma.html" },
   { text: "Pontifical Biblical Commission. De charactere historico trium priorum capitum Geneseos (On the Historical Character of the First Three Chapters of Genesis). June 30, 1909.", url: "http://catholicapologetics.info/scripture/oldtestament/commission.htm" },
   { text: "Owen, Hugh, and the Kolbe Center for the Study of Creation. Creation, Evolution, and Catholicism: A Discussion for Those Who Believe. Kolbe Center, 2000ff.", url: "https://kolbecenter.org/" },
-  { text: "Wile, Jay L. Science in the Beginning. Berean Builders, 2013. See also the Discovering Design series (2015\u20132022).", url: "https://bereanbuilders.com/ecomm/" },
-  { text: "Apologia Educational Ministries. Exploring Creation science curriculum series. Founded by Jay L. Wile; currently published by Davis Carman.", url: "https://www.apologia.com/" },
   { text: "Pius X, Pope St. Praestantia Scripturae. Motu proprio on the authority of the Pontifical Biblical Commission, November 18, 1907." },
   { text: "Poupard, Cardinal Paul. Address on Faith and Science, Pontifical Council for Culture. Cited in Catholic News Service reports on the Galileo Commission findings." },
   { text: "Pian, E., et al. \"Spectroscopic identification of r-process nucleosynthesis in a double neutron-star merger.\" Nature 551 (2017): 67\u201370.", url: "https://doi.org/10.1038/nature24298" },
@@ -1781,7 +1778,6 @@ content.push(heading1("Index of Key Terms and Persons"));
 
 const indexEntries = [
   "Adam and Eve \u2014 Chapters 2\u201315, passim",
-  "Apologia Educational Ministries \u2014 Chapter 2",
   "Aquinas, Thomas (Five Ways) \u2014 Chapter 3",
   "Augros, Robert \u2014 Chapter 5",
   "Augustine of Hippo, Saint \u2014 Chapters 2, 3",
@@ -1789,7 +1785,6 @@ const indexEntries = [
   "Ayala, Francisco \u2014 Chapter 9",
   "Barnes, Thomas G. (magnetic field decay) \u2014 Chapter 2",
   "Behavioral modernity \u2014 Chapter 10",
-  "Berean Builders (Dr. Jay Wile) \u2014 Chapter 2",
   "Bestiality objection \u2014 Chapters 4, 7",
   "Big Bang \u2014 Chapters 3, 5",
   "Bonnette, Dennis \u2014 Chapters 4, 7",
