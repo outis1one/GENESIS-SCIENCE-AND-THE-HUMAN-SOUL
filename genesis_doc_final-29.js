@@ -1,7 +1,7 @@
 const fs = require("fs");
 const {
   Document, Packer, Paragraph, TextRun, Header, Footer,
-  AlignmentType, HeadingLevel, PageBreak, PageNumber, SectionType,
+  AlignmentType, HeadingLevel, PageBreak, PageNumber,
   TableOfContents, BorderStyle, TabStopType, TabStopPosition,
   PositionalTab, PositionalTabAlignment, PositionalTabRelativeTo, PositionalTabLeader,
   LevelFormat, ExternalHyperlink, InternalHyperlink, Bookmark, FootnoteReferenceRun
@@ -103,10 +103,6 @@ const magSectionLink = (text, docKey) => new ExternalHyperlink({
 
 const pageBreak = () => new Paragraph({ children: [new PageBreak()] });
 
-// Section break marker — used to split content into per-chapter sections with individual headers
-const SECTION_MARKER = Symbol('section');
-const sectionBreak = (headerTitle) => ({ [SECTION_MARKER]: true, headerTitle });
-
 // Build all content
 // ===== FOOTNOTE CITATION SYSTEM =====
 let footnoteCounter = 0;
@@ -163,6 +159,9 @@ const SOURCES = {
   SMITHSONIAN_HEID: { text: 'Smithsonian Institution. "Homo heidelbergensis." Human Origins Program, 2024.', url: 'https://humanorigins.si.edu/evidence/human-fossils/species/homo-heidelbergensis' },
   SMITHSONIAN_DNA: { text: 'Smithsonian Institution. "Ancient DNA and Neanderthals." Human Origins Program, 2024.', url: 'https://humanorigins.si.edu/evidence/genetics/ancient-dna-and-neanderthals' },
   HOFFMANN: { text: 'Hoffmann, D.L., et al. "U-Th Dating of Carbonate Crusts Reveals Neandertal Origin of Iberian Cave Art." Science 359 (2018): 912\u2013915.', url: 'https://doi.org/10.1126/science.aap7778' },
+  VACANT: { text: 'Vacant, Alfred. "Cr\u00e9ation." In Dictionnaire de Th\u00e9ologie Catholique, Vol. 3. Letouzey et An\u00e9, 1908.' },
+  HURTER: { text: 'Hurter, Hugo von. Theologiae Dogmaticae Compendium. 3 vols. Innsbruck, 1876\u201378; 12th ed. 1909.' },
+  LOMBARD: { text: 'Peter Lombard. Sententiae in IV Libris Distinctae, Book II, Distinction 1. Circa 1150.' },
 };
 
 function cite(sourceKey) {
@@ -318,7 +317,7 @@ tocEntries.forEach((title, i) => {
   }));
 });
 
-content.push(sectionBreak("Chapter 1: The Problem and the Promise"));
+content.push(pageBreak());
 
 // ===== INTRODUCTION =====
 content.push(heading1("Chapter 1: The Problem and the Promise"));
@@ -353,7 +352,7 @@ content.push(para([
   t("What follows is structured as an exploration. Each section takes a major question\u2014the age of the earth, the origin of Adam and Eve, the genetic diversity problem, the identity of the \u201Cother people\u201D in Genesis, the nature of Neanderthals and Denisovans, the origin of consciousness\u2014and works through the evidence, the objections, and the possibilities. The tone is intended to be readable rather than academic, though the substance is drawn from serious scholarship and peer-reviewed science.")
 ]));
 
-content.push(sectionBreak("Chapter 2: The Case for a Young Earth"));
+content.push(pageBreak());
 
 
 // ===== CHAPTER 2: THE CASE FOR A YOUNG EARTH =====
@@ -474,11 +473,53 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("However, reputable theologians such as P. Hurter, S.J. and M. Jungmann have argued that "),
+  t("However, this reading is far from settled. Hugo von Hurter, S.J. (1832\u20131914), professor of dogmatic theology at the University of Innsbruck for over fifty years and author of the widely-used "),
+  ti("Theologiae Dogmaticae Compendium"),
+  t(", and Bernard Jungmann (1833\u20131895), professor of dogmatic theology at the Catholic University of Louvain and author of "),
+  ti("Institutiones Theologiae Dogmaticae Specialis"),
+  t(", both argued that "),
   ti("simul"),
-  t(" in the Lateran text can be understood not as simultaneity of time but as unity of plan and community of origin\u2014meaning that all creatures share one Creator and one act of creation, not necessarily that they were created in a single instant. The Council\u2019s primary target was the Albigensian/Catharist heresy, which denied that the material world was created by the good God. The "),
+  t(" in the Lateran text can be understood not as simultaneity of time but as unity of plan and community of origin\u2014meaning that all creatures share one Creator and one act of creation, not necessarily that they were created in a single instant."),
+  cite('HURTER'),
+  t(" They were not alone. Cardinal Johann Baptist Franzelin, S.J. (1816\u20131886)\u2014the principal theological advisor at Vatican Council I who helped draft the "),
+  ti("Dei Filius"),
+  t(" constitution, which reaffirmed the Lateran IV language on creation\u2014himself remarked at the Council that the passage was borrowed from the Lateran IV decree and that it was not certain the word "),
+  ti("simul"),
+  t(" expressed a simultaneity of time. The man who drafted the text denied that "),
+  ti("simul"),
+  t(" necessarily meant temporal simultaneity."),
+  cite('VACANT'),
+  t(" Ludwig Ott, in "),
+  ti("Fundamentals of Catholic Dogma"),
+  t(" (1952)\u2014the most widely used English-language dogmatic theology manual of the twentieth century\u2014explicitly states that "),
+  ti("simul"),
+  t(" \u201Ccan also mean: in total, together; cf. Ecclus. 18:1,\u201D and classifies the temporal simultaneity of angelic and material creation not as "),
+  ti("de fide"),
+  t(" defined dogma but only as "),
+  ti("sententia communis"),
+  t(" (common theological opinion)."),
+  cite('OTT'),
+  t(" The Sirach reference is significant: the Greek text of Sirach 18:1 uses the word "),
+  ti("koine"),
+  t(" (\u201Cin common,\u201D \u201Ctogether\u201D), a non-temporal word\u2014the Latin "),
+  ti("simul"),
+  t(" that Augustine and the Council read was a translation that introduced temporal connotations the Greek original did not carry.")
+]));
+
+content.push(para([
+  t("The historical context points the same direction. The "),
   ti("Firmiter"),
-  t(" was asserting that both spiritual and material creation come from the same God, against Cathar dualism\u2014not defining a timeline for creation.")
+  t(" was directed against the Albigensian/Catharist heresy, which denied that the material world was created by the good God. The Cathars taught that an evil deity made the physical world, separate from the good spiritual God. The Council\u2019s assertion that God created "),
+  ti("utramque creaturam"),
+  t(" (\u201Cboth kinds of creature\u201D\u2014spiritual and corporeal) "),
+  ti("de nihilo"),
+  t(" was asserting that both spiritual and material creation come from the same God, against Cathar dualism\u2014not defining a timeline for creation. Moreover, the "),
+  ti("Firmiter\u2019s"),
+  t(" language mirrors Peter Lombard\u2019s "),
+  ti("Sentences"),
+  t(" (Book II, Distinction 1), which was the standard theology textbook from the twelfth century through the Reformation."),
+  cite('LOMBARD'),
+  t(" Lombard himself left the simultaneous-versus-sequential question explicitly open, making it unlikely that the Council intended to settle a debate its own source text had declined to resolve.")
 ]));
 
 content.push(para([
@@ -499,7 +540,7 @@ content.push(para([
   t(" serious.")
 ]));
 
-content.push(sectionBreak("Chapter 3: The Crux"));
+content.push(pageBreak());
 
 // ===== CHAPTER 3: THE CRUX =====
 content.push(heading1("Chapter 3: The Crux\u2014Why This Document Parts Ways with the Young Earth Position"));
@@ -893,7 +934,7 @@ content.push(para([
   t("Our framework requires deep time. The rest of this document will show why that deep time, far from diminishing God or undermining Scripture, reveals a Creator whose patience, craftsmanship, and foresight are written in every star that burns, every element that forms, every hominid lineage that unfolds toward the moment when God breathes a rational soul into the dust of the ground\u2014dust that He spent 13.8 billion years preparing.")
 ]));
 
-content.push(sectionBreak("Chapter 4: Existing Models"));
+content.push(pageBreak());
 
 // ===== CHAPTER 4: EXISTING MODELS =====
 content.push(heading1("Chapter 4: Existing Models\u2014Their Strengths and Limitations"));
@@ -1001,7 +1042,7 @@ content.push(para([
   t("The Church has not endorsed any particular model for how Adam and Eve relate to the broader hominid population. Catholics are free to explore the Swamidass genealogical model, the Kemp biological/theological distinction, the Craig deep-time approach, the Suarez variation, or the synthesis proposed in this document. The precise dating of Adam and Eve, the mechanism by which genetic diversity entered the human lineage, the identity of the \u201Cother people\u201D in Genesis, and the exact relationship between ensouled humans and the broader hominid population are all matters of legitimate theological and scientific inquiry. No Catholic is bound to any one answer on these questions.")
 ]));
 
-content.push(sectionBreak("Chapter 5: The New Biology"));
+content.push(pageBreak());
 
 // ===== CHAPTER 5: THE NEW BIOLOGY =====
 content.push(heading1("Chapter 5: Augros and Stanciu\u2014The New Biology and Latent Potential"));
@@ -1192,7 +1233,7 @@ content.push(para([
   t("The Church has not defined the specific mechanism by which God brought about biological complexity. Catholics are free to hold that God used evolutionary processes, that latent potential unfolds through natural law (as Augros and Stanciu propose), or that God intervened directly at key moments\u2014or some combination of these. The Augros/Stanciu model of latent unfolding is one legitimate philosophical interpretation. Standard evolutionary biology\u2019s account of mutation and natural selection is another. The evo-devo synthesis that emphasizes regulatory gene changes is a third. The Church requires that God is the author of the process, whatever the process turns out to be. The details of the mechanism are a matter for science and philosophy, not dogma.")
 ]));
 
-content.push(sectionBreak("Chapter 6: The Hominid Family Tree"));
+content.push(pageBreak());
 
 // ===== CHAPTER 6: THE HOMINID FAMILY =====
 content.push(heading1("Chapter 6: The Hominid Family Tree\u2014Who Are These Cousins?"));
@@ -1334,7 +1375,7 @@ content.push(para([
   t(", \u00A736, permitted investigation of bodily evolution from pre-existing living matter but made no pronouncement on which ancestral forms qualify. Whether Neanderthals and Denisovans possessed rational souls, whether they are descendants of Adam, and how they relate to the ensoulment event are all questions of legitimate inquiry. Our framework proposes that all hominid groups showing evidence of symbolic, rational behavior are ensouled descendants of Adam\u2014but this is a theological interpretation, not a dogmatic requirement. A Catholic could coherently hold different views on the spiritual status of Neanderthals without contradicting any defined teaching.")
 ]));
 
-content.push(sectionBreak("Chapter 7: The Synthesis"));
+content.push(pageBreak());
 
 // ===== CHAPTER 7: THE SYNTHESIS =====
 content.push(heading1("Chapter 7: The Synthesis\u2014A Proposed Framework"));
@@ -1490,7 +1531,7 @@ content.push(para([
   t(", \u00A736, permits inquiry into bodily evolution \u201Cin as far as it inquires into the origin of the human body as coming from pre-existent and living matter.\u201D The Pontifical Biblical Commission (1909) confirmed that Catholics may interpret the \u201Cdays\u201D of Genesis as periods of time. A Catholic could accept our framework\u2019s dogmatic foundations while differing on its specific scientific and historical claims. The synthesis is offered as a coherent possibility, not as a binding interpretation.")
 ]));
 
-content.push(sectionBreak("Chapter 8: Cain and Abel"));
+content.push(pageBreak());
 
 // ===== CHAPTER 8: CAIN AND ABEL =====
 content.push(heading1("Chapter 8: The Cain and Abel Problem"));
@@ -1535,7 +1576,7 @@ content.push(para([
   t("), and the Pontifical Biblical Commission\u2019s 1948 letter grants liberty regarding the literary forms of Genesis 1\u201311. The identity of Cain\u2019s wife has been an open question since the patristic era\u2014Augustine addressed it, as did Aquinas\u2014and the Church has never issued a definitive answer.")
 ]));
 
-content.push(sectionBreak("Chapter 9: Genetic Diversity"));
+content.push(pageBreak());
 
 // ===== CHAPTER 9: GENETIC DIVERSITY =====
 content.push(heading1("Chapter 9: The Genetic Diversity Problem\u2014Honestly Addressed"));
@@ -1613,7 +1654,7 @@ content.push(para([
   t(" the genetic mathematics work out. Catholics are free to explore any mechanism that preserves universal Adamic descent.")
 ]));
 
-content.push(sectionBreak("Chapter 10: Consciousness"));
+content.push(pageBreak());
 
 // ===== CHAPTER 10: CONSCIOUSNESS =====
 content.push(heading1("Chapter 10: The Hard Problem of Consciousness\u2014The Strongest Argument"));
@@ -1686,7 +1727,7 @@ content.push(para([
   t("The relationship between brain structures and rational thought, the precise mechanisms by which the immaterial soul interacts with the material body, and the philosophical analysis of the hard problem of consciousness are all open questions. Whether the hard problem is genuinely unsolvable or merely unsolved, whether animal cognition admits of degrees that blur the line more than traditional Thomistic categories suggest, and how exactly to interpret the archaeological evidence of symbolic behavior\u2014these are matters of legitimate philosophical and scientific debate. The Church requires the reality of the rational soul. It does not require any particular theory of consciousness or any specific account of how soul and brain interact.")
 ]));
 
-content.push(sectionBreak("Chapter 11: Original Sin"));
+content.push(pageBreak());
 
 // ===== CHAPTER 11: ORIGINAL SIN =====
 content.push(heading1("Chapter 11: Original Sin and the Nature of the Fall"));
@@ -1738,7 +1779,7 @@ content.push(para([
   t(" remains open.")
 ]));
 
-content.push(sectionBreak("Chapter 12: The Bottleneck and the Flood"));
+content.push(pageBreak());
 
 
 
@@ -2034,7 +2075,7 @@ content.push(para([
   t(", 2023) and the Genesis Flood is a speculative proposal within this open space\u2014not a dogmatic claim.")
 ]));
 
-content.push(sectionBreak("Chapter 13: What a Scientist Would Say"));
+content.push(pageBreak());
 
 // ===== CHAPTER 13: WHAT A SCIENTIST WOULD SAY =====
 content.push(heading1("Chapter 13: What a Scientist Would Say\u2014An Honest Assessment"));
@@ -2104,7 +2145,7 @@ content.push(para([
   t("The precise relationship between theological claims and scientific methodology\u2014how non-overlapping magisteria interact, whether and how theology may inform scientific interpretation, and what counts as genuine conflict versus mere apparent tension\u2014these are matters of ongoing discussion. Pope Benedict XVI, in his 2007 meeting at Castel Gandolfo, noted that \u201Cthe question of origins is not merely a scientific question but also a philosophical and theological one.\u201D The Church does not require any particular philosophy of science. It requires only that science\u2019s legitimate findings not be dismissed, and that theology\u2019s legitimate claims not be surrendered. Our framework operates within this space: accepting the findings of science while maintaining the theological commitments the Church defines as non-negotiable.")
 ]));
 
-content.push(sectionBreak("Chapter 14: The Framework Summarized"));
+content.push(pageBreak());
 
 // ===== CHAPTER 14: SUMMARY =====
 content.push(heading1("Chapter 14: The Framework Summarized"));
@@ -2190,7 +2231,7 @@ content.push(para([
   t(". The mechanism of early interbreeding as the source of genetic diversity. The claim that all post-dispersal hominid groups (Neanderthals, Denisovans) are ensouled descendants of Adam. The connection between the population bottleneck and the Genesis Flood. The Augros/Stanciu model of latent biological potential. The \u201Cjump\u201D argument from the hard problem of consciousness. These are all proposals within the open space Catholic theology permits\u2014the best synthesis we can construct from available evidence, offered as a coherent possibility rather than a binding interpretation.")
 ]));
 
-content.push(sectionBreak("Chapter 15: Acknowledged Weaknesses"));
+content.push(pageBreak());
 
 // ===== CHAPTER 15: ACKNOWLEDGMENTS OF WEAKNESS =====
 content.push(heading1("Chapter 15: Acknowledged Weaknesses and Open Questions"));
@@ -2251,7 +2292,7 @@ content.push(para([
   t(", \u00A736, which allows that the human body may derive from \u201Cpre-existing and living matter.\u201D The genetic challenge to monogenism is addressed by our mechanisms but not fully resolved\u2014a candor the Church\u2019s own International Theological Commission (2004) models when it acknowledges that the science of human origins is \u201Ccomplex and subject to revision.\u201D The Augros/Stanciu mechanism is a philosophical proposal, not a doctrinal commitment. And the unfalsifiability of ensoulment is a necessary feature of any claim about an immaterial reality acting on a material world\u2014a feature shared by every Catholic doctrine about the soul.")
 ]));
 
-content.push(sectionBreak("References and Further Reading"));
+content.push(pageBreak());
 
 // ===== REFERENCES =====
 content.push(heading1("References and Further Reading"));
@@ -2305,6 +2346,9 @@ const refs = [
   { text: "John Paul II, Pope. Fides et Ratio. Encyclical Letter, September 14, 1998.", url: "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html" },
   { text: "Second Vatican Council. Gaudium et Spes: Pastoral Constitution on the Church in the Modern World. December 7, 1965.", url: "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html" },
   { text: "Fourth Lateran Council. Constitution 1: On the Catholic Faith (Firmiter Credimus). 1215." },
+  { text: "Hurter, Hugo von. Theologiae Dogmaticae Compendium. 3 vols. Innsbruck, 1876\u201378; 12th ed. 1909." },
+  { text: "Vacant, Alfred. \u201CCr\u00e9ation.\u201D In Dictionnaire de Th\u00e9ologie Catholique, Vol. 3. Letouzey et An\u00e9, 1908." },
+  { text: "Peter Lombard. Sententiae in IV Libris Distinctae (Sentences), Book II, Distinction 1. Circa 1150." },
   { text: "Fifth Lateran Council. Apostolici Regiminis: Bull on the Immortality of the Soul. December 19, 1513." },
   { text: "Pontifical Academy of Sciences. Founded 1936 by Pope Pius XI; Statutes renewed by Pope John Paul II, 1986.", url: "https://www.pas.va/en.html" },
   { text: "Ott, Ludwig. Fundamentals of Catholic Dogma. Translated by Patrick Lynch. Edited by James Canon Bastible. Baronius Press, 2018 (orig. 1952).", url: "https://www.baronius.com/fundamentals-of-catholic-dogma.html" },
@@ -2335,7 +2379,7 @@ refs.forEach((ref, i) => {
   content.push(para(children, { spacing: { after: 120, line: 276 } }));
 });
 
-content.push(sectionBreak("Index of Key Terms and Persons"));
+content.push(pageBreak());
 
 // ===== INDEX =====
 content.push(heading1("Index of Key Terms and Persons"));
@@ -2450,64 +2494,6 @@ indexEntries.forEach(entry => {
   content.push(para([t(entry)], { spacing: { after: 80, line: 240 } }));
 });
 
-// Split content into sections at sectionBreak markers
-const pageProps = {
-  page: {
-    size: { width: 12240, height: 15840 },
-    margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 }
-  }
-};
-
-const makeFooter = () => ({
-  default: new Footer({
-    children: [new Paragraph({
-      alignment: AlignmentType.CENTER,
-      children: [new TextRun({ children: [PageNumber.CURRENT], size: 20, font: "Georgia" })],
-      border: { top: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
-    })]
-  })
-});
-
-const makeHeader = (text) => ({
-  default: new Header({
-    children: [new Paragraph({
-      alignment: AlignmentType.CENTER,
-      children: [new TextRun({ text, italics: true, size: 18, font: "Georgia", color: "888888" })],
-      border: { bottom: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
-    })]
-  })
-});
-
-// Split the content array into sections at each sectionBreak marker
-const docSections = [];
-let currentChildren = [];
-let currentHeader = "Genesis, Science, and the Human Soul";
-
-for (const item of content) {
-  if (item && item[SECTION_MARKER]) {
-    // Push the accumulated section
-    docSections.push({
-      properties: { ...pageProps, type: docSections.length === 0 ? undefined : SectionType.NEXT_PAGE },
-      headers: makeHeader(currentHeader),
-      footers: makeFooter(),
-      children: currentChildren
-    });
-    currentChildren = [];
-    currentHeader = item.headerTitle;
-  } else {
-    currentChildren.push(item);
-  }
-}
-// Push the final section
-if (currentChildren.length > 0) {
-  docSections.push({
-    properties: { ...pageProps, type: SectionType.NEXT_PAGE },
-    headers: makeHeader(currentHeader),
-    footers: makeFooter(),
-    children: currentChildren
-  });
-}
-
 // Build document
 const doc = new Document({
   footnotes: buildFootnotes(),
@@ -2544,7 +2530,33 @@ const doc = new Document({
       }
     ]
   },
-  sections: docSections
+  sections: [{
+    properties: {
+      page: {
+        size: { width: 12240, height: 15840 },
+        margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 }
+      }
+    },
+    headers: {
+      default: new Header({
+        children: [new Paragraph({
+          alignment: AlignmentType.CENTER,
+          children: [new TextRun({ text: "Genesis, Science, and the Human Soul", italics: true, size: 18, font: "Georgia", color: "888888" })],
+          border: { bottom: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
+        })]
+      })
+    },
+    footers: {
+      default: new Footer({
+        children: [new Paragraph({
+          alignment: AlignmentType.CENTER,
+          children: [new TextRun({ children: [PageNumber.CURRENT], size: 20, font: "Georgia" })],
+          border: { top: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
+        })]
+      })
+    },
+    children: content
+  }]
 });
 
 Packer.toBuffer(doc).then(buffer => {
