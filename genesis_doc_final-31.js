@@ -81,7 +81,7 @@ content.push(new Paragraph({
 
 const tocEntries = [
   "Chapter 1: The Problem and the Promise",
-  "Chapter 2: The Case for a Young Earth\u2014Stated Fairly and Fully",
+  "Chapter 2: The Case for a Young Earth\u2014Stated Fairly",
   "Chapter 3: The Crux\u2014Why the Young Earth Position, Though Permitted, Is Untenable",
   "Chapter 4: Existing Models and Why They Fall Short",
   "Chapter 5: Augros and Stanciu\u2014The New Biology and Latent Potential",
@@ -134,7 +134,7 @@ content.push(pageBreak());
 
 
 // ===== CHAPTER 2: THE CASE FOR A YOUNG EARTH =====
-content.push(heading1("Chapter 2: The Case for a Young Earth\u2014Stated Fairly and Fully"));
+content.push(heading1("Chapter 2: The Case for a Young Earth\u2014Stated Fairly"));
 
 content.push(para([
   t("The question of the earth\u2019s age stands at the threshold of any serious discussion of human origins. It deserves more than a dismissive paragraph. The young earth position is held sincerely by many faithful Christians, and intellectual honesty requires that we present it at its strongest before explaining why this document takes a different path.")
@@ -246,7 +246,7 @@ content.push(pageBreak());
 content.push(heading1("Chapter 3: The Crux\u2014Why the Young Earth Position, Though Permitted, Is Untenable"));
 
 content.push(para([
-  t("The previous chapter stated the case for a young earth as fairly and fully as we could. This chapter explains why, despite the strength of those arguments, we believe the young earth position ultimately fails\u2014not because the science overwhelms it (though it does), but because it collides with a dogmatic teaching of the Catholic Church that its proponents rarely address.")
+  t("The previous chapter stated the case for a young earth as fairly as we could. This chapter explains why, despite the strength of those arguments, we believe the young earth position ultimately fails\u2014not because the science overwhelms it (though it does), but because it collides with a dogmatic teaching of the Catholic Church that its proponents rarely address.")
 ]));
 
 content.push(para([
