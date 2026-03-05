@@ -306,8 +306,7 @@ tocEntries.forEach((title, i) => {
             text: title,
             font: "Georgia",
             size: 24,
-            color: "2B5797",
-            underline: { type: "single" }
+            style: "Hyperlink"
           })
         ]
       })
