@@ -11,8 +11,7 @@ const {
 let bookmarkCounter = 0;
 const chapterBookmarks = {}; // maps chapter title to bookmark id
 
-// Create unique bookmark IDs - docx-js Bookmark class reuses id=1, 
-// so we manually construct with unique IDs
+// Bookmark + InternalHyperlink approach (requires docx >=9.x for unique numeric IDs)
 const heading1 = (text) => {
   const bookmarkName = `ch_${bookmarkCounter}`;
   bookmarkCounter++;
@@ -20,7 +19,10 @@ const heading1 = (text) => {
   return new Paragraph({
     heading: HeadingLevel.HEADING_1,
     children: [
-      new Bookmark({ id: bookmarkName, children: [new TextRun(text)] })
+      new Bookmark({
+        id: bookmarkName,
+        children: [new TextRun({ text, bold: true })]
+      })
     ],
     spacing: { before: 360, after: 200 }
   });
@@ -304,8 +306,7 @@ tocEntries.forEach((title, i) => {
             text: title,
             font: "Georgia",
             size: 24,
-            color: "2B5797",
-            underline: { type: "single" }
+            style: "Hyperlink"
           })
         ]
       })
@@ -2457,6 +2458,12 @@ const doc = new Document({
         run: { font: "Georgia", size: 24 }
       }
     },
+    characterStyles: [
+      {
+        id: "Hyperlink", name: "Hyperlink", basedOn: "DefaultParagraphFont",
+        run: { color: "2B5797", underline: { type: "single" } }
+      }
+    ],
     paragraphStyles: [
       {
         id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true,
@@ -2505,6 +2512,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then(buffer => {
-  fs.writeFileSync("Genesis_Science_Catholic_Theology.docx", buffer);
-  console.log("Document created successfully");
+  fs.writeFileSync("Genesis_Science_Catholic_Theology-28.docx", buffer);
+  console.log("Document created: Genesis_Science_Catholic_Theology-28.docx");
 });

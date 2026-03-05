@@ -1,0 +1,12 @@
+{
+  "name": "genesis-science-and-the-human-soul",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Genesis, Science, and the Human Soul - document generator",
+  "scripts": {
+    "build": "node genesis_doc_final-28.js"
+  },
+  "dependencies": {
+    "docx": "^9.6.0"
+  }
+}
