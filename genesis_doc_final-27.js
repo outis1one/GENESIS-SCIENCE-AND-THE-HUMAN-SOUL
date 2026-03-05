@@ -186,6 +186,46 @@ function buildFootnotes() {
 
 const content = [];
 
+// ===== QUICK REFERENCE: THE ARGUMENT IN BRIEF =====
+content.push(new Paragraph({
+  alignment: AlignmentType.CENTER,
+  spacing: { before: 2000, after: 600 },
+  children: [new TextRun({ text: "THE ARGUMENT IN ONE SENTENCE", size: 28, bold: true, font: "Georgia" })]
+}));
+
+content.push(para([
+  ti("Adam and Eve were real, ensouled by God, ancestors of all humanity\u2014and the scientific evidence for deep time, genetics, and the fossil record does not contradict this, because Catholic teaching defines what happened theologically while leaving the natural history open.")
+]));
+
+content.push(new Paragraph({
+  alignment: AlignmentType.CENTER,
+  spacing: { before: 600, after: 400 },
+  children: [new TextRun({ text: "THE ARGUMENT IN BRIEF", size: 28, bold: true, font: "Georgia" })]
+}));
+
+content.push(para([
+  ti("Adam and Eve were real, ensouled by God, ancestors of all humanity\u2014and the scientific evidence for deep time, genetics, and the fossil record does not contradict this, because Catholic teaching defines what happened theologically while leaving the natural history open."),
+  t(" That is the core claim of this document. Here is how it works:")
+]));
+
+content.push(para([
+  t("The Catholic Church requires belief in a real Adam and Eve, a real Fall, and the direct creation of every human soul by God. She does not require belief in a young earth, nor does she require belief in an old one. The age of the earth is not defined by any council, encyclical, or ex cathedra statement. Both positions are permitted; neither is heretical.")
+]));
+
+content.push(para([
+  t("This document argues that the scientific evidence for deep time\u2014ice cores, tree rings, coral reefs, continental drift, genetics\u2014is substantial and convergent, and that it is very difficult to set aside without invoking ad hoc miracles that raise their own theological problems. At the same time, it argues that the theological claims of the Church\u2014a real first couple, a real ensoulment, a real Fall, real original sin transmitted to all descendants\u2014are non-negotiable and must be preserved in any faithful synthesis.")
+]));
+
+content.push(para([
+  t("The proposed framework: God prepared a biological substrate over deep time\u2014hominids increasingly resembling modern humans in body but lacking rational souls. At a specific moment, God ensouled two of these hominids, making them the first true human beings: Adam and Eve. Their descendants, bearing rational souls, intermarried with the surrounding non-ensouled population (as permitted under pre-Mosaic conditions), and within generations all living hominids carried both the biological lineage and the ensouled lineage of Adam and Eve. This accounts for genetic diversity without abandoning monogenism, explains the fossil record without denying theology, and preserves every dogmatic requirement the Church has defined.")
+]));
+
+content.push(para([
+  t("The framework is not a proof. It is a working synthesis\u2014an attempt to show that faith and science are not at war, and that a Catholic can look honestly at the evidence of God\u2019s creation without fearing what it reveals.")
+]));
+
+content.push(pageBreak());
+
 // ===== TITLE PAGE =====
 content.push(new Paragraph({ children: [], spacing: { before: 4000 } }));
 content.push(new Paragraph({
@@ -493,6 +533,25 @@ content.push(para([
 
 content.push(para([
   t("Our argument is not that the young earth position is heretical\u2014it plainly is not. It is that it faces serious difficulties, both scientific and theological, that we have been unable to resolve. The reader who can resolve them may reasonably remain a young earth Catholic in good standing. What follows is our honest account of why we could not.")
+]));
+
+content.push(heading2("Can a Catholic Hold an Old Earth Position?"));
+
+content.push(para([
+  tb("Yes—and for the same reason."),
+  t(" If the Church has not defined the age of the earth, then the freedom runs in both directions. A Catholic who accepts the scientific evidence for deep time—an earth approximately 4.5 billion years old, a universe approximately 13.8 billion years old—is not in conflict with any defined dogma. No ecumenical council, papal encyclical, or ex cathedra statement has declared the earth to be young. The Pontifical Biblical Commission's 1909 ruling that "),
+  ti("yom"),
+  t(" may be understood as \"a certain space of time\" explicitly permits readings of Genesis that accommodate long ages. Pope Pius XII's "),
+  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  t(" (1950) permitted the scientific investigation of human bodily origins from pre-existing living matter—a concession that presupposes the deep-time framework in which such evolution occurs. The Pontifical Academy of Sciences, established to advise the Holy See on scientific matters, operates entirely within the standard scientific chronology. Pope St. John Paul II, addressing the Pontifical Academy of Sciences in 1996, spoke of evolution as \"more than a hypothesis\" and raised no objection to the timescales it requires.")
+]));
+
+content.push(para([
+  t("What the Church requires of the old earth Catholic is the same as what it requires of the young earth Catholic: that God is Creator, that Adam and Eve were real historical individuals, that all humans descend from them, that original sin is a true event transmitted through generation, and that every human soul is immediately created by God. An old earth Catholic who affirms all of these is fully within the bounds of Catholic orthodoxy—and this document is, in fact, an attempt to show how these theological commitments can be maintained within a deep-time framework.")
+]));
+
+content.push(para([
+  t("The symmetry should be stated plainly: neither position is heretical, neither is required, and both must be held accountable to the full weight of Catholic teaching on human origins. The question is not which position the Church permits—she permits both—but which position best accounts for the totality of the evidence, scientific and theological alike.")
 ]));
 
 content.push(heading2("The Scientific Evidence: Why Deep Time Is Difficult to Set Aside"));
