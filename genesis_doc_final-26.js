@@ -17,15 +17,13 @@ const heading1 = (text) => {
   const bookmarkName = `ch_${bookmarkCounter}`;
   bookmarkCounter++;
   chapterBookmarks[text] = bookmarkName;
-  const p = new Paragraph({
+  return new Paragraph({
     heading: HeadingLevel.HEADING_1,
     children: [
       new Bookmark({ id: bookmarkName, children: [new TextRun(text)] })
     ],
     spacing: { before: 360, after: 200 }
   });
-  p._chapterTitle = text;
-  return p;
 };
 
 const heading2 = (text) => new Paragraph({
@@ -101,11 +99,7 @@ const magSectionLink = (text, docKey) => new ExternalHyperlink({
   link: MAGISTERIAL_URLS[docKey]
 });
 
-const pageBreak = () => {
-  const p = new Paragraph({ children: [new PageBreak()] });
-  p._isPageBreak = true;
-  return p;
-};
+const pageBreak = () => new Paragraph({ children: [new PageBreak()] });
 
 // Build all content
 // ===== FOOTNOTE CITATION SYSTEM =====
@@ -973,7 +967,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("For the next 380,000 years, the universe is a hot, opaque plasma. Then it cools enough for electrons to combine with nuclei, forming the first neutral atoms. Light breaks free. That light\u2014stretched by 13.8 billion years of cosmic expansion\u2014is still detectable today as the cosmic microwave background radiation, the oldest observable signal in the universe. At this stage, the universe contains nothing but gas and radiation. Yet everything that will follow\u2014stars, planets, oceans, cells, consciousness\u2014is latent in the physical constants and laws governing this primordial simplicity.")
+  t("For the next 380,000 years, the universe is a hot, opaque plasma. Then it cools enough for electrons to combine with nuclei, forming the first neutral atoms. Light breaks free. That light\u2014stretched by 13.8 billion years of cosmic expansion\u2014is still detectable today as the cosmic microwave background radiation, the oldest observable signal in the universe. At this stage, the universe contains nothing but gas and radiation. Yet everything that will follow\u2014stars, planets, oceans, cells\u2014is latent in the physical constants and laws governing this primordial simplicity. Consciousness, however, is another matter entirely. As Chapter 10 will argue, the emergence of subjective experience and rational thought cannot be explained by physical constants alone\u2014it requires a cause beyond matter, which Catholic teaching identifies as the rational soul, created directly by God.")
 ]));
 
 content.push(heading3("Stage Two: The First Stars and Stellar Nucleosynthesis (200 Million to 1 Billion Years)"));
@@ -1592,6 +1586,14 @@ content.push(para([
 
 content.push(para([
   t("This is the \u201Cjump\u201D\u2014not a missing fossil, not a gap in the geological record, but an explanatory gap at the very foundation of science\u2019s understanding of the human mind. Catholic theology offers a straightforward answer: these capacities exist because they originate not from matter alone but from the rational soul, which God alone creates.")
+]));
+
+content.push(para([
+  t("Pope St. John Paul II addressed this directly in "),
+  magLink("Fides et Ratio", 'FIDES_ET_RATIO'),
+  t(" (1998). In \u00A7\u00A780\u201383, he warned against scientism\u2014the philosophical position that the methods of the natural sciences are the only valid path to knowledge\u2014calling it a \u201Cphilosophical impoverishment\u201D that leaves the deepest human questions unanswered. The encyclical insists that the human person transcends what the empirical sciences can measure: \u201CThe results [of the natural sciences] could even be helpful in understanding of the universe and of the human person. But these are not enough. Those who search for the truth cannot ignore the contribution of the moral and religious knowledge which reaches the very heart of the human person.\u201D"),
+  cite('FIDES'),
+  t(" The hard problem of consciousness is, in a sense, the vindication of this warning. Science can map every neuron, trace every electrical impulse, catalog every chemical reaction in the brain\u2014and still cannot answer why any of it produces the experience of being someone. The knot that materialism cannot untie, Catholic philosophy cuts cleanly: the rational soul, immaterial and directly created by God, is the source of consciousness, self-awareness, moral reasoning, and the capacity to know truth. Science cannot explain what consciousness is, where it comes from, how matter produces it, or why it exists at all. The Catholic understanding does not struggle with this question\u2014it answers it.")
 ]));
 
 content.push(heading2("Required vs. Open: What the Church Demands About the Soul and Consciousness"));
@@ -2406,69 +2408,33 @@ const doc = new Document({
       }
     ]
   },
-  sections: (() => {
-    // Split content into sections at each heading1 (chapter boundary)
-    const sections = [];
-    let currentChildren = [];
-    let currentTitle = "Genesis, Science, and the Human Soul";
-
-    const makeFooter = () => new Footer({
-      children: [new Paragraph({
-        alignment: AlignmentType.CENTER,
-        children: [new TextRun({ children: [PageNumber.CURRENT], size: 20, font: "Georgia" })],
-        border: { top: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
-      })]
-    });
-
-    const makeHeader = (title) => new Header({
-      children: [new Paragraph({
-        alignment: AlignmentType.CENTER,
-        children: [new TextRun({ text: title, italics: true, size: 18, font: "Georgia", color: "888888" })],
-        border: { bottom: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
-      })]
-    });
-
-    const pushSection = (children, title) => {
-      sections.push({
-        properties: {
-          page: {
-            size: { width: 12240, height: 15840 },
-            margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 }
-          }
-        },
-        headers: { default: makeHeader(title) },
-        footers: { default: makeFooter() },
-        children: children
-      });
-    };
-
-    for (let i = 0; i < content.length; i++) {
-      const item = content[i];
-      if (item._chapterTitle) {
-        // Remove trailing pageBreak from previous section (section break handles page break)
-        while (currentChildren.length > 0 && currentChildren[currentChildren.length - 1]._isPageBreak) {
-          currentChildren.pop();
-        }
-        // Push the previous section
-        if (currentChildren.length > 0 || sections.length === 0) {
-          pushSection(currentChildren, currentTitle);
-        }
-        currentTitle = item._chapterTitle;
-        currentChildren = [item];
-      } else {
-        currentChildren.push(item);
+  sections: [{
+    properties: {
+      page: {
+        size: { width: 12240, height: 15840 },
+        margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 }
       }
-    }
-    // Push the last section
-    while (currentChildren.length > 0 && currentChildren[currentChildren.length - 1]._isPageBreak) {
-      currentChildren.pop();
-    }
-    if (currentChildren.length > 0) {
-      pushSection(currentChildren, currentTitle);
-    }
-
-    return sections;
-  })()
+    },
+    headers: {
+      default: new Header({
+        children: [new Paragraph({
+          alignment: AlignmentType.CENTER,
+          children: [new TextRun({ text: "Genesis, Science, and the Human Soul", italics: true, size: 18, font: "Georgia", color: "888888" })],
+          border: { bottom: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
+        })]
+      })
+    },
+    footers: {
+      default: new Footer({
+        children: [new Paragraph({
+          alignment: AlignmentType.CENTER,
+          children: [new TextRun({ children: [PageNumber.CURRENT], size: 20, font: "Georgia" })],
+          border: { top: { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC", space: 4 } }
+        })]
+      })
+    },
+    children: content
+  }]
 });
 
 Packer.toBuffer(doc).then(buffer => {
