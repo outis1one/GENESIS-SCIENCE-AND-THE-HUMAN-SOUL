@@ -349,12 +349,6 @@ content.push(para([
   t("Any serious discussion of human origins must begin with the age of the earth. The young earth position has deep roots in Christian history and is held sincerely by many faithful believers today. It deserves to be stated at its strongest before this document explains why it takes a different path.")
 ]));
 
-content.push(heading2("The Case for a Young Earth, Stated Fairly"));
-
-content.push(para([
-  t("The young earth position rests on several arguments that deserve serious engagement. We try to present them here at their strongest.")
-]));
-
 content.push(para([
   t("First, the most natural reading of Genesis 1 describes six days of creation. The Hebrew word "),
   ti("yom"),
