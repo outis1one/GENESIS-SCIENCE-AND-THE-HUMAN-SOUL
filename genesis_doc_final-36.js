@@ -1478,19 +1478,69 @@ content.push(para([
 
 content.push(para([
   tb("2. Balancing Selection Inflates Apparent Divergence Times."),
-  t(" When geneticists estimate how old a gene variant is, they use something called a \u201Cmolecular clock\u201D\u2014counting the number of DNA differences between two variants and dividing by the known mutation rate. More differences means more time. But this calculation assumes the variants are evolving at a neutral rate, accumulating changes randomly like a ticking clock. HLA genes violate this assumption dramatically.")
+  t(" Before explaining how this works, we need to understand what balancing selection actually is and why it happens\u2014because this single mechanism is the key to the entire HLA puzzle.")
 ]));
 
 content.push(para([
-  t("HLA genes are under the strongest balancing selection in the human genome. Balancing selection means that rare variants have a survival advantage (because the diseases they protect against are the ones the rest of the population is vulnerable to), so natural selection actively preserves multiple variants and prevents any one from being lost. The Japanese population geneticist Naoyuki Takahata showed in 1990 that under this kind of selection, the apparent "),
+  t("Normal natural selection is "),
+  tb("directional"),
+  t("\u2014one version of a gene is better than the alternatives, it spreads through the population, and the inferior versions disappear. Resistance to malaria replaces vulnerability to malaria. A better eye replaces a worse one. Directional selection reduces diversity: one winner, many losers. Balancing selection is the opposite. It is a form of natural selection that actively "),
+  tb("preserves multiple versions of a gene simultaneously"),
+  t(", sometimes for millions of years, because having "),
+  ti("variety itself"),
+  t(" is what provides the survival advantage.")
+]));
+
+content.push(para([
+  t("Here is why this happens at HLA genes. Your HLA molecules are the immune system\u2019s \u201Cwanted posters.\u201D They grab fragments of invading pathogens\u2014pieces of viruses, bacteria, parasites, fungi\u2014and display them on the surface of your cells. Your T-cells then read these displayed fragments and destroy any cell showing signs of infection. No display means no detection, and the pathogen wins. But here is the critical fact: "),
+  tb("each HLA variant can only grab and display certain shapes of pathogen fragments"),
+  t(". One variant (say, DRB1*07:01) might be excellent at displaying tuberculosis fragments but poor at displaying malaria fragments. Another variant (DRB1*15:01) might be the reverse. Two different wanted posters catch more criminals than two identical ones.")
+]));
+
+content.push(para([
+  t("This means that a person who is "),
+  tb("heterozygous"),
+  t(" at an HLA gene\u2014carrying two "),
+  ti("different"),
+  t(" variants, one from each parent\u2014can display a wider range of pathogen fragments than a person who is homozygous (carrying two copies of the same variant). The heterozygous person has a broader immune repertoire and is harder for diseases to kill. This is called "),
+  tb("heterozygote advantage"),
+  t(", and it is one of the most powerful selective forces in biology.")
+]));
+
+content.push(para([
+  t("But it gets even more powerful than that. Pathogens evolve too. They tend to evolve ways to evade the "),
+  ti("most common"),
+  t(" HLA variants in a population, because those are the immune defenses they encounter most often. This means "),
+  tb("rare HLA variants have an automatic survival advantage"),
+  t("\u2014the diseases circulating in the population have not yet evolved to evade them. If 90% of the population carries Variant A and a new plague arrives that has evolved to slip past Variant A\u2019s defenses, the 10% carrying rare Variant B survive and reproduce. Now Variant B becomes more common. But then a different pathogen evolves to exploit Variant B carriers\u2014and the cycle reverses. This is called "),
+  tb("frequency-dependent selection"),
+  t(": the rarer you are, the more valuable you become, because pathogens always evolve to attack the majority. The result is that natural selection "),
+  ti("never lets any HLA variant win permanently"),
+  t(". Multiple variants are actively maintained in the population indefinitely, in a perpetual arms race with infectious disease.")
+]));
+
+content.push(para([
+  t("Now here is where this distorts the molecular clock. When geneticists estimate how old a gene variant is, they count the number of DNA differences between two variants and divide by the known mutation rate. More differences means more time. This is the \u201Cmolecular clock.\u201D But the clock assumes variants are accumulating mutations at a neutral rate\u2014randomly, like a ticking metronome. HLA genes violate this assumption dramatically.")
+]));
+
+content.push(para([
+  t("Normally, genetic drift periodically eliminates gene variants from a population\u2014one lineage goes extinct by chance, and the clock \u201Cresets\u201D because the surviving variants are now more closely related to each other. Under balancing selection, "),
+  tb("this reset never happens"),
+  t(". Selection actively prevents any HLA lineage from going extinct. Both lineages keep accumulating mutations independently, generation after generation, for hundreds of thousands of years\u2014without the periodic collapses that would normally bring them back together. The result is that two HLA variants that "),
+  ti("actually"),
+  t(" diverged one million years ago can "),
+  ti("look like"),
+  t(" they diverged five million, ten million, or even thirty million years ago\u2014because the selection pressure prevented the normal pruning events that would have reset the apparent age.")
+]));
+
+content.push(para([
+  t("This is not speculation. The Japanese population geneticist Naoyuki Takahata showed mathematically in 1990 that under balancing selection, the apparent "),
   tb("coalescence time"),
-  t("\u2014the estimated date when two gene variants last shared a common ancestor, calculated by counting DNA differences between them and working backward\u2014is inflated by a mathematical factor that can be "),
-  ti("very large"),
-  t("\u2014potentially making 6 million years of actual history look like 30 million years."),
+  t("\u2014the estimated date when two gene variants last shared a common ancestor\u2014is inflated by a factor that can be enormous, potentially making 6 million years of actual history look like 30 million years."),
   cite('TAKAHATA'),
   t(" Montgomery Slatkin of UC Berkeley refined this analysis in 2022, showing that the inflation factor is proportional to the square root of the ratio of selection intensity to mutation rate."),
   cite('SLATKIN'),
-  t(" For HLA genes, where selection is strong and the relevant mutation rate is low, this ratio can be enormous. The \u201C30-million-year-old lineages\u201D at DRB1 and DQB1 may represent significantly less real time\u2014the clock is running fast because selection is actively maintaining diversity, generating the "),
+  t(" For HLA genes, where selection is among the strongest anywhere in the genome and the relevant mutation rate is low, this ratio can be very large. The \u201C30-million-year-old lineages\u201D at DRB1 and DQB1 may represent significantly less real time\u2014the clock is running fast because selection is actively maintaining diversity, generating the "),
   ti("appearance"),
   t(" of extreme antiquity.")
 ]));
