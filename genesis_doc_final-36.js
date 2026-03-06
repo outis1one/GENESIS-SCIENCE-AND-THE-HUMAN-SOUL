@@ -1399,22 +1399,42 @@ content.push(para([
 
 content.push(para([
   tb("HLA"),
-  t(" stands for Human Leukocyte Antigen\u2014the system your body uses to tell the difference between your own cells and foreign invaders like viruses and bacteria. Think of HLA genes as the training manuals for your immune system. They teach your body which molecular shapes to recognize as threats. The more diverse these manuals are in a population, the more diseases that population can collectively fight off. This is why your body rejects organ transplants from most donors\u2014their HLA \u201Cmanuals\u201D are different from yours, so your immune system reads the transplanted organ as an invader.")
+  t(" stands for Human Leukocyte Antigen\u2014the system your body uses to tell the difference between your own cells and foreign invaders like viruses and bacteria. Think of HLA genes as the training manuals for your immune system. They teach your body which molecular shapes to recognize as threats. The more diverse these manuals are in a population, the more diseases that population can collectively fight off. This is why your body rejects organ transplants from most donors\u2014their HLA \u201Cmanuals\u201D are different from yours, so your immune system reads the transplanted organ as an invader. (In older scientific literature, you may also see the term "),
+  tb("MHC"),
+  t("\u2014Major Histocompatibility Complex\u2014which is the broader name for the same system across all vertebrates. HLA is just the human version of MHC.)")
 ]));
 
 content.push(para([
   tb("DRB1"),
   t(" and "),
   tb("DQB1"),
-  t(" are specific HLA genes\u2014two of the most variable genes in the entire human genome. The letters and numbers are simply catalog names, like library call numbers. DRB1 sits on chromosome 6 and helps your immune cells present fragments of bacteria and viruses for inspection. DQB1 sits nearby and does similar work.")
+  t(" are specific HLA genes\u2014two of the most variable genes in the entire human genome. The letters and numbers are simply a naming system, like a library\u2019s call numbers. Here is how to decode them: the "),
+  tb("D"),
+  t(" means it belongs to Class II of the immune system (the part that presents fragments of invaders to your immune cells). The next letter\u2014"),
+  tb("R"),
+  t(" in DRB1, "),
+  tb("Q"),
+  t(" in DQB1\u2014identifies which specific gene family within Class II (there are several families, labeled P, Q, R, and so on, each handling slightly different immune tasks). The "),
+  tb("B"),
+  t(" means it encodes the beta chain of the protein (proteins in this system come in pairs\u2014an alpha chain and a beta chain\u2014and the beta chain is the more variable one). And the "),
+  tb("1"),
+  t(" just means it\u2019s the first (and in most cases, the primary) gene in that family. So DRB1 sits on chromosome 6 and helps your immune cells present fragments of bacteria and viruses for inspection. DQB1 sits nearby and does similar work with a slightly different set of molecular targets.")
 ]));
 
 content.push(para([
-  t("The numbers after the asterisk\u2014like DRB1*0701 or DQB1*03\u2014are specific variants (alleles). Think of them as different editions of the same manual. DRB1*0701 is one edition; DRB1*0302 is another. Each edition teaches your immune system to recognize a slightly different set of molecular shapes. The more editions circulating in a population, the more diseases that population can collectively survive.")
+  t("The numbers after the asterisk\u2014like DRB1*0701 or DQB1*03\u2014are specific variants. In genetics, these variants are called "),
+  tb("alleles"),
+  t(" (pronounced uh-LEELZ)\u2014different versions of the same gene, the way different editions of a textbook cover the same subject but with slightly different content. Think of them as different editions of the same training manual. DRB1*0701 is one edition; DRB1*0302 is another. Each edition teaches your immune system to recognize a slightly different set of molecular shapes. The more editions circulating in a population, the more diseases that population can collectively survive. When you see a chimpanzee variant written as "),
+  tb("Patr"),
+  t("-DRB1*0702, the \u201CPatr\u201D is simply the species abbreviation for "),
+  ti("Pan troglodytes"),
+  t(" (the common chimpanzee)\u2014the same naming system, applied to a different species.")
 ]));
 
 content.push(para([
-  t("When geneticists talk about \u201Ctrans-species polymorphism\u201D (TSP) at HLA genes, they mean something specific and striking: some of these variant \u201Ceditions\u201D appear to predate the split between humans and chimpanzees. For example, the human variant DRB1*0701 differs from the chimpanzee variant Patr-DRB1*0702 by only 2 letter changes in its DNA sequence\u2014but differs from another "),
+  t("When geneticists talk about \u201Ctrans-species polymorphism\u201D (TSP) at HLA genes, they mean something specific and striking: some of these variant \u201Ceditions\u201D appear to predate the split between humans and chimpanzees. "),
+  t("\u201CPolymorphism\u201D simply means \u201Cmany forms\u201D\u2014many different versions of the same gene existing in a population. \u201CTrans-species\u201D means these different versions appear to cross the species boundary\u2014the same variant lineage shows up in both humans and chimpanzees. "),
+  t("For example, the human variant DRB1*0701 differs from the chimpanzee variant Patr-DRB1*0702 by only 2 letter changes in its DNA sequence\u2014but differs from another "),
   ti("human"),
   t(" variant (DRB1*0302) by 31 changes. This seems to imply that DRB1*0701 is more closely related to a chimpanzee gene than to another human gene\u2014and therefore must be older than the human species itself.")
 ]));
@@ -1439,9 +1459,13 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("How recently? A landmark 1998 study in "),
+  t("How recently? To understand the next piece of evidence, you need to know that genes are not one continuous stretch of meaningful code. They are broken into segments called "),
+  tb("exons"),
+  t(" (the parts that actually encode the protein) separated by "),
+  tb("introns"),
+  t(" (stretches of DNA between the exons that do not encode protein). Think of a gene as a book where the chapters (exons) contain the instructions, and the spaces between chapters (introns) are filler. Exon 2 of DRB1 is the chapter that encodes the antigen-binding site\u2014the part of the protein that actually grabs onto fragments of viruses and bacteria. This is the most important chapter, and it is the one subject to the most intense natural selection and gene conversion. Exon 3 is the next chapter, encoding a structural part of the protein that does not directly interact with pathogens\u2014and therefore evolves more normally, like a ticking clock. A landmark 1998 study in "),
   ti("Nature Genetics"),
-  t(" by Bergström et al. analyzed the non-coding regions of DRB1 alleles (the stretches of DNA surrounding exon 2 that are not subject to natural selection or gene conversion) and found that "),
+  t(" by Bergström et al. analyzed the non-coding regions of DRB1 alleles (the introns and stretches of DNA surrounding exon 2 that are not subject to natural selection or gene conversion) and found that "),
   tb("over 90% of DRB1 alleles originated less than 250,000 years ago"),
   t("."),
   cite('BERGSTROM'),
@@ -1458,7 +1482,9 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("HLA genes are under the strongest balancing selection in the human genome. Balancing selection means that rare variants have a survival advantage (because the diseases they protect against are the ones the rest of the population is vulnerable to), so natural selection actively preserves multiple variants and prevents any one from being lost. The Japanese population geneticist Naoyuki Takahata showed in 1990 that under this kind of selection, the apparent coalescence time (how far back the \u201Cfamily tree\u201D of variants extends) is inflated by a mathematical factor that can be "),
+  t("HLA genes are under the strongest balancing selection in the human genome. Balancing selection means that rare variants have a survival advantage (because the diseases they protect against are the ones the rest of the population is vulnerable to), so natural selection actively preserves multiple variants and prevents any one from being lost. The Japanese population geneticist Naoyuki Takahata showed in 1990 that under this kind of selection, the apparent "),
+  tb("coalescence time"),
+  t("\u2014the estimated date when two gene variants last shared a common ancestor, calculated by counting DNA differences between them and working backward\u2014is inflated by a mathematical factor that can be "),
   ti("very large"),
   t("\u2014potentially making 6 million years of actual history look like 30 million years."),
   cite('TAKAHATA'),
