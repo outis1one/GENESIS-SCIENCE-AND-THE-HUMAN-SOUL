@@ -346,7 +346,7 @@ content.push(pageBreak());
 content.push(heading1("Chapter 2: The Case for a Young Earth\u2014Stated Fairly"));
 
 content.push(para([
-  t("Any serious discussion of human origins must begin with the age of the earth. The young earth position is not a fringe view\u2014it was the near-universal understanding of Christendom for most of its history, and it remains the conviction of many faithful Christians today. Due diligence and simple fairness require that we present it at its strongest before explaining why this document takes a different path.")
+  t("Any serious discussion of human origins must begin with the age of the earth. The young earth position has deep roots in Christian history and is held sincerely by many faithful believers today. Due diligence and simple fairness require that we try to present it at its strongest before explaining why this document takes a different path.")
 ]));
 
 content.push(heading2("The Case for a Young Earth, Stated Fairly"));
