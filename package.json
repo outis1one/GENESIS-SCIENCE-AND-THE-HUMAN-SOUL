@@ -4,7 +4,7 @@
   "private": true,
   "description": "Genesis, Science, and the Human Soul - document generator",
   "scripts": {
-    "build": "node genesis_doc_final-29.js"
+    "build": "node genesis_doc_final-39.js"
   },
   "dependencies": {
     "docx": "^9.6.0"
