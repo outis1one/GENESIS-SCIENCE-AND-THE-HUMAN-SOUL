@@ -161,6 +161,10 @@ const SOURCES = {
   HOSSJER: { text: 'Hössjer, Ola, and Ann Gauger. "A Single-Couple Human Origin Is Possible." BIO-Complexity 2019, no. 1 (2019): 1\u201320.', url: 'https://bio-complexity.org/ojs/index.php/main/article/viewFile/BIO-C.2019.1/BIO-C.2019.1' },
   TAKAHATA: { text: 'Takahata, Naoyuki. "A Simple Genealogical Structure of Strongly Balanced Allelic Lines and Trans-Species Evolution of Polymorphism." Proceedings of the National Academy of Sciences 87 (1990): 2419\u20132423.', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC53700/' },
   DENG: { text: 'Deng, Yun, et al. "Critique of FitCoal Bottleneck Inference." Genetics 226, no. 3 (2025): iyae013.', url: 'https://doi.org/10.1093/genetics/iyae013' },
+  ORIGEN: { text: 'Origen. De Principiis (On First Principles), Book IV. Circa 230 AD.', url: 'https://www.newadvent.org/fathers/04124.htm' },
+  CLEMENT: { text: 'Clement of Alexandria. Stromata (Miscellanies), Book VI. Circa 200 AD.', url: 'https://www.newadvent.org/fathers/02106.htm' },
+  VINE_MATTHEWS: { text: 'Vine, Frederick J., and Drummond H. Matthews. "Magnetic Anomalies over Oceanic Ridges." Nature 199 (1963): 947–949.', url: 'https://doi.org/10.1038/199947a0' },
+  HUMPHREYS_REBUTTAL: { text: 'Henke, Kevin R. "Young-Earth Creationist Helium Diffusion \'Dates.\'" Talk.Origins Archive, 2010.', url: 'https://www.talkorigins.org/faqs/helium/zircons.html' },
 };
 
 function cite(sourceKey) {
@@ -285,7 +289,7 @@ const tocEntries = [
   "Chapter 6: The Hominid Family Tree\u2014Who Are These Cousins?",
   "Chapter 7: The Synthesis\u2014A Proposed Framework",
   "Chapter 8: The Cain and Abel Problem",
-  "Chapter 9: The Genetic Diversity Problem\u2014Solved",
+  "Chapter 9: The Genetic Diversity Problem\u2014An Honest Examination",
   "Chapter 10: The Hard Problem of Consciousness\u2014The Strongest Argument",
   "Chapter 11: Original Sin and the Nature of the Fall",
   "Chapter 12: The Flood and the Memory of Near-Extinction",
@@ -316,7 +320,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("This document attempts something ambitious but, we believe, intellectually honest: a synthesis that takes both Catholic theology and modern science seriously, without reducing either to the other. It is not a proof. It is not a catechism. It is a working framework\u2014an attempt to show that the apparent contradictions between Genesis and the fossil record are not as absolute as either side often assumes, and that a coherent account of human origins can honor both the theological claims of the Church and the empirical discoveries of science.")
+  t("This document attempts something ambitious but, we believe, intellectually honest: a synthesis that takes both Catholic theology and modern science seriously, without reducing either to the other. It is not a proof. It is not a catechism. It is a working framework\u2014an attempt to show that the apparent contradictions between Genesis and the fossil record are not as absolute as either side often assumes, and that a coherent account of human origins can honor both the theological requirements of the Church and the empirical discoveries of science.")
 ]));
 
 content.push(para([
@@ -332,7 +336,7 @@ content.push(para([
   magLink("Fides et Ratio", 'FIDES_ET_RATIO'),
   t(" (1998), described faith and reason as \u201Clike two wings on which the human spirit rises to the contemplation of truth.\u201D"),
   cite('FIDES'),
-  t(" The encyclical warns against two opposite errors that are directly relevant to the debate over human origins. The first is fideism\u2014the position that faith alone is sufficient and that reason is irrelevant or dangerous to belief. The second is rationalism or scientism\u2014the position that empirical science is the only valid path to knowledge, and that what science cannot measure does not exist. The Church rejects both. This document is written in the conviction that faith needs reason and reason needs faith\u2014and that all sides of this debate sometimes forget this. Within the Church, the young earth advocate who dismisses radiometric dating, the fossil record, and the genetic evidence can appear\u2014to old earth Catholics\u2014to have set reason aside in the name of a particular reading of Genesis, abandoning the Catholic intellectual tradition that produced Albertus Magnus (the Dominican friar whose thirteenth-century work in natural science earned him the title Doctor Universalis), Gregor Mendel (the Augustinian monk who founded modern genetics), and Georges Lema\u00eetre (the Catholic priest who first proposed what became the Big Bang theory). The old earth advocate who treats the early chapters of Genesis as dispensable poetry, or who speaks of Adam and Eve as though their historical reality is a quaint embarrassment, can appear\u2014to young earth Catholics\u2014to have surrendered the faith to the reigning scientific consensus, keeping the label \u201CCatholic\u201D while quietly emptying it of content. Both perceptions contain some truth. Both are sometimes unfair. And beyond the Church, the scientist or philosopher who dismisses the possibility of an immaterial soul, or who insists that consciousness must ultimately reduce to physics, has not followed the evidence to its conclusion but has adopted a philosophical assumption that the scientific method itself cannot justify. As Chapter 10 of this document will argue, the hard problem of consciousness is not a gap waiting to be filled by future research; it is an explanatory boundary that materialism cannot cross. If this document succeeds, it will be because it takes both wings seriously\u2014honoring the full witness of Scripture and the binding teachings of the Church while also honoring the evidence that God has written into His own creation, and offering to the honest inquirer outside the faith a reason to consider that the Catholic account of the human person answers questions that science alone cannot even properly frame.")
+  t(" The encyclical warns against two opposite errors that are directly relevant to the debate over human origins. The first is fideism\u2014the position that faith alone is sufficient and that reason is irrelevant or dangerous to belief. The second is rationalism or scientism\u2014the position that empirical science is the only valid path to knowledge, and that what science cannot measure does not exist. The Church rejects both. This document is written in the conviction that faith needs reason and reason needs faith\u2014and that all sides of this debate sometimes forget this. Within the Church, the young earth advocate who dismisses radiometric dating, the fossil record, and the genetic evidence can appear\u2014to old earth Catholics and proponents\u2014to have set reason aside in the name of a particular reading of Genesis, abandoning the Catholic intellectual tradition that produced Albertus Magnus (the Dominican friar whose thirteenth-century work in natural science earned him the title Doctor Universalis), Gregor Mendel (the Augustinian monk who founded modern genetics), and Georges Lema\u00eetre (the Catholic priest who first proposed what became the Big Bang theory). The old earth advocate who treats the early chapters of Genesis as dispensable poetry, or who speaks of Adam and Eve as though their historical reality is a quaint embarrassment, can appear\u2014to young earth Catholics\u2014to have surrendered the faith to the reigning scientific consensus, keeping the label \u201CCatholic\u201D while quietly emptying it of content. Both perceptions contain some truth. Both are sometimes unfair. And beyond the Church, the scientist or philosopher who dismisses the possibility of an immaterial soul, or who insists that consciousness must ultimately reduce to physics, has not followed the evidence to its conclusion but has adopted a philosophical assumption that the scientific method itself cannot justify. As Chapter 10 of this document will argue, the hard problem of consciousness is not a gap waiting to be filled by future research; it is an explanatory boundary that materialism cannot cross. If this document succeeds, it will be because it takes both wings seriously\u2014honoring the full witness of Scripture and the binding teachings of the Church while also honoring the evidence that God has written into His own creation, and offering to the honest inquirer outside the faith a reason to consider that the Catholic account of the human person answers questions that science alone has trouble framing.")
 ]));
 
 content.push(para([
@@ -355,7 +359,7 @@ content.push(para([
   t(" is used with the formula \u201Cthere was evening and there was morning, the Xth day\u201D\u2014a construction that, everywhere else in the Old Testament, refers to an ordinary calendar day. "),
   sLink("Exodus 20:11", "Exodus 20:11"),
   t(" (NABRE)"),
-  t(" grounds the Sabbath commandment in this six-day pattern: \u201CFor in six days the Lord made heaven and earth, the sea, and all that is in them, and rested on the seventh day.\u201D Young earth advocates argue that if the days of Genesis are not literal days, this commandment loses its grounding\u2014the pattern of six days of work followed by one day of rest only makes sense, they contend, if God actually worked for six ordinary days and rested on the seventh. Those who hold a non-literal view of the days respond that the commandment\u2019s force lies in the pattern of work and rest itself\u2014six units of labor followed by one of rest\u2014and that this pattern retains its meaning whether the original \u201Cdays\u201D were twenty-four hours, ages, or a literary framework. The reader must weigh both arguments.")
+  t(" grounds the Sabbath commandment in this six-day pattern: \u201CFor in six days the Lord made heaven and earth, the sea, and all that is in them, and rested on the seventh day.\u201D Young earth advocates argue that if the days of Genesis are not literal days, this commandment loses its grounding\u2014the pattern of six days of work followed by one day of rest only makes sense, they contend, if God actually worked for six ordinary days and rested on the seventh.")
 ]));
 
 content.push(para([
@@ -433,7 +437,15 @@ content.push(para([
 content.push(para([
   t("However, this argument has a critical weakness: the Fathers were not, in fact, unanimous on this point. Saint Augustine, in "),
   magLink("De Genesi ad Litteram", 'DE_GENESI'),
-  t(" (circa 415 AD), explicitly argued that the \u201Cdays\u201D of Genesis were not ordinary days but a literary framework whose actual duration was unknown. Augustine wrote that the creation narrative was arranged not according to temporal sequence but according to a logical order. Saint Basil of Caesarea, while defending the days as real periods, acknowledged that the first day was called \u201Cone\u201D rather than \u201Cfirst\u201D to indicate its special character. The very existence of disagreement among the Fathers means the \u201Cunanimous consent\u201D rule does not apply to the specific question of the earth\u2019s age.")
+  t(" (circa 415 AD), explicitly argued that the \u201Cdays\u201D of Genesis were not ordinary days but a literary framework whose actual duration was unknown. He wrote that the creation narrative was arranged not according to temporal sequence but according to a logical order, and that God\u2019s creative act may have been instantaneous\u2014with the \u201Cdays\u201D serving as an explanatory structure for human understanding, not a chronological report. Origen of Alexandria (circa 184\u2013253 AD), one of the most influential exegetes in the early Church, wrote in "),
+  ti("De Principiis"),
+  t(" (Book IV) that \u201Cwhat person of intelligence\u201D would believe that the first three days of creation\u2014before the sun existed\u2014could be literal days with evening and morning?"),
+  cite('ORIGEN'),
+  t(" Origen explicitly treated the creation days as conveying spiritual meaning rather than temporal sequence. Clement of Alexandria (circa 150\u2013215 AD), Origen\u2019s teacher, argued in the "),
+  ti("Stromata"),
+  t(" (Book VI) that creation could not have occurred in time at all, since time itself was part of the created order."),
+  cite('CLEMENT'),
+  t(" These are not obscure figures. Augustine is the most cited Father in the Catechism. Origen and Clement were among the most important theologians of the first three centuries. Their disagreement with a literal chronological reading of Genesis means the \u201Cunanimous consent of the Fathers\u201D rule\u2014which Vatican I invoked\u2014simply does not apply to the specific question of the earth\u2019s age or the duration of the creation days.")
 ]));
 
 content.push(para([
@@ -484,7 +496,7 @@ content.push(pageBreak());
 content.push(heading1("Chapter 3: The Crux\u2014Why This Document Parts Ways with the Young Earth Position"));
 
 content.push(para([
-  t("The previous chapter stated the case for a young earth as fairly as we could. This chapter explains why, despite the strength of those arguments, we believe the young earth position faces difficulties it cannot fully resolve\u2014not only because of the scientific evidence (though it is substantial), but because of a tension with dogmatic Catholic teaching that has not yet received adequate attention from either side.")
+  t("The previous chapter tried to state the case for a young earth at its strongest. This chapter explains why, despite those arguments, we believe the young earth position faces difficulties it cannot fully resolve\u2014not only because of the scientific evidence (though it is substantial), but because of a tension with dogmatic Catholic teaching that has not yet received adequate attention from either side.")
 ]));
 
 content.push(para([
@@ -544,13 +556,17 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("Continental drift provides evidence on an even grander scale. The Mid-Atlantic Ridge is spreading at approximately 2.5 centimeters per year\u2014measurable today by GPS. The Atlantic Ocean is approximately 5,000 kilometers wide. At current rates, this requires roughly 200 million years. The magnetic striping of the ocean floor, recorded in volcanic rock as it cools, preserves a precise record of the earth\u2019s magnetic field reversals stretching back hundreds of millions of years\u2014and incidentally refutes the Barnes magnetic decay argument, since the field does not simply decay but oscillates and reverses cyclically.")
+  t("Continental drift provides evidence on an even grander scale. The Mid-Atlantic Ridge is spreading at approximately 2.5 centimeters per year\u2014measurable today by GPS. The Atlantic Ocean is approximately 5,000 kilometers wide. At current rates, this requires roughly 200 million years. The magnetic striping of the ocean floor, recorded in volcanic rock as it cools, preserves a precise record of the earth\u2019s magnetic field reversals stretching back hundreds of millions of years."),
+  cite('VINE_MATTHEWS'),
+  t(" This striping incidentally refutes the Barnes magnetic decay argument, since the field does not simply decay but oscillates and reverses cyclically\u2014a pattern documented in ocean floor basalts worldwide.")
 ]));
 
 content.push(para([
   t("The RATE project\u2019s findings, while impressive in their ambition, have been extensively critiqued by mainstream geologists and physicists."),
   cite('RATE'),
-  t(" The carbon-14 in coal and diamonds is most plausibly explained by in-situ production from nitrogen-14 through neutron bombardment from surrounding uranium and thorium decay\u2014a known and measured process. The helium retention findings have been challenged on methodological grounds by multiple independent researchers. Most critically, the RATE team themselves acknowledged that if billions of years of radioactive decay occurred in a young earth, the heat generated would have melted the earth\u2019s crust multiple times over\u2014a problem they could not resolve and described as requiring \u201Cmiracles.\u201D")
+  t(" The carbon-14 in coal and diamonds is most plausibly explained by in-situ production from nitrogen-14 through neutron bombardment from surrounding uranium and thorium decay\u2014a known and measured process. The helium retention findings have been challenged on methodological grounds by multiple independent researchers."),
+  cite('HUMPHREYS_REBUTTAL'),
+  t(" Most critically, the RATE team themselves acknowledged that if billions of years of radioactive decay occurred in a young earth, the heat generated would have melted the earth\u2019s crust multiple times over\u2014a problem they could not resolve and described as requiring \u201Cmiracles.\u201D")
 ]));
 
 content.push(para([
@@ -656,6 +672,14 @@ content.push(para([
   t(" in Hebrew) is not being used as a twenty-four-hour solar period. The most obvious indicator is that the sun is not created until Day Four ("),
   sLink("Genesis 1:14\u201319", "Genesis 1:14-19"),
   t("). A \u201Cday\u201D defined by solar rotation cannot exist before the sun exists. The text signals from its opening verses that it operates on a different kind of timescale.")
+]));
+
+content.push(para([
+  t("The young earth case that "),
+  sLink("Exodus 20:11", "Exodus 20:11"),
+  t(" grounds the Sabbath in six literal days is real, but the force of the commandment lies in the pattern of work and rest itself\u2014six units of labor followed by one of rest. That pattern retains its meaning whether the original \u201Cdays\u201D were twenty-four hours, ages, or a literary framework. The commandment says: work six, rest one. It does not say: work six "),
+  ti("twenty-four-hour periods"),
+  t(". The analogy holds regardless of the duration of the original creative acts, just as a parable teaches truth regardless of whether its characters are historical.")
 ]));
 
 content.push(para([
