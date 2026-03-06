@@ -4,7 +4,7 @@ const {
   AlignmentType, HeadingLevel, PageBreak, PageNumber,
   BorderStyle, TabStopType, TabStopPosition,
   PositionalTab, PositionalTabAlignment, PositionalTabRelativeTo, PositionalTabLeader,
-  LevelFormat, ExternalHyperlink, FootnoteReferenceRun
+  LevelFormat, ExternalHyperlink
 } = require("docx");
 
 // Helper functions
@@ -71,113 +71,6 @@ const urlLinkItalic = (text, url) => new ExternalHyperlink({
   children: [new TextRun({ text, size: 24, font: "Georgia", italics: true, color: "0563C1", underline: { type: "single" } })],
   link: url
 });
-
-
-// Catechism multi-paragraph link
-const cccMultiLink = (text, firstPara) => new ExternalHyperlink({
-  children: [new TextRun({ text, size: 24, font: "Georgia", color: "0563C1", underline: { type: "single" } })],
-  link: `http://www.scborromeo.org/ccc/para/${firstPara}.htm`
-});
-
-// Magisterial document link helpers
-const MAGISTERIAL_URLS = {
-  HUMANI_GENERIS: 'https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html',
-  DEI_FILIUS: 'https://www.ewtn.com/catholicism/teachings/vatican-i-dogmatic-constitution-dei-filius-on-the-catholic-faith-241',
-  FIDES_ET_RATIO: 'https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html',
-  GAUDIUM_ET_SPES: 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html',
-  TRENT_V: 'https://www.ewtn.com/catholicism/library/decree-concerning-original-sin-1503',
-  PROVIDENTISSIMUS: 'https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_18111893_providentissimus-deus.html',
-  SUMMA: 'https://www.newadvent.org/summa/1002.htm#article3',
-  DE_GENESI: 'https://www.newadvent.org/fathers/1407.htm'
-};
-
-// Magisterial document link (italic text, hyperlinked)
-const magLink = (text, docKey) => new ExternalHyperlink({
-  children: [new TextRun({ text, size: 24, font: "Georgia", italics: true, color: "0563C1", underline: { type: "single" } })],
-  link: MAGISTERIAL_URLS[docKey]
-});
-
-// Magisterial section link (non-italic, for section numbers)
-const magSectionLink = (text, docKey) => new ExternalHyperlink({
-  children: [new TextRun({ text, size: 24, font: "Georgia", color: "0563C1", underline: { type: "single" } })],
-  link: MAGISTERIAL_URLS[docKey]
-});
-
-// ===== FOOTNOTE CITATION SYSTEM =====
-let footnoteCounter = 0;
-const footnoteMap = {};
-
-const SOURCES = {
-  EPICA: { text: 'EPICA Community Members. "Eight Glacial Cycles from an Antarctic Ice Core." Nature 429 (2004): 623–628.', url: 'https://doi.org/10.1038/nature02599' },
-  FRIEDRICH: { text: 'Friedrich, Michael, et al. "The 12,460-Year Hohenheim Oak and Pine Tree-Ring Chronology." Radiocarbon 46 (2004): 1111–1122.', url: 'https://doi.org/10.1017/S0033822200033078' },
-  ENIWETOK: { text: 'Ladd, Harry S., Joshua I. Tracey Jr., and M. Grant Gross. "Drilling on Eniwetok Atoll, Marshall Islands." AAPG Bulletin 54 (1970): 2,257–2,280.' },
-  RATE: { text: 'Vardiman, Larry, Andrew A. Snelling, and Eugene F. Chaffin, eds. Radioisotopes and the Age of the Earth, Vol. 2. Institute for Creation Research, 2005.' },
-  BARNES: { text: 'Barnes, Thomas G. "Decay of the Earth\'s Magnetic Moment and the Geochronological Implications." Creation Research Society Quarterly 9 (1973): 24–29.' },
-  HU: { text: 'Hu, Haipeng, et al. "Genomic Inference of a Severe Human Bottleneck During the Early to Middle Pleistocene Transition." Science 381 (2023): 979–984.', url: 'https://doi.org/10.1126/science.abq7487' },
-  HUMANI: { text: 'Pius XII. Humani Generis. Encyclical Letter, August 12, 1950.', url: 'https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html' },
-  CCC: { text: 'Catechism of the Catholic Church, Second Edition. Vatican City, 1994.', url: 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM' },
-  TRENT_V: { text: 'Council of Trent. Session V: Decree Concerning Original Sin. June 17, 1546.', url: 'https://www.ewtn.com/catholicism/library/decree-concerning-original-sin-1503' },
-  DEI_FILIUS: { text: 'First Vatican Council. Dei Filius: Dogmatic Constitution on the Catholic Faith. April 24, 1870.', url: 'https://www.ewtn.com/catholicism/teachings/vatican-i-dogmatic-constitution-dei-filius-on-the-catholic-faith-241' },
-  AQUINAS: { text: 'Thomas Aquinas. Summa Theologica, Prima Pars, Question 2, Article 3.', url: 'https://www.newadvent.org/summa/1002.htm#article3' },
-  GOSSE: { text: 'Gosse, Philip Henry. Omphalos: An Attempt to Untie the Geological Knot. John Van Voorst, 1857.', url: 'https://archive.org/details/omphalosattemptt00goss' },
-  AUGUSTINE: { text: 'Augustine of Hippo. De Genesi ad Litteram (The Literal Meaning of Genesis). Circa 415 AD.', url: 'https://www.newadvent.org/fathers/1407.htm' },
-  PBC_1909: { text: 'Pontifical Biblical Commission. "On the Historical Character of the First Three Chapters of Genesis." June 30, 1909.' },
-  PBC_1948: { text: 'Pontifical Biblical Commission. Letter to Cardinal Suhard on the Pentateuch and Genesis 1–11. January 16, 1948.' },
-  ITC_2004: { text: 'International Theological Commission. "Communion and Stewardship: Human Persons Created in the Image of God." 2004.', url: 'https://www.vatican.va/roman_curia/congregations/cfaith/cti_documents/rc_con_cfaith_doc_20040723_communion-stewardship_en.html' },
-  KEMP_2011: { text: 'Kemp, Kenneth W. "Science, Theology, and Monogenesis." American Catholic Philosophical Quarterly 85, no. 2 (2011): 217–236.', url: 'https://doi.org/10.5840/acpq201185213' },
-  SWAMIDASS: { text: 'Swamidass, S. Joshua. The Genealogical Adam and Eve. IVP Academic, 2019.', url: 'https://www.ivpress.com/the-genealogical-adam-and-eve' },
-  CRAIG: { text: 'Craig, William Lane. In Quest of the Historical Adam. Eerdmans, 2021.' },
-  CHALMERS: { text: 'Chalmers, David. "Facing Up to the Problem of Consciousness." Journal of Consciousness Studies 2 (1995): 200–219.', url: 'https://consc.net/papers/facing.html' },
-  HOFFMANN: { text: 'Hoffmann, D.L., et al. "U-Th Dating of Carbonate Crusts Reveals Neandertal Origin of Iberian Cave Art." Science 359 (2018): 912–915.', url: 'https://doi.org/10.1126/science.aap7778' },
-  AUGROS: { text: 'Augros, Robert, and George Stanciu. The New Biology: Discovering the Wisdom in Nature. Shambhala, 1987.' },
-  NUNN: { text: 'Nunn, Patrick D., and Nicholas J. Reid. "Aboriginal Memories of Inundation of the Australian Coast." Australian Geographer 47, no. 1 (2016): 11–47.', url: 'https://doi.org/10.1080/00049182.2015.1077539' },
-  FRAZER: { text: 'Frazer, James George. Folklore in the Old Testament. Macmillan, 1918.', url: 'https://archive.org/details/folkloreinoldtes01fraz_1' },
-  FRANKLIN: { text: 'Franklin, Ian R. "Evolutionary Change in Small Populations." In Conservation Biology, edited by Soulé and Wilcox, 135–149. Sinauer, 1980.' },
-  MASSE: { text: 'Masse, W. Bruce. "The Archaeology and Anthropology of Quaternary Period Cosmic Impact." Springer, 2007.' },
-  FIDES: { text: 'John Paul II. Fides et Ratio. Encyclical Letter, September 14, 1998.', url: 'https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html' },
-  VIENNE: { text: 'Council of Vienne. Decrees on the Soul as the Form of the Body. 1312.' },
-  PIAN: { text: 'Pian, E., et al. "Spectroscopic identification of r-process nucleosynthesis in a double neutron-star merger." Nature 551 (2017): 67–70.', url: 'https://doi.org/10.1038/nature24298' },
-  LEVAN: { text: 'Levan, A.J., et al. "Heavy-element production in a compact object merger observed by JWST." Nature 626 (2024): 737–741.', url: 'https://doi.org/10.1038/s41586-023-06759-1' },
-  STRINGER: { text: 'Stringer, Chris, et al. "Dating the Broken Hill Skull." Nature, April 2020.', url: 'https://doi.org/10.1038/s41586-020-2224-8' },
-  GAUDIUM: { text: 'Second Vatican Council. Gaudium et Spes. December 7, 1965.', url: 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html' },
-  KOLBE: { text: 'Owen, Hugh, and the Kolbe Center. Creation, Evolution, and Catholicism. Kolbe Center, 2000ff.', url: 'https://kolbecenter.org/' },
-  CA_YEC: { text: 'Catholic Answers. "Can Catholics Believe in a Young Earth?"', url: 'https://www.catholic.com/magazine/print-edition/the-six-days-of-creation' },
-  CE_DELUGE: { text: 'Maas, Anthony. "Deluge." In The Catholic Encyclopedia, Vol. 4. Robert Appleton Company, 1908.', url: 'https://www.newadvent.org/cathen/04702a.htm' },
-  BONNETTE: { text: 'Bonnette, Dennis. "Time to Abandon the Genesis Story?" Homiletic & Pastoral Review, July 2014.' },
-  OTT: { text: 'Ott, Ludwig. Fundamentals of Catholic Dogma. Baronius Press, 2018 (orig. 1952).', url: 'https://www.baronius.com/fundamentals-of-catholic-dogma.html' },
-  LATERAN_IV: { text: 'Fourth Lateran Council. Firmiter Credimus. 1215.' },
-  ROOTH: { text: 'Rooth, Anna Birgitta. "The Creation Myths of the North American Indians." Anthropos 52 (1957): 497–508.' },
-  SMITHSONIAN_NEAND: { text: 'Smithsonian Institution. "Homo neanderthalensis." Human Origins Program, 2024.', url: 'https://humanorigins.si.edu/evidence/human-fossils/species/homo-neanderthalensis' },
-  HURTER: { text: 'Hurter, Hugo von. Theologiae Dogmaticae Compendium. 3 vols. Innsbruck, 1876–78; 12th ed. 1909.' },
-  VACANT: { text: 'Vacant, Alfred. "Création." In Dictionnaire de Théologie Catholique, Vol. 3. Letouzey et Ané, 1908.' },
-  LOMBARD: { text: 'Peter Lombard. Sententiae in IV Libris Distinctae, Book II, Distinction 1. Circa 1150.' },
-  SCS: { text: 'Society of Catholic Scientists. "Q6: How Do Adam and Eve Fit in with Evolution and the Science of Human Origins?" 2022.', url: 'https://www.catholicscientists.org/common-questions/adam-and-eve' },
-};
-
-function cite(sourceKey) {
-  if (!SOURCES[sourceKey]) throw new Error('Unknown source: ' + sourceKey);
-  if (!footnoteMap[sourceKey]) {
-    footnoteCounter++;
-    footnoteMap[sourceKey] = { ...SOURCES[sourceKey], footnoteNum: footnoteCounter };
-  }
-  return new FootnoteReferenceRun(footnoteMap[sourceKey].footnoteNum);
-}
-
-function buildFootnotes() {
-  const footnotes = {};
-  for (const [key, val] of Object.entries(footnoteMap)) {
-    const children = [new TextRun({ text: val.text, size: 20, font: "Georgia" })];
-    if (val.url) {
-      children.push(new TextRun({ text: " ", size: 20 }));
-      children.push(new ExternalHyperlink({
-        children: [new TextRun({ text: val.url, size: 20, font: "Georgia", color: "0563C1", underline: { type: "single" } })],
-        link: val.url
-      }));
-    }
-    footnotes[val.footnoteNum] = { children: [new Paragraph({ children })] };
-  }
-  return footnotes;
-}
 
 // Build all content
 const content = [];
@@ -320,9 +213,9 @@ content.push(para([
 
 content.push(para([
   t("A word about the spirit of this inquiry. Pope St. John Paul II, in his encyclical "),
-  magLink("Fides et Ratio", 'FIDES_ET_RATIO'),
+  ti("Fides et Ratio"),
   t(" (1998), described faith and reason as \u201Clike two wings on which the human spirit rises to the contemplation of truth.\u201D"),
-  cite('FIDES'),
+  sup("1"),
   t(" The encyclical warns against two opposite errors that are directly relevant to the debate over human origins. The first is fideism\u2014the position that faith alone is sufficient and that reason is irrelevant or dangerous to belief. The second is rationalism or scientism\u2014the position that empirical science is the only valid path to knowledge, and that what science cannot measure does not exist. The Church rejects both. This document is written in the conviction that faith needs reason and reason needs faith\u2014and that all sides of this debate sometimes forget this. Within the Church, the young earth advocate who dismisses radiometric dating, the fossil record, and the genetic evidence can appear\u2014to old earth Catholics\u2014to have set reason aside in the name of a particular reading of Genesis, abandoning the Catholic intellectual tradition that produced Albertus Magnus (the Dominican friar whose thirteenth-century work in natural science earned him the title Doctor Universalis), Gregor Mendel (the Augustinian monk who founded modern genetics), and Georges Lema\u00eetre (the Catholic priest who first proposed what became the Big Bang theory). The old earth advocate who treats the early chapters of Genesis as dispensable poetry, or who speaks of Adam and Eve as though their historical reality is a quaint embarrassment, can appear\u2014to young earth Catholics\u2014to have surrendered the faith to the reigning scientific consensus, keeping the label \u201CCatholic\u201D while quietly emptying it of content. Both perceptions contain some truth. Both are sometimes unfair. And beyond the Church, the scientist or philosopher who dismisses the possibility of an immaterial soul, or who insists that consciousness must ultimately reduce to physics, has not followed the evidence to its conclusion but has adopted a philosophical assumption that the scientific method itself cannot justify. As Chapter 10 of this document will argue, the hard problem of consciousness is not a gap waiting to be filled by future research; it is an explanatory boundary that materialism cannot cross. If this document succeeds, it will be because it takes both wings seriously\u2014honoring the full witness of Scripture and the binding teachings of the Church while also honoring the evidence that God has written into His own creation, and offering to the honest inquirer outside the faith a reason to consider that the Catholic account of the human person answers questions that science alone cannot even properly frame.")
 ]));
 
@@ -371,7 +264,7 @@ content.push(para([
   t("Fourth, and most philosophically sophisticated, is the argument from Thomistic metaphysics\u2014the philosophical system of Saint Thomas Aquinas (1225\u20131274), the Catholic Church\u2019s most influential philosopher and theologian, whose framework remains the foundation of Catholic intellectual life. Aquinas defined creation as not a change but a simple emanation of being out of nothing\u2014it is instantaneous, supernatural, and involves no secondary causes. If God creates, He creates immediately and completely. A tree that God creates does not begin as a seed; Adam does not begin as an infant. God creates mature, fully functioning realities. This is the \u201Cmature creation\u201D argument, formalized by the naturalist Philip Henry Gosse in his 1857 work "),
   ti("Omphalos"),
   t(" (Greek for \u201Cnavel\u201D\u2014the question being whether Adam, who was never born, had a navel)."),
-  cite('GOSSE'),
+  sup("2"),
   t(" Gosse argued that God necessarily created a world with the "),
   ti("appearance"),
   t(" of age, because a functioning world requires pre-existing conditions: trees need rings, soil needs organic matter, rivers need erosion patterns, and light from distant stars must already be in transit. The appearance of age is not deception but a necessary feature of mature creation. We will return to this argument below, because while it is internally consistent, it raises a serious theological difficulty that deserves careful examination.")
@@ -387,7 +280,7 @@ content.push(para([
 
 content.push(para([
   t("Sixth, the earth\u2019s magnetic field has been measured to be decaying. Thomas G. Barnes, a physicist, argued in 1973 that if this decay is exponential and has been constant, the field would have been impossibly strong more than about 10,000 years ago\u2014consistent with a young earth."),
-  cite('BARNES'),
+  sup("3"),
   t(" This argument was influential among young earth advocates for decades.")
 ]));
 
@@ -415,21 +308,20 @@ content.push(heading2("Why Some Catholics Argue Young Earth Belief Is Required")
 
 content.push(para([
   t("The strongest case for a young earth within Catholicism does not come from the Protestant fundamentalist tradition but from a distinctly Catholic argument rooted in the Church Fathers, ecumenical councils, and Thomistic metaphysics. The most prominent advocate of this position is the Kolbe Center for the Study of Creation, founded in 2000 and directed by Hugh Owen."),
-  cite('KOLBE'),
+  sup("4"),
   t(" Their arguments deserve serious engagement, because they appeal to sources that every Catholic must take seriously.")
 ]));
 
 content.push(para([
   tb("The Church Fathers Argument. "),
   t("The Kolbe Center argues that every Apostle, Father, and Doctor of the Church upheld a young earth chronology derived from Genesis. They challenge opponents to \u201Cshow us a single statement from a Church Father who taught that God used long periods of time in the creation of the material universe.\u201D This matters because the First Vatican Council, "),
-  magLink("Dei Filius", 'DEI_FILIUS'),
-  magSectionLink(", Chapter 2", 'DEI_FILIUS'), t(", teaches that Scripture must be interpreted \u201Caccording to that sense which Holy Mother Church has held and holds\u201D and \u201Cin accordance with the unanimous consent of the Fathers.\u201D If the Fathers unanimously taught a young earth, a Catholic might be bound to accept it.")
+  ti("Dei Filius"),
+  t(", Chapter 2, teaches that Scripture must be interpreted \u201Caccording to that sense which Holy Mother Church has held and holds\u201D and \u201Cin accordance with the unanimous consent of the Fathers.\u201D If the Fathers unanimously taught a young earth, a Catholic might be bound to accept it.")
 ]));
-  
 
 content.push(para([
   t("However, this argument has a critical weakness: the Fathers were not, in fact, unanimous on this point. Saint Augustine, in "),
-  magLink("De Genesi ad Litteram", 'DE_GENESI'),
+  ti("De Genesi ad Litteram"),
   t(" (circa 415 AD), explicitly argued that the \u201Cdays\u201D of Genesis were not ordinary days but a literary framework whose actual duration was unknown. Augustine wrote that the creation narrative was arranged not according to temporal sequence but according to a logical order. Saint Basil of Caesarea, while defending the days as real periods, acknowledged that the first day was called \u201Cone\u201D rather than \u201Cfirst\u201D to indicate its special character. The very existence of disagreement among the Fathers means the \u201Cunanimous consent\u201D rule does not apply to the specific question of the earth\u2019s age.")
 ]));
 
@@ -449,9 +341,7 @@ content.push(para([
 content.push(para([
   t("However, reputable theologians such as P. Hurter, S.J. and M. Jungmann have argued that "),
   ti("simul"),
-  t(" in the Lateran text can be understood not as simultaneity of time but as unity of plan and community of origin\u2014meaning that all creatures share one Creator and one act of creation, not necessarily that they were created in a single instant."),
-  cite('HURTER'),
-  t(" The Council\u2019s primary target was the Albigensian/Catharist heresy, which denied that the material world was created by the good God. The "),
+  t(" in the Lateran text can be understood not as simultaneity of time but as unity of plan and community of origin\u2014meaning that all creatures share one Creator and one act of creation, not necessarily that they were created in a single instant. The Council\u2019s primary target was the Albigensian/Catharist heresy, which denied that the material world was created by the good God. The "),
   ti("Firmiter"),
   t(" was asserting that both spiritual and material creation come from the same God, against Cathar dualism\u2014not defining a timeline for creation.")
 ]));
@@ -474,7 +364,36 @@ content.push(para([
   t(" serious.")
 ]));
 
-// Chapter 2 footnotes now handled by cite() system
+// Chapter 2 footnotes
+content.push(spacer());
+content.push(para([
+  sup("1"),
+  t("John Paul II. "),
+  ti("Fides et Ratio."),
+  t(" Encyclical Letter, September 14, 1998. "),
+  urlLink("vatican.va", "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html")
+], { spacing: { after: 80, line: 240 } }));
+content.push(para([
+  sup("2"),
+  t("Gosse, Philip Henry. "),
+  ti("Omphalos: An Attempt to Untie the Geological Knot."),
+  t(" John Van Voorst, 1857. "),
+  urlLink("archive.org", "https://archive.org/details/omphalosattemptt00goss")
+], { spacing: { after: 80, line: 240 } }));
+content.push(para([
+  sup("3"),
+  t("Barnes, Thomas G. \u201CDecay of the Earth\u2019s Magnetic Moment and the Geochronological Implications.\u201D "),
+  ti("Creation Research Society Quarterly"),
+  t(" 9 (1973): 24\u201329.")
+], { spacing: { after: 80, line: 240 } }));
+content.push(para([
+  sup("4"),
+  t("Owen, Hugh, and the Kolbe Center. "),
+  ti("Creation, Evolution, and Catholicism."),
+  t(" Kolbe Center, 2000ff. "),
+  urlLink("kolbecenter.org", "https://kolbecenter.org/")
+], { spacing: { after: 80, line: 240 } }));
+
 content.push(pageBreak());
 
 // ===== CHAPTER 3: THE CRUX =====
@@ -498,10 +417,7 @@ content.push(para([
   ti("de fide"),
   t(" (divinely revealed) teachings of the Church. The Pontifical Biblical Commission (1909) explicitly ruled that the word "),
   ti("yom"),
-  t(" in Genesis may be understood either as a literal day or as \u201Ca certain space of time\u201D\u2014and that this question \u201Cmay be the subject of free discussion among exegetes.\u201D"),
-  cite('PBC_1909'),
-  t(" Catholic Answers, the most prominent Catholic apologetics organization, states plainly: \u201CThe Catholic Church does not have a teaching about the theory of evolution or the extinction of the dinosaurs. You can be a faithful Catholic and deny or accept evolution.\u201D"),
-  cite('CA_YEC')
+  t(" in Genesis may be understood either as a literal day or as \u201Ca certain space of time\u201D\u2014and that this question \u201Cmay be the subject of free discussion among exegetes.\u201D Catholic Answers, the most prominent Catholic apologetics organization, states plainly: \u201CThe Catholic Church does not have a teaching about the theory of evolution or the extinction of the dinosaurs. You can be a faithful Catholic and deny or accept evolution.\u201D")
 ]));
 
 content.push(para([
@@ -523,21 +439,15 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("Ice cores drilled in Greenland and Antarctica contain annual layers\u2014visible as alternating light and dark bands caused by seasonal variation in snowfall, dust content, and chemistry. The EPICA core from Antarctica contains over 800,000 annual layers."),
-  cite('EPICA'),
-  t(" Each layer can be independently verified by volcanic ash markers, atmospheric gas ratios, and isotopic signatures. Eight hundred thousand layers means 800,000 years\u2014minimum.")
+  t("Ice cores drilled in Greenland and Antarctica contain annual layers\u2014visible as alternating light and dark bands caused by seasonal variation in snowfall, dust content, and chemistry. The EPICA core from Antarctica contains over 800,000 annual layers. Each layer can be independently verified by volcanic ash markers, atmospheric gas ratios, and isotopic signatures. Eight hundred thousand layers means 800,000 years\u2014minimum.")
 ]));
 
 content.push(para([
-  t("Dendrochronology\u2014tree ring dating\u2014provides another independent clock. Living trees produce one ring per year. By overlapping the ring patterns of living trees with those of dead trees, researchers have constructed continuous tree ring chronologies extending over 12,000 years. The bristlecone pines of California\u2019s White Mountains include individual specimens over 4,800 years old. The German oak-pine chronology extends back 12,460 years."),
-  cite('FRIEDRICH'),
-  t(" These are not estimates or models\u2014they are counted, one ring at a time.")
+  t("Dendrochronology\u2014tree ring dating\u2014provides another independent clock. Living trees produce one ring per year. By overlapping the ring patterns of living trees with those of dead trees, researchers have constructed continuous tree ring chronologies extending over 12,000 years. The bristlecone pines of California\u2019s White Mountains include individual specimens over 4,800 years old. The German oak-pine chronology extends back 12,460 years. These are not estimates or models\u2014they are counted, one ring at a time.")
 ]));
 
 content.push(para([
-  t("Coral reefs present a similar challenge. The Great Barrier Reef has been growing for approximately 500,000 years. Coral growth rates are measurable in the present: typically a few millimeters to a few centimeters per year. The Eniwetok Atoll in the Pacific has reef limestone over 1,400 meters thick,"),
-  cite('ENIWETOK'),
-  t(" requiring hundreds of thousands of years of growth at observed rates. A young earth requires that either coral grew hundreds of times faster in the past\u2014contradicting observable biology\u2014or that God created reefs with the appearance of ancient growth, returning us once again to Gosse\u2019s Omphalos hypothesis and the theological difficulty it creates, which we address below.")
+  t("Coral reefs present a similar challenge. The Great Barrier Reef has been growing for approximately 500,000 years. Coral growth rates are measurable in the present: typically a few millimeters to a few centimeters per year. The Eniwetok Atoll in the Pacific has reef limestone over 1,400 meters thick, requiring hundreds of thousands of years of growth at observed rates. A young earth requires that either coral grew hundreds of times faster in the past\u2014contradicting observable biology\u2014or that God created reefs with the appearance of ancient growth, returning us once again to Gosse\u2019s Omphalos hypothesis and the theological difficulty it creates, which we address below.")
 ]));
 
 content.push(para([
@@ -545,9 +455,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("The RATE project\u2019s findings, while impressive in their ambition, have been extensively critiqued by mainstream geologists and physicists."),
-  cite('RATE'),
-  t(" The carbon-14 in coal and diamonds is most plausibly explained by in-situ production from nitrogen-14 through neutron bombardment from surrounding uranium and thorium decay\u2014a known and measured process. The helium retention findings have been challenged on methodological grounds by multiple independent researchers. Most critically, the RATE team themselves acknowledged that if billions of years of radioactive decay occurred in a young earth, the heat generated would have melted the earth\u2019s crust multiple times over\u2014a problem they could not resolve and described as requiring \u201Cmiracles.\u201D")
+  t("The RATE project\u2019s findings, while impressive in their ambition, have been extensively critiqued by mainstream geologists and physicists. The carbon-14 in coal and diamonds is most plausibly explained by in-situ production from nitrogen-14 through neutron bombardment from surrounding uranium and thorium decay\u2014a known and measured process. The helium retention findings have been challenged on methodological grounds by multiple independent researchers. Most critically, the RATE team themselves acknowledged that if billions of years of radioactive decay occurred in a young earth, the heat generated would have melted the earth\u2019s crust multiple times over\u2014a problem they could not resolve and described as requiring \u201Cmiracles.\u201D")
 ]));
 
 content.push(para([
@@ -566,10 +474,8 @@ content.push(para([
 
 content.push(para([
   t("Thomas Aquinas, in the "),
-  magLink("Summa Theologica", 'SUMMA'),
-  t(" (Prima Pars, Question 2, Article 3), presented five demonstrations of God\u2019s existence\u2014the famous Five Ways."),
-  cite('AQUINAS'),
-  t(" All five proceed "),
+  ti("Summa Theologica"),
+  t(" (Prima Pars, Question 2, Article 3), presented five demonstrations of God\u2019s existence\u2014the famous Five Ways. All five proceed "),
   ti("a posteriori"),
   t(": from observations of the created world to the existence of God as their necessary explanation. The First Way reasons from motion in the world to an Unmoved Mover. The Second Way reasons from chains of efficient causes to a First Cause. The Third Way reasons from contingent beings to a Necessary Being. The Fourth Way reasons from degrees of perfection in things to a source of all perfection. The Fifth Way reasons from the purposeful order of natural things to an Intelligent Governor of the universe. Every one of these arguments depends on the created world being "),
   ti("real evidence"),
@@ -578,11 +484,8 @@ content.push(para([
 
 content.push(para([
   t("The First Vatican Council (1870), in its dogmatic constitution "),
-  magLink("Dei Filius", 'DEI_FILIUS'),
-  t(", elevated this principle to the level of dogma."),
-  cite('DEI_FILIUS'),
-  cite('CCC'),
-  t(" The Council taught: \u201CThe same Holy Mother Church holds and teaches that God, the beginning and end of all things, can be known with certainty by the natural light of human reason from created things.\u201D The Council then issued its teaching under anathema\u2014the strongest language available to an ecumenical council, meaning that the condemned position is formally incompatible with Catholic faith. In the early Church, anathema meant complete excommunication; by the time of the great councils, it functioned as a declaration that the rejected view constitutes heresy, and that a Catholic who knowingly and obstinately holds it has placed himself outside the faith on that point. It does not mean automatic damnation\u2014that judgment belongs to God alone\u2014but it means the Church has drawn a line and will not move it. The canon reads: \u201CIf anyone says that the one, true God, our creator and lord, cannot be known with certainty from the things that have been made, by the natural light of human reason: let him be anathema.\u201D The Catechism of the Catholic Church repeats this at \u00A736: God \u201Ccan be known with certainty from the created world by the natural light of human reason.\u201D And the Council cited "),
+  ti("Dei Filius"),
+  t(", elevated this principle to the level of dogma. The Council taught: \u201CThe same Holy Mother Church holds and teaches that God, the beginning and end of all things, can be known with certainty by the natural light of human reason from created things.\u201D The Council then issued its teaching under anathema\u2014the strongest language available to an ecumenical council, meaning that the condemned position is formally incompatible with Catholic faith. In the early Church, anathema meant complete excommunication; by the time of the great councils, it functioned as a declaration that the rejected view constitutes heresy, and that a Catholic who knowingly and obstinately holds it has placed himself outside the faith on that point. It does not mean automatic damnation\u2014that judgment belongs to God alone\u2014but it means the Church has drawn a line and will not move it. The canon reads: \u201CIf anyone says that the one, true God, our creator and lord, cannot be known with certainty from the things that have been made, by the natural light of human reason: let him be anathema.\u201D The Catechism of the Catholic Church repeats this at \u00A736: God \u201Ccan be known with certainty from the created world by the natural light of human reason.\u201D And the Council cited "),
   sLink("Romans 1:20", "Romans 1:20"),
   t(": \u201CFor the invisible things of him, from the creation of the world, are clearly seen, being understood by the things that are made.\u201D")
 ]));
@@ -609,13 +512,13 @@ content.push(para([
 
 content.push(para([
   t("Furthermore, "),
-  magLink("Dei Filius", 'DEI_FILIUS'),
+  ti("Dei Filius"),
   t(" Chapter 4 teaches: \u201CSince the same God who reveals mysteries and infuses faith has bestowed the light of reason on the human mind, God cannot deny himself, nor can truth ever contradict truth.\u201D If creation and revelation are both from the same God, and God cannot contradict Himself, then the evidence of creation and the truth of revelation must be compatible. A creation that bears false witness about its own history contradicts truth\u2014and thereby contradicts God Himself.")
 ]));
 
 content.push(para([
   t("The Omphalos hypothesis, then, raises a difficulty that goes beyond the question of divine deception. If taken to its logical conclusion, it stands in tension with the very foundation by which Catholic dogma says we can know that God exists. It sits uneasily with an anathematized canon of an ecumenical council. It weakens the evidentiary basis of the Five Ways. And it risks pitting creation against revelation in precisely the way "),
-  magLink("Dei Filius", 'DEI_FILIUS'),
+  ti("Dei Filius"),
   t(" says is impossible. This is not a minor theological difficulty. It is a serious internal tension that any Catholic holding this position would need to resolve.")
 ]));
 
@@ -657,7 +560,7 @@ content.push(para([
 
 content.push(para([
   t("This is not a modern observation forced onto the text by scientific embarrassment. Saint Augustine of Hippo, writing in the fifth century\u2014long before anyone had a scientific reason to question a young earth\u2014argued that the \u201Cdays\u201D of Genesis were not ordinary days but a framework for divine creative acts whose actual duration was unknown to us. Augustine\u2019s "),
-  magLink("De Genesi ad Litteram", 'DE_GENESI'),
+  ti("De Genesi ad Litteram"),
   t(" ("),
   ti("The Literal Meaning of Genesis"),
   t(") explicitly warned against Christians making claims about the natural world that contradicted well-established knowledge, lest they bring the faith into disrepute. This warning was issued sixteen centuries ago and remains worth heeding.")
@@ -666,9 +569,7 @@ content.push(para([
 content.push(para([
   t("The Pontifical Biblical Commission, in its 1909 response on the historical character of Genesis, was asked directly whether the word "),
   ti("yom"),
-  t(" must be taken as a natural day or may be understood as a certain space of time. The answer: \u201CIn the affirmative.\u201D"),
-  cite('PBC_1909'),
-  t(" Catholics are free to interpret the days of Genesis as periods of time rather than twenty-four-hour days. This was not a concession forced by modernity; it was a recognition of what the text itself permits.")
+  t(" must be taken as a natural day or may be understood as a certain space of time. The answer: \u201CIn the affirmative\u201D\u2014meaning Catholics are free to interpret the days of Genesis as periods of time rather than twenty-four-hour days. This was not a concession forced by modernity; it was a recognition of what the text itself permits.")
 ]));
 
 content.push(heading2("Required vs. Open: What the Church Demands About the Age of the Earth"));
@@ -676,9 +577,7 @@ content.push(heading2("Required vs. Open: What the Church Demands About the Age 
 content.push(para([
   t("To answer this question with precision, we must understand the levels of doctrinal authority in Catholic theology. Ludwig Ott, in his authoritative "),
   ti("Fundamentals of Catholic Dogma"),
-  t(" (1952),"),
-  cite('OTT'),
-  t(" classifies teachings by their degree of certainty: "),
+  t(" (1952), classifies teachings by their degree of certainty: "),
   ti("de fide definita"),
   t(" (divinely revealed and solemnly defined\u2014denial is heresy); "),
   ti("de fide"),
@@ -698,36 +597,32 @@ content.push(para([
   t("The following teachings about creation are classified by Ott as "),
   ti("de fide"),
   t("\u2014divinely revealed truths whose denial constitutes heresy: All that exists outside God was, in its whole substance, produced out of nothing by God (Fourth Lateran Council; Vatican I, "),
-  magLink("Dei Filius", 'DEI_FILIUS'),
-  magSectionLink(", Chapter 1, Canon 5", 'DEI_FILIUS'), t("). God was moved by His goodness to create the world (Vatican I, "),
-  magLink("Dei Filius", 'DEI_FILIUS'),
-  magSectionLink(", Chapter 1, Canon 2", 'DEI_FILIUS'), t("). The world had a beginning in time ("),
-  magLink("Dei Filius", 'DEI_FILIUS'),
-  magSectionLink(", Chapter 1, Canon 5", 'DEI_FILIUS'), t(": \u201CIf anyone does not confess that the world and all things which are contained in it, both spiritual and material, as regards their whole substance, have been produced by God from nothing\u2026 let him be anathema\u201D). God alone created the world ("),
-  magLink("Dei Filius", 'DEI_FILIUS'),
-  magSectionLink(", Chapter 1", 'DEI_FILIUS'), t("). God keeps all created things in existence and guides them through His Providence ("),
-  magLink("Dei Filius", 'DEI_FILIUS'),
-  magSectionLink(", Chapter 1", 'DEI_FILIUS'), t("). The first man was created by God ("),
+  ti("Dei Filius"),
+  t(", Chapter 1, Canon 5). God was moved by His goodness to create the world (Vatican I, "),
+  ti("Dei Filius"),
+  t(", Chapter 1, Canon 2). The world had a beginning in time ("),
+  ti("Dei Filius"),
+  t(", Chapter 1, Canon 5: \u201CIf anyone does not confess that the world and all things which are contained in it, both spiritual and material, as regards their whole substance, have been produced by God from nothing\u2026 let him be anathema\u201D). God alone created the world ("),
+  ti("Dei Filius"),
+  t(", Chapter 1). God keeps all created things in existence and guides them through His Providence ("),
+  ti("Dei Filius"),
+  t(", Chapter 1). The first man was created by God ("),
   sLink("Genesis 1:27", "Genesis 1:27"),
   t("; "),
   cccLink("356"),
   t("). Man consists of a material body and a spiritual soul ("),
   cccRangeLink("362", "368"),
-  t("). The rational soul is the essential form of the body (Council of Vienne, 1312)."),
-  cite('VIENNE'),
-  t(" Every human soul is directly created by God ("),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  t("). The rational soul is the essential form of the body (Council of Vienne, 1312). Every human soul is directly created by God ("),
+  ti("Humani Generis"),
   t(", \u00A736; "),
   cccLink("366"),
-  t(")."),
-  cite('HUMANI'),
-  t(" Adam and Eve are real, historical individuals from whom all humans descend ("),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A737", 'HUMANI_GENERIS'), t("; "), magSectionLink("Council of Trent, Session V, Canons 1\u20134", 'TRENT_V'), t("). Creation reveals God\u2019s existence and attributes to human reason ("),
+  t("). Adam and Eve are real, historical individuals from whom all humans descend ("),
+  ti("Humani Generis"),
+  t(", \u00A737; Council of Trent, Session V, Canons 1\u20134). Creation reveals God\u2019s existence and attributes to human reason ("),
   sLink("Romans 1:19\u201320", "Romans 1:19-20"),
   t("; "),
-  magLink("Dei Filius", 'DEI_FILIUS'),
-  magSectionLink(", Chapter 2, Canon 1", 'DEI_FILIUS'), t("; "),
+  ti("Dei Filius"),
+  t(", Chapter 2, Canon 1; "),
   cccLink("36"),
   t("). The Genesis account, while using \u201Cfigurative language\u201D ("),
   cccLink("390"),
@@ -750,19 +645,14 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("In 1948, the Pontifical Biblical Commission sent a letter to Cardinal Suhard of Paris, effectively clarifying the scope of its 1909 responses: \u201CThese literary forms do not correspond exactly with any classical category\u201D and the \u201Chistoricity can neither be denied nor affirmed simply.\u201D"),
-  cite('PBC_1948'),
-  t(" Pope Pius XII, in "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  t(" (1950), "), magSectionLink("\u00A736", 'HUMANI_GENERIS'), t(", explicitly permitted Catholics to investigate evolution as it pertains to the human body."),
-  cite('HUMANI'),
-  t(" The International Theological Commission, in its 2004 document \u201CCommunion and Stewardship,\u201D approved by the Congregation for the Doctrine of the Faith (then headed by Cardinal Ratzinger), stated that \u201Cthe story of human origins is complex and subject to revision.\u201D"),
-  cite('ITC_2004')
+  t("In 1948, the Pontifical Biblical Commission sent a letter to Cardinal Suhard of Paris, effectively clarifying the scope of its 1909 responses: \u201CThese literary forms do not correspond exactly with any classical category\u201D and the \u201Chistoricity can neither be denied nor affirmed simply.\u201D Pope Pius XII, in "),
+  ti("Humani Generis"),
+  t(" (1950), \u00A736, explicitly permitted Catholics to investigate evolution as it pertains to the human body. The International Theological Commission, in its 2004 document \u201CCommunion and Stewardship,\u201D approved by the Congregation for the Doctrine of the Faith (then headed by Cardinal Ratzinger), stated that \u201Cthe story of human origins is complex and subject to revision.\u201D")
 ]));
 
 content.push(para([
   t("Saint Augustine, in "),
-  magLink("De Genesi ad Litteram", 'DE_GENESI'),
+  ti("De Genesi ad Litteram"),
   t(" (circa 415 AD), argued that the \u201Cdays\u201D of Genesis were not ordinary days but a literary framework whose actual duration was unknown\u2014and was not condemned for this view. The Pontifical Academy of Sciences, established by Pope Pius XI in 1936, operates on the assumption of deep time and modern cosmology. Cardinal Paul Poupard, then President of the Pontifical Council for Culture, stated that \u201Cthe faithful have the obligation to listen to that which secular modern science has to offer,\u201D warning of \u201Cthe dangers of a religion that severs its links with reason.\u201D")
 ]));
 
@@ -796,9 +686,7 @@ content.push(heading2("The Swamidass Model: The Genealogical Adam and Eve"));
 content.push(para([
   t("S. Joshua Swamidass, a computational biologist at Washington University in St. Louis, published "),
   ti("The Genealogical Adam and Eve"),
-  t(" in 2019."),
-  cite('SWAMIDASS'),
-  t(" His central insight is powerful: genealogical ancestry and genetic ancestry are different things. You have exponentially more genealogical ancestors than genetic ancestors\u2014you may share no DNA (deoxyribonucleic acid, the molecule that carries genetic instructions in all living organisms) with many of your ancestors just a few hundred years back, but they are still your ancestors. Swamidass demonstrated mathematically that a single couple living in the Middle East as recently as six thousand to ten thousand years ago could become the genealogical ancestors of every human on earth by approximately 1 AD.")
+  t(" in 2019. His central insight is powerful: genealogical ancestry and genetic ancestry are different things. You have exponentially more genealogical ancestors than genetic ancestors\u2014you may share no DNA (deoxyribonucleic acid, the molecule that carries genetic instructions in all living organisms) with many of your ancestors just a few hundred years back, but they are still your ancestors. Swamidass demonstrated mathematically that a single couple living in the Middle East as recently as six thousand to ten thousand years ago could become the genealogical ancestors of every human on earth by approximately 1 AD.")
 ]));
 
 content.push(para([
@@ -807,7 +695,7 @@ content.push(para([
 
 content.push(para([
   t("The weakness, for Catholic purposes, is significant. Swamidass\u2019s model requires the existence of fully human beings who are not descended from Adam and Eve\u2014at least initially. This is difficult to reconcile with the Catholic requirement (expressed in "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  ti("Humani Generis"),
   t(") that all true humans descend from Adam. It also raises the question of the moral and spiritual status of these non-Adamic humans. Do they have souls? Do they bear original sin? Swamidass himself acknowledges this as a theological question his model does not resolve.")
 ]));
 
@@ -816,9 +704,7 @@ content.push(heading2("The Kemp Model: Theological Monogenism (One Original Pair
 content.push(para([
   t("Kenneth Kemp, a philosopher at the University of St. Thomas, published an influential 2011 paper in the "),
   ti("American Catholic Philosophical Quarterly"),
-  t(" proposing what he calls a distinction between \u201Cbiological humans\u201D and \u201Ctheological humans.\u201D"),
-  cite('KEMP_2011'),
-  t(" In his model, God selects two individuals from an existing population of biologically human hominids and endows them with rational souls, making them the first \u201Ctheological humans.\u201D Their descendants interbreed with the biologically human but not-yet-ensouled population, and God grants rational souls to all offspring of ensouled beings. Over time, every living hominid has Adam and Eve among their ancestors and possesses a rational soul.")
+  t(" proposing what he calls a distinction between \u201Cbiological humans\u201D and \u201Ctheological humans.\u201D In his model, God selects two individuals from an existing population of biologically human hominids and endows them with rational souls, making them the first \u201Ctheological humans.\u201D Their descendants interbreed with the biologically human but not-yet-ensouled population, and God grants rational souls to all offspring of ensouled beings. Over time, every living hominid has Adam and Eve among their ancestors and possesses a rational soul.")
 ]));
 
 content.push(para([
@@ -840,10 +726,7 @@ content.push(heading2("The Craig/Bonnette Model: Pushing Adam Deep Into the Past
 content.push(para([
   t("William Lane Craig, in his 2021 book "),
   ti("In Quest of the Historical Adam"),
-  t(", and Dennis Bonnette in several articles,"),
-  cite('CRAIG'),
-  cite('BONNETTE'),
-  t(" have argued that the genetic diversity problem can be resolved by placing Adam and Eve very deep in the past\u2014perhaps 500,000 years ago or even one million years ago. At these timescales, they argue, normal population growth and genetic drift (the random changes in gene frequency that occur in small populations over time) from a single pair could generate the diversity we observe, and no interbreeding with non-human hominids is required.")
+  t(", and Dennis Bonnette in several articles, have argued that the genetic diversity problem can be resolved by placing Adam and Eve very deep in the past\u2014perhaps 500,000 years ago or even one million years ago. At these timescales, they argue, normal population growth and genetic drift (the random changes in gene frequency that occur in small populations over time) from a single pair could generate the diversity we observe, and no interbreeding with non-human hominids is required.")
 ]));
 
 content.push(para([
@@ -867,7 +750,7 @@ content.push(para([
 content.push(heading2("The Suarez Variation: Mass Ensoulment at the Fall"));
 
 content.push(para([
-  t("Antoine Suarez, a physicist and philosopher, has proposed a variation in which God ensouled Adam and Eve as the first rational humans, and then, at the moment of the Fall, simultaneously raised all non-rational biological humans to the status of rational beings. This avoids the interbreeding problem entirely\u2014everyone becomes human at the same moment\u2014but it creates its own theological difficulty: original sin would need to spread instantaneously to beings who did not commit it and were not descended from those who did, which is hard to square with the Catholic doctrine that original sin is transmitted \u201Cthrough generation\u201D ("), magSectionLink("Council of Trent, Session V", 'TRENT_V'), t(").")
+  t("Antoine Suarez, a physicist and philosopher, has proposed a variation in which God ensouled Adam and Eve as the first rational humans, and then, at the moment of the Fall, simultaneously raised all non-rational biological humans to the status of rational beings. This avoids the interbreeding problem entirely\u2014everyone becomes human at the same moment\u2014but it creates its own theological difficulty: original sin would need to spread instantaneously to beings who did not commit it and were not descended from those who did, which is hard to square with the Catholic doctrine that original sin is transmitted \u201Cthrough generation\u201D (Council of Trent, Session V).")
 ]));
 
 content.push(heading2("Required vs. Open: What the Church Demands of Any Model"));
@@ -875,8 +758,8 @@ content.push(heading2("Required vs. Open: What the Church Demands of Any Model")
 content.push(para([
   tb("Required: "),
   t("Any Catholic model of human origins must affirm that Adam and Eve were real, historical individuals\u2014not symbols, not a \u201Ccertain number of first parents\u201D ("),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A737", 'HUMANI_GENERIS'), t("). All true humans must descend from them biologically. Original sin must be transmitted through generation, not imitation ("), magSectionLink("Council of Trent, Session V", 'TRENT_V'), t("). The human soul must be directly created by God in each individual ("),
+  ti("Humani Generis"),
+  t(", \u00A737). All true humans must descend from them biologically. Original sin must be transmitted through generation, not imitation (Council of Trent, Session V). The human soul must be directly created by God in each individual ("),
   cccLink("366"),
   t("). These are non-negotiable dogmatic commitments. Any model that violates them is not a Catholic option, however scientifically elegant it may be.")
 ]));
@@ -896,9 +779,7 @@ content.push(para([
   ti("The New Biology: Discovering the Wisdom in Nature"),
   t(". (The two also co-authored "),
   ti("The New Story of Science"),
-  t(", published by Bantam New Age, from which the title of the current document is partly derived.)"),
-  cite('AUGROS'),
-  t(" Augros holds a doctorate in philosophy from Saint Anselm College; Stanciu has a Ph.D. in theoretical physics and conducted research at Los Alamos National Laboratory.")
+  t(", published by Bantam New Age, from which the title of the current document is partly derived.) Augros holds a doctorate in philosophy from Saint Anselm College; Stanciu has a Ph.D. in theoretical physics and conducted research at Los Alamos National Laboratory.")
 ]));
 
 content.push(para([
@@ -934,11 +815,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("When these massive stars exhaust their fuel, they collapse and explode as supernovae. The explosion generates temperatures and pressures extreme enough to forge some elements heavier than iron through the rapid neutron-capture process (r-process). The explosion scatters these newly created elements into the surrounding space, enriching the interstellar medium with the raw materials for a second generation of stars and, crucially, for rocky planets. However, supernovae are not the only source of heavy elements. In 2017, the LIGO and Virgo gravitational-wave detectors observed the merger of two neutron stars (event GW170817), and the electromagnetic afterglow\u2014called a kilonova\u2014confirmed that neutron star mergers are a major, perhaps dominant, source of the heaviest r-process elements: gold, platinum, and uranium among them (Pian et al., "), ti("Nature"), t(", 2017; Kasen et al., "), ti("Nature"), t(", 2017)."),
-  cite('PIAN'),
-  t(" In 2023, the James Webb Space Telescope spectroscopically identified tellurium in the kilonova associated with GRB 230307A (Levan et al., "), ti("Nature"), t(", 2024), providing the most direct identification yet of a specific heavy element produced in a neutron star merger."),
-  cite('LEVAN'),
-  t(" The picture that emerges is that the elements necessary for life are manufactured through multiple cosmic processes\u2014stellar fusion for the lighter elements up through iron, supernovae and neutron star mergers for the heavier ones.")
+  t("When these massive stars exhaust their fuel, they collapse and explode as supernovae. The explosion generates temperatures and pressures extreme enough to forge some elements heavier than iron through the rapid neutron-capture process (r-process). The explosion scatters these newly created elements into the surrounding space, enriching the interstellar medium with the raw materials for a second generation of stars and, crucially, for rocky planets. However, supernovae are not the only source of heavy elements. In 2017, the LIGO and Virgo gravitational-wave detectors observed the merger of two neutron stars (event GW170817), and the electromagnetic afterglow\u2014called a kilonova\u2014confirmed that neutron star mergers are a major, perhaps dominant, source of the heaviest r-process elements: gold, platinum, and uranium among them (Pian et al., "), ti("Nature"), t(", 2017; Kasen et al., "), ti("Nature"), t(", 2017). In 2023, the James Webb Space Telescope spectroscopically identified tellurium in the kilonova associated with GRB 230307A (Levan et al., "), ti("Nature"), t(", 2024), providing the most direct identification yet of a specific heavy element produced in a neutron star merger. The picture that emerges is that the elements necessary for life are manufactured through multiple cosmic processes\u2014stellar fusion for the lighter elements up through iron, supernovae and neutron star mergers for the heavier ones.")
 ]));
 
 content.push(para([
@@ -1040,11 +917,13 @@ content.push(heading2("Required vs. Open: What the Church Demands About Creation
 content.push(para([
   tb("Required: "),
   t("God is the Creator of all things visible and invisible (Nicene Creed). Creation is not an accident but an act of divine will and wisdom. The human soul cannot be a product of material processes\u2014it is directly created by God ("),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A736", 'HUMANI_GENERIS'), t("; "), cccLink("366"), t("). The created world reflects God\u2019s wisdom and can be known through reason ("),
+  ti("Humani Generis"),
+  t(", \u00A736; "),
+  cccLink("366"),
+  t("). The created world reflects God\u2019s wisdom and can be known through reason ("),
   sLink("Romans 1:19\u201320", "Romans 1:19-20"),
   t("; Vatican I, "),
-  magLink("Dei Filius", 'DEI_FILIUS'),
+  ti("Dei Filius"),
   t("). These are doctrinal givens.")
 ]));
 
@@ -1081,9 +960,7 @@ content.push(para([
   ti("Science"),
   t(" found that the global population of human ancestors was reduced to fewer than 1,300 individuals between 800,000 and 900,000 years ago\u2014an extreme population bottleneck occurring at precisely the time period when "),
   ti("Homo heidelbergensis"),
-  t(" was emerging."),
-  cite('HU'),
-  t(" While mainstream science attributes this to environmental catastrophe, the coincidence of timing with our proposed ensoulment event is striking.")
+  t(" was emerging. While mainstream science attributes this to environmental catastrophe, the coincidence of timing with our proposed ensoulment event is striking.")
 ]));
 
 content.push(para([
@@ -1103,16 +980,13 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("The evidence for Neanderthal rationality has grown dramatically in recent years. According to the Smithsonian Institution, Neanderthals \u201Cmade and used a diverse set of sophisticated tools, controlled fire, lived in shelters, made and wore clothing, were skilled hunters of large animals and also ate plant foods, and occasionally made symbolic or ornamental objects. There is evidence that Neanderthals deliberately buried their dead and occasionally even marked their graves with offerings, such as flowers. No other primates, and no earlier human species, had ever practiced this sophisticated and symbolic behavior.\u201D"),
-  cite('SMITHSONIAN_NEAND')
+  t("The evidence for Neanderthal rationality has grown dramatically in recent years. According to the Smithsonian Institution, Neanderthals \u201Cmade and used a diverse set of sophisticated tools, controlled fire, lived in shelters, made and wore clothing, were skilled hunters of large animals and also ate plant foods, and occasionally made symbolic or ornamental objects. There is evidence that Neanderthals deliberately buried their dead and occasionally even marked their graves with offerings, such as flowers. No other primates, and no earlier human species, had ever practiced this sophisticated and symbolic behavior.\u201D")
 ]));
 
 content.push(para([
   t("In 2018, studies published in the journal "),
   ti("Science"),
-  t(" using uranium-thorium dating revealed that Neanderthals created cave paintings in Spain more than 64,000 years ago\u2014at least 20,000 years before modern humans arrived in Europe."),
-  cite('HOFFMANN'),
-  t(" As Alistair Pike, professor of archaeological sciences at the University of Southampton, stated: \u201CUndoubtedly it is showing that Neanderthals were thinking and behaving just like modern humans. We should no longer think of them as a different species, just humans in different places.\u201D")
+  t(" using uranium-thorium dating revealed that Neanderthals created cave paintings in Spain more than 64,000 years ago\u2014at least 20,000 years before modern humans arrived in Europe. As Alistair Pike, professor of archaeological sciences at the University of Southampton, stated: \u201CUndoubtedly it is showing that Neanderthals were thinking and behaving just like modern humans. We should no longer think of them as a different species, just humans in different places.\u201D")
 ]));
 
 content.push(para([
@@ -1171,22 +1045,20 @@ content.push(para([
   t("; "),
   cccLink("356"),
   t("; "),
-  magLink("Gaudium et Spes", 'GAUDIUM_ET_SPES'),
-  magSectionLink(", \u00A712", 'GAUDIUM_ET_SPES'), t(": \u201CAccording to the almost unanimous opinion of believers and unbelievers alike, all things on earth should be related to man as their center and crown\u201D)."),
-  cite('GAUDIUM'),
-  t(" The human soul is directly created by God and is not the product of material evolution ("),
+  ti("Gaudium et Spes"),
+  t(", \u00A712: \u201CAccording to the almost unanimous opinion of believers and unbelievers alike, all things on earth should be related to man as their center and crown\u201D). The human soul is directly created by God and is not the product of material evolution ("),
   cccLink("366"),
   t("; "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A736", 'HUMANI_GENERIS'), t(": \u201Cthe Catholic faith obliges us to hold that souls are immediately created by God\u201D). The soul is the substantial form of the body (Council of Vienne, 1312, "),
+  ti("Humani Generis"),
+  t(", \u00A736: \u201Cthe Catholic faith obliges us to hold that souls are immediately created by God\u201D). The soul is the substantial form of the body (Council of Vienne, 1312, "),
   ti("Fidei Catholicae"),
   t("; Fifth Lateran Council, 1513, "),
   ti("Apostolici Regiminis"),
   t("; "),
   cccLink("365"),
   t("). All true human beings\u2014those possessing rational souls\u2014descend from Adam and Eve ("),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A737", 'HUMANI_GENERIS'), t(").")
+  ti("Humani Generis"),
+  t(", \u00A737).")
 ]));
 
 content.push(para([
@@ -1194,7 +1066,7 @@ content.push(para([
   t("The Church has issued no definitive teaching on the spiritual status of Neanderthals, Denisovans, "),
   ti("Homo erectus"),
   t(", or any other hominid group. The International Theological Commission\u2019s 2004 document \u201CCommunion and Stewardship\u201D acknowledges \u201Cthe emergence of the first members of the human species (whether as individuals or in populations)\u201D without specifying which fossil species counts as human. Pope Pius XII, in "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  ti("Humani Generis"),
   t(", \u00A736, permitted investigation of bodily evolution from pre-existing living matter but made no pronouncement on which ancestral forms qualify. Whether Neanderthals and Denisovans possessed rational souls, whether they are descendants of Adam, and how they relate to the ensoulment event are all questions of legitimate inquiry. Our framework proposes that all hominid groups showing evidence of symbolic, rational behavior are ensouled descendants of Adam\u2014but this is a theological interpretation, not a dogmatic requirement. A Catholic could coherently hold different views on the spiritual status of Neanderthals without contradicting any defined teaching.")
 ]));
 
@@ -1313,14 +1185,14 @@ content.push(heading2("Required vs. Open: What the Church Demands of This Synthe
 content.push(para([
   tb("Required: "),
   t("The dogmatic requirements constraining this synthesis are drawn from the highest levels of Church authority. Adam and Eve must be real, historical individuals ("),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A737", 'HUMANI_GENERIS'), t(": the faithful \u201Ccannot embrace that opinion which maintains\u2026 that Adam represents a certain number of first parents\u201D). All humans must descend from them through biological generation ("), magSectionLink("Council of Trent, Session V, Canon 3", 'TRENT_V'), t(": original sin \u201Cin its origin is one, and being transfused into all by propagation, not by imitation\u201D). The soul must be directly created by God in each individual ("),
+  ti("Humani Generis"),
+  t(", \u00A737: the faithful \u201Ccannot embrace that opinion which maintains\u2026 that Adam represents a certain number of first parents\u201D). All humans must descend from them through biological generation (Council of Trent, Session V, Canon 3: original sin \u201Cin its origin is one, and being transfused into all by propagation, not by imitation\u201D). The soul must be directly created by God in each individual ("),
   cccLink("366"),
   t("; "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A736", 'HUMANI_GENERIS'), t("). The soul is the form of the body, transforming the whole being (Council of Vienne, 1312). The Fall was a real event with real consequences for all humanity ("),
+  ti("Humani Generis"),
+  t(", \u00A736). The soul is the form of the body, transforming the whole being (Council of Vienne, 1312). The Fall was a real event with real consequences for all humanity ("),
   cccLink("390"),
-  t("; "), magSectionLink("Council of Trent, Session V, Canons 1\u20132", 'TRENT_V'), t("). Our framework is constructed specifically to satisfy every one of these requirements.")
+  t("; Council of Trent, Session V, Canons 1\u20132). Our framework is constructed specifically to satisfy every one of these requirements.")
 ]));
 
 content.push(para([
@@ -1328,8 +1200,8 @@ content.push(para([
   t("The specific date of ensoulment (our proposal of 750,000 to 1,000,000 years ago), the identification of Adam with "),
   ti("Homo heidelbergensis"),
   t(", the mechanism of early interbreeding, the exact timeline of dispersal, and the claim that all post-dispersal hominid groups are ensouled\u2014these are all interpretive proposals operating within the open space Catholic theology permits. The International Theological Commission (2004) acknowledged that \u201Cthe story of human origins is complex and subject to revision,\u201D and "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A736", 'HUMANI_GENERIS'), t(", permits inquiry into bodily evolution \u201Cin as far as it inquires into the origin of the human body as coming from pre-existent and living matter.\u201D The Pontifical Biblical Commission (1909) confirmed that Catholics may interpret the \u201Cdays\u201D of Genesis as periods of time. A Catholic could accept our framework\u2019s dogmatic foundations while differing on its specific scientific and historical claims. The synthesis is offered as a coherent possibility, not as a binding interpretation.")
+  ti("Humani Generis"),
+  t(", \u00A736, permits inquiry into bodily evolution \u201Cin as far as it inquires into the origin of the human body as coming from pre-existent and living matter.\u201D The Pontifical Biblical Commission (1909) confirmed that Catholics may interpret the \u201Cdays\u201D of Genesis as periods of time. A Catholic could accept our framework\u2019s dogmatic foundations while differing on its specific scientific and historical claims. The synthesis is offered as a coherent possibility, not as a binding interpretation.")
 ]));
 
 content.push(pageBreak());
@@ -1440,8 +1312,8 @@ content.push(heading2("Required vs. Open: What the Church Demands About Genetic 
 content.push(para([
   tb("Required: "),
   t("Monogenism\u2014all humans descend from one original pair. This is stated clearly in "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A737", 'HUMANI_GENERIS'), t(" and is grounded in the Council of Trent\u2019s teaching that original sin is \u201Cin its origin one\u201D and is transmitted \u201Cby propagation, not by imitation.\u201D The framework must account for universal descent from Adam and Eve.")
+  ti("Humani Generis"),
+  t(" \u00A737 and is grounded in the Council of Trent\u2019s teaching that original sin is \u201Cin its origin one\u201D and is transmitted \u201Cby propagation, not by imitation.\u201D The framework must account for universal descent from Adam and Eve.")
 ]));
 
 content.push(para([
@@ -1463,9 +1335,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("In 1994, philosopher David Chalmers identified what he called the \u201Chard problem of consciousness.\u201D"),
-  cite('CHALMERS'),
-  t(" The \u201Ceasy problems\u201D of consciousness\u2014how the brain integrates information, categorizes stimuli, focuses attention\u2014are amenable to standard neuroscience. They are difficult in practice but not in principle. The hard problem is different: even after all the relevant functional facts are explained, there remains a further question\u2014why is the performance of these functions accompanied by subjective "),
+  t("In 1994, philosopher David Chalmers identified what he called the \u201Chard problem of consciousness.\u201D The \u201Ceasy problems\u201D of consciousness\u2014how the brain integrates information, categorizes stimuli, focuses attention\u2014are amenable to standard neuroscience. They are difficult in practice but not in principle. The hard problem is different: even after all the relevant functional facts are explained, there remains a further question\u2014why is the performance of these functions accompanied by subjective "),
   ti("experience"),
   t("? Why does it feel like something to be you?")
 ]));
@@ -1502,10 +1372,8 @@ content.push(para([
 
 content.push(para([
   t("Pope St. John Paul II addressed this directly in "),
-  magLink("Fides et Ratio", 'FIDES_ET_RATIO'),
-  t(" (1998)."),
-  cite('FIDES'),
-  t(" In \u00A7\u00A780\u201383, he warned against scientism\u2014the philosophical position that the methods of the natural sciences are the only valid path to knowledge\u2014calling it a \u201Cphilosophical impoverishment\u201D that leaves the deepest human questions unanswered. The encyclical insists that the human person transcends what the empirical sciences can measure: \u201CThe results [of the natural sciences] could even be helpful in understanding of the universe and of the human person. But these are not enough. Those who search for the truth cannot ignore the contribution of the moral and religious knowledge which reaches the very heart of the human person.\u201D The hard problem of consciousness is, in a sense, the vindication of this warning. Science can map every neuron, trace every electrical impulse, catalog every chemical reaction in the brain\u2014and still cannot answer why any of it produces the experience of being someone. The knot that materialism cannot untie, Catholic philosophy cuts cleanly: the rational soul, immaterial and directly created by God, is the source of consciousness, self-awareness, moral reasoning, and the capacity to know truth. Science cannot explain what consciousness is, where it comes from, how matter produces it, or why it exists at all. The Catholic understanding does not struggle with this question\u2014it answers it.")
+  urlLinkItalic("Fides et Ratio", "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_14091998_fides-et-ratio.html"),
+  t(" (1998). In \u00A7\u00A780\u201383, he warned against scientism\u2014the philosophical position that the methods of the natural sciences are the only valid path to knowledge\u2014calling it a \u201Cphilosophical impoverishment\u201D that leaves the deepest human questions unanswered. The encyclical insists that the human person transcends what the empirical sciences can measure: \u201CThe results [of the natural sciences] could even be helpful in understanding of the universe and of the human person. But these are not enough. Those who search for the truth cannot ignore the contribution of the moral and religious knowledge which reaches the very heart of the human person.\u201D The hard problem of consciousness is, in a sense, the vindication of this warning. Science can map every neuron, trace every electrical impulse, catalog every chemical reaction in the brain\u2014and still cannot answer why any of it produces the experience of being someone. The knot that materialism cannot untie, Catholic philosophy cuts cleanly: the rational soul, immaterial and directly created by God, is the source of consciousness, self-awareness, moral reasoning, and the capacity to know truth. Science cannot explain what consciousness is, where it comes from, how matter produces it, or why it exists at all. The Catholic understanding does not struggle with this question\u2014it answers it.")
 ]));
 
 content.push(heading2("Required vs. Open: What the Church Demands About the Soul and Consciousness"));
@@ -1557,7 +1425,6 @@ content.push(para([
   ti("spiritual death"),
   t("\u2014separation from God, the loss of sanctifying grace, the transformation of natural death from a safe passage (under the preternatural gift of bodily immortality that God offered) into something final and terrifying. As the Society of Catholic Scientists explains: \u201CThe traditional Catholic doctrine is that the first humans were offered bodily immortality for themselves and their descendants as a preternatural gift\u2014a gift that goes beyond what is natural\u2014on the condition that they would not transgress the commandment God had given them.\u201D "),
   sLink("Ecclesiastes 3:19", "Ecclesiastes 3:19"),
-  cite('SCS'),
   t(" itself acknowledges: \u201CSurely the fate of human beings is like that of the animals; the same fate awaits them both. As one dies, so dies the other.\u201D")
 ]));
 
@@ -1598,8 +1465,8 @@ content.push(para([
 
 content.push(para([
   t("Pope Pius XII, in "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", paragraph 37", 'HUMANI_GENERIS'), t(", made this even more explicit: \u201CThe faithful cannot embrace that opinion which maintains that either after Adam there existed on this earth true men who did not take their origin through natural generation from him as from the first parent of all, or that Adam represents a certain number of first parents. Now it is in no way apparent how such an opinion can be reconciled with that which the sources of revealed truth and the documents of the Teaching Authority of the Church propose with regard to original sin, which proceeds from a sin actually committed by an individual Adam and which, through generation, is passed on to all and is in everyone as his own.\u201D")
+  ti("Humani Generis"),
+  t(" (1950), paragraph 37, made this even more explicit: \u201CThe faithful cannot embrace that opinion which maintains that either after Adam there existed on this earth true men who did not take their origin through natural generation from him as from the first parent of all, or that Adam represents a certain number of first parents. Now it is in no way apparent how such an opinion can be reconciled with that which the sources of revealed truth and the documents of the Teaching Authority of the Church propose with regard to original sin, which proceeds from a sin actually committed by an individual Adam and which, through generation, is passed on to all and is in everyone as his own.\u201D")
 ]));
 
 content.push(para([
@@ -1629,8 +1496,8 @@ content.push(para([
 content.push(para([
   tb("5. "),
   t("The human body may have evolved from pre-existing living matter, but the soul cannot have evolved\u2014it is directly created by God ("),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", paragraph 36", 'HUMANI_GENERIS'), t(").")
+  ti("Humani Generis"),
+  t(", paragraph 36).")
 ]));
 
 content.push(para([
@@ -1658,10 +1525,8 @@ content.push(para([
 content.push(para([
   t("The Catholic Answers apostolate summarizes the Church\u2019s position clearly: the Church \u201Cdoes not prohibit interpretations of "),
   sLink("Genesis 6\u20138", "Genesis 6-8"),
-  t(" that include a worldwide flood, but neither does the Church require there to be a worldwide flood.\u201D"),
-  cite('CA_YEC'),
-  t(" Pius XII\u2019s own "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
+  t(" that include a worldwide flood, but neither does the Church require there to be a worldwide flood.\u201D Pius XII\u2019s own "),
+  ti("Humani Generis"),
   t(" (paragraph 38) described the first eleven chapters of Genesis as conveying principal truths fundamental for salvation in \u201Csimple and metaphorical language adapted to the mentality of a people but little cultured.\u201D")
 ]));
 
@@ -1670,8 +1535,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("The Catholic Encyclopedia\u2019s entry on the Deluge acknowledged that the question of whether the Flood narrative should be \u201Cconsidered as strictly historical throughout, or only in their outward form\u201D is legitimate. It noted that the view which preserves \u201Cunder the embroidery of poetical parlance, the memory of a fact handed down by a very old tradition\u201D could \u201Cbe readily accepted by a Catholic.\u201D"),
-  cite('CE_DELUGE')
+  t("The Catholic Encyclopedia\u2019s entry on the Deluge acknowledged that the question of whether the Flood narrative should be \u201Cconsidered as strictly historical throughout, or only in their outward form\u201D is legitimate. It noted that the view which preserves \u201Cunder the embroidery of poetical parlance, the memory of a fact handed down by a very old tradition\u201D could \u201Cbe readily accepted by a Catholic.\u201D")
 ]));
 
 content.push(para([
@@ -1725,9 +1589,7 @@ content.push(para([
 ]));
 
 content.push(para([
-  t("The well-known \u201C50/500 rule\u201D in conservation biology suggests that a minimum of 50 individuals is needed to prevent inbreeding depression in the short term, and 500 to guard against genetic drift over the long term."),
-  cite('FRANKLIN'),
-  t(" For mammals like humans, a minimum viable population generally ranges from 500 to 5,000 individuals.")
+  t("The well-known \u201C50/500 rule\u201D in conservation biology suggests that a minimum of 50 individuals is needed to prevent inbreeding depression in the short term, and 500 to guard against genetic drift over the long term. For mammals like humans, a minimum viable population generally ranges from 500 to 5,000 individuals.")
 ]));
 
 content.push(para([
@@ -1743,10 +1605,7 @@ content.push(para([
 content.push(heading2("The Universal Memory: Flood Stories Across the World"));
 
 content.push(para([
-  t("Perhaps the most fascinating dimension of the Flood question is this: flood narratives appear across cultures worldwide, including cultures with no contact with each other or with the biblical tradition. Scholars have catalogued more than 270 distinct flood narratives from cultures around the world."),
-  cite('FRAZER'),
-  cite('ROOTH'),
-  t(" The breadth of this distribution is genuinely striking.")
+  t("Perhaps the most fascinating dimension of the Flood question is this: flood narratives appear across cultures worldwide, including cultures with no contact with each other or with the biblical tradition. Scholars have catalogued more than 270 distinct flood narratives from cultures around the world. The breadth of this distribution is genuinely striking.")
 ]));
 
 content.push(para([
@@ -1775,9 +1634,7 @@ content.push(para([
   tb("Australian Aboriginal"),
   t(" traditions\u2014representing possibly the oldest continuous cultures on earth\u2014contain stories of a time when the sea rose and covered the land. Research by Patrick Nunn of the University of the Sunshine Coast and Nicholas Reid of the University of New England, published in the "),
   ti("Australian Geographer"),
-  t(", has identified 21 Aboriginal stories from across the Australian coastline that accurately describe geographical features from a time when sea levels were lower than today."),
-  cite('NUNN'),
-  t(" Their analysis suggests these oral traditions have endured for between 7,250 and 13,070 years\u2014and more recent research published in the "),
+  t(", has identified 21 Aboriginal stories from across the Australian coastline that accurately describe geographical features from a time when sea levels were lower than today. Their analysis suggests these oral traditions have endured for between 7,250 and 13,070 years\u2014and more recent research published in the "),
   ti("Journal of Archaeological Science"),
   t(" has demonstrated that Tasmanian Aboriginal stories have been passed down for more than 12,000 years, confirmed by multiple independent lines of evidence. Some Aboriginal tribes can still point to islands that no longer exist and provide their original names.")
 ]));
@@ -1805,9 +1662,7 @@ content.push(para([
 
 content.push(para([
   tb("The regional event view"),
-  t(" suggests that specific catastrophic floods\u2014the flooding of the Black Sea around 5600 BC is a popular candidate, as is the post-Ice Age sea level rise\u2014became mythologized in the cultures that experienced them. Archaeologist Bruce Masse has proposed that an oceanic asteroid impact around 2807 BC may have generated tsunamis remembered in multiple traditions."),
-  cite('MASSE'),
-  t(" This view explains some flood stories well but cannot account for traditions from inland cultures or from peoples who experienced no known catastrophic flooding.")
+  t(" suggests that specific catastrophic floods\u2014the flooding of the Black Sea around 5600 BC is a popular candidate, as is the post-Ice Age sea level rise\u2014became mythologized in the cultures that experienced them. Archaeologist Bruce Masse has proposed that an oceanic asteroid impact around 2807 BC may have generated tsunamis remembered in multiple traditions. This view explains some flood stories well but cannot account for traditions from inland cultures or from peoples who experienced no known catastrophic flooding.")
 ]));
 
 content.push(para([
@@ -1841,14 +1696,15 @@ content.push(heading2("Required vs. Open: Summary for the Bottleneck and the Flo
 
 content.push(para([
   tb("Required: "),
-  t("On Adam, the requirements are dogmatic and non-negotiable: Adam was a real, historical individual who committed an actual sin, and all humans descend from him through generation ("), magSectionLink("Council of Trent, Session V, Canons 1\u20134", 'TRENT_V'), t("; "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A737", 'HUMANI_GENERIS'), t("; "), cccRangeLink("390", "404"),
+  t("On Adam, the requirements are dogmatic and non-negotiable: Adam was a real, historical individual who committed an actual sin, and all humans descend from him through generation (Council of Trent, Session V, Canons 1\u20134; "),
+  ti("Humani Generis"),
+  t(", \u00A737; "),
+  cccRangeLink("390", "404"),
   t("). Every human soul is directly created by God ("),
   cccLink("366"),
   t("; "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A736", 'HUMANI_GENERIS'), t("). On the Flood, the Church requires that the narrative conveys real theological truth: God judges sin, God saves the righteous, God offers new beginnings. The Ark and the Flood are established types (prefigurations) of baptism and the Church ("),
+  ti("Humani Generis"),
+  t(", \u00A736). On the Flood, the Church requires that the narrative conveys real theological truth: God judges sin, God saves the righteous, God offers new beginnings. The Ark and the Flood are established types (prefigurations) of baptism and the Church ("),
   sLink("1 Peter 3:20\u201321", "1 Peter 3:20-21"),
   t("; "),
   cccLink("1219"),
@@ -1862,8 +1718,8 @@ content.push(para([
 content.push(para([
   tb("Open: "),
   t("Whether the Flood was global or regional, whether the ark was a literal vessel or a narrative vehicle, whether Noah\u2019s family numbered literally eight or represents a compressed account of a larger remnant\u2014these are all open questions. The Pontifical Biblical Commission\u2019s 1948 letter to Cardinal Suhard granted \u201Cconsiderable liberty\u201D regarding \u201Cthe literary genre of the first eleven chapters of Genesis.\u201D Pope Pius XII in "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A738", 'HUMANI_GENERIS'), t(", described these chapters as using \u201Csimple and metaphorical language adapted to the mentality of a people but little cultured.\u201D The Catholic Encyclopedia\u2019s article on the Deluge acknowledged that viewing the Flood as preserving \u201Cunder the embroidery of poetical parlance, the memory of a fact handed down by a very old tradition\u201D could \u201Cbe readily accepted by a Catholic.\u201D The connection between the 800,000\u2013900,000-year bottleneck (Hu et al., "),
+  ti("Humani Generis"),
+  t(", \u00A738, described these chapters as using \u201Csimple and metaphorical language adapted to the mentality of a people but little cultured.\u201D The Catholic Encyclopedia\u2019s article on the Deluge acknowledged that viewing the Flood as preserving \u201Cunder the embroidery of poetical parlance, the memory of a fact handed down by a very old tradition\u201D could \u201Cbe readily accepted by a Catholic.\u201D The connection between the 800,000\u2013900,000-year bottleneck (Hu et al., "),
   ti("Science"),
   t(", 2023) and the Genesis Flood is a speculative proposal within this open space\u2014not a dogmatic claim.")
 ]));
@@ -1922,12 +1778,10 @@ content.push(heading2("Required vs. Open: What the Church Demands About the Rela
 content.push(para([
   tb("Required: "),
   t("Faith and reason cannot contradict each other. The First Vatican Council, "),
-  magLink("Dei Filius", 'DEI_FILIUS'),
-  magSectionLink(", Chapter 4", 'DEI_FILIUS'), t(", teaches: \u201CSince the same God who reveals mysteries and infuses faith has bestowed the light of reason on the human mind, God cannot deny himself, nor can truth ever contradict truth.\u201D The same document ("), magSectionLink("Chapter 2, Canon 1", 'DEI_FILIUS'), t(") defines under anathema that God \u201Ccan be known with certainty from the things that have been made, by the natural light of human reason.\u201D Pope St. John Paul II, in "),
-  magLink("Fides et Ratio", 'FIDES_ET_RATIO'),
-  magSectionLink(", \u00A7\u00A713\u201316", 'FIDES_ET_RATIO'), t(", affirmed that faith and reason are \u201Clike two wings on which the human spirit rises to the contemplation of truth\u201D and that reason retains its proper autonomy within its own domain."),
-  cite('FIDES'),
-  t(" The Pontifical Academy of Sciences, established by Pope Pius XI in 1936 and renewed by John Paul II in 1986, exists precisely to honor the Church\u2019s commitment to genuine scientific inquiry.")
+  ti("Dei Filius"),
+  t(", Chapter 4, teaches: \u201CSince the same God who reveals mysteries and infuses faith has bestowed the light of reason on the human mind, God cannot deny himself, nor can truth ever contradict truth.\u201D The same document (Chapter 2, Canon 1) defines under anathema that God \u201Ccan be known with certainty from the things that have been made, by the natural light of human reason.\u201D Pope St. John Paul II, in "),
+  ti("Fides et Ratio"),
+  t(" (1998), \u00A7\u00A713\u201316, affirmed that faith and reason are \u201Clike two wings on which the human spirit rises to the contemplation of truth\u201D and that reason retains its proper autonomy within its own domain. The Pontifical Academy of Sciences, established by Pope Pius XI in 1936 and renewed by John Paul II in 1986, exists precisely to honor the Church\u2019s commitment to genuine scientific inquiry.")
 ]));
 
 content.push(para([
@@ -1996,18 +1850,18 @@ content.push(para([
 content.push(para([
   tb("Dogmatic (Required): "),
   t("God is Creator of all things (Nicene Creed; Fourth Lateran Council, 1215; First Vatican Council, "),
-  magLink("Dei Filius", 'DEI_FILIUS'),
-  magSectionLink(", Chapter 1", 'DEI_FILIUS'), t("). Adam and Eve are real, historical individuals ("),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A737", 'HUMANI_GENERIS'), t("). All humans descend from them through generation ("), magSectionLink("Council of Trent, Session V, Canon 3", 'TRENT_V'), t(": original sin is \u201Ctransfused into all by propagation, not by imitation\u201D). The Fall was a real, historical event ("),
+  ti("Dei Filius"),
+  t(", Chapter 1). Adam and Eve are real, historical individuals ("),
+  ti("Humani Generis"),
+  t(", \u00A737). All humans descend from them through generation (Council of Trent, Session V, Canon 3: original sin is \u201Ctransfused into all by propagation, not by imitation\u201D). The Fall was a real, historical event ("),
   cccLink("390"),
-  t("). Original sin is transmitted to all descendants ("), magSectionLink("Council of Trent, Session V, Canons 1\u20134", 'TRENT_V'), t("). Every human soul is directly created by God ("),
+  t("). Original sin is transmitted to all descendants (Council of Trent, Session V, Canons 1\u20134). Every human soul is directly created by God ("),
   cccLink("366"),
   t("; "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A736", 'HUMANI_GENERIS'), t("). The soul is the form of the body (Council of Vienne, 1312; "),
+  ti("Humani Generis"),
+  t(", \u00A736). The soul is the form of the body (Council of Vienne, 1312; "),
   cccLink("365"),
-  t("). Redemption comes through Christ alone ("), magSectionLink("Council of Trent, Session VI, Chapter 3", 'TRENT_V'), t("; "),
+  t("). Redemption comes through Christ alone (Council of Trent, Session VI, Chapter 3; "),
   cccRangeLink("388", "405"),
   t(").")
 ]));
@@ -2065,17 +1919,17 @@ content.push(heading2("Required vs. Open: Why Acknowledging Weakness Is Itself a
 content.push(para([
   tb("Required: "),
   t("Intellectual honesty is a theological obligation, not merely a rhetorical strategy. The First Vatican Council, "),
-  magLink("Dei Filius", 'DEI_FILIUS'),
-  magSectionLink(", Chapter 4", 'DEI_FILIUS'), t(", teaches that \u201Creason, illuminated by faith, when it seeks earnestly, piously and calmly, attains by a gift from God some understanding, and that a most fruitful one, of mysteries.\u201D The word \u201Csome\u201D is significant\u2014the Council explicitly acknowledges the limits of human understanding even when aided by faith. The same document warns against \u201Cthat false appearance of knowledge\u201D which presents speculation as certainty. Pope St. John Paul II, in "),
-  magLink("Fides et Ratio", 'FIDES_ET_RATIO'),
-  magSectionLink(", \u00A74", 'FIDES_ET_RATIO'), t(", insisted that philosophy and theology must maintain \u201Ca legitimate autonomy\u201D and that faith \u201Cdoes not fear reason, but seeks it out and has trust in it.\u201D Acknowledging weaknesses in a theological framework is not a failure of faith; it is fidelity to the Church\u2019s own teaching about the limits of human reasoning.")
+  ti("Dei Filius"),
+  t(", Chapter 4, teaches that \u201Creason, illuminated by faith, when it seeks earnestly, piously and calmly, attains by a gift from God some understanding, and that a most fruitful one, of mysteries.\u201D The word \u201Csome\u201D is significant\u2014the Council explicitly acknowledges the limits of human understanding even when aided by faith. The same document warns against \u201Cthat false appearance of knowledge\u201D which presents speculation as certainty. Pope St. John Paul II, in "),
+  ti("Fides et Ratio"),
+  t(", \u00A74, insisted that philosophy and theology must maintain \u201Ca legitimate autonomy\u201D and that faith \u201Cdoes not fear reason, but seeks it out and has trust in it.\u201D Acknowledging weaknesses in a theological framework is not a failure of faith; it is fidelity to the Church\u2019s own teaching about the limits of human reasoning.")
 ]));
 
 content.push(para([
   tb("Open: "),
   t("All six weaknesses acknowledged above operate within the open space of Catholic theology. The early interbreeding question involves a moral judgment about pre-law conditions\u2014a matter on which the Church has issued no definitive ruling. The fuzzy transition point is shared by every competing model. The metaphorical reading of \u201Cdust of the ground\u201D is permitted by "),
-  magLink("Humani Generis", 'HUMANI_GENERIS'),
-  magSectionLink(", \u00A736", 'HUMANI_GENERIS'), t(", which allows that the human body may derive from \u201Cpre-existing and living matter.\u201D The genetic challenge to monogenism is addressed by our mechanisms but not fully resolved\u2014a candor the Church\u2019s own International Theological Commission (2004) models when it acknowledges that the science of human origins is \u201Ccomplex and subject to revision.\u201D The Augros/Stanciu mechanism is a philosophical proposal, not a doctrinal commitment. And the unfalsifiability of ensoulment is a necessary feature of any claim about an immaterial reality acting on a material world\u2014a feature shared by every Catholic doctrine about the soul.")
+  ti("Humani Generis"),
+  t(", \u00A736, which allows that the human body may derive from \u201Cpre-existing and living matter.\u201D The genetic challenge to monogenism is addressed by our mechanisms but not fully resolved\u2014a candor the Church\u2019s own International Theological Commission (2004) models when it acknowledges that the science of human origins is \u201Ccomplex and subject to revision.\u201D The Augros/Stanciu mechanism is a philosophical proposal, not a doctrinal commitment. And the unfalsifiability of ensoulment is a necessary feature of any claim about an immaterial reality acting on a material world\u2014a feature shared by every Catholic doctrine about the soul.")
 ]));
 
 content.push(pageBreak());
@@ -2280,7 +2134,6 @@ indexEntries.forEach(entry => {
 
 // Build document
 const doc = new Document({
-  footnotes: buildFootnotes(),
   features: {
     updateFields: true
   },
@@ -2290,12 +2143,6 @@ const doc = new Document({
         run: { font: "Georgia", size: 24 }
       }
     },
-    characterStyles: [
-      {
-        id: "Hyperlink", name: "Hyperlink", basedOn: "DefaultParagraphFont",
-        run: { color: "2B5797", underline: { type: "single" } }
-      }
-    ],
     paragraphStyles: [
       {
         id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true,
@@ -2344,6 +2191,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then(buffer => {
-  fs.writeFileSync("Genesis_Science_Catholic_Theology-34.docx", buffer);
+  fs.writeFileSync("Genesis_Science_Catholic_Theology-33.docx", buffer);
   console.log("Document created successfully");
 });
