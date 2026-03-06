@@ -1568,6 +1568,23 @@ content.push(para([
   t(" HLA diversity than Eurasian populations, despite having essentially zero Neanderthal or Denisovan admixture. If HLA diversity required contributions from multiple ancient populations or species, Africans\u2014who remained isolated from Neanderthals and Denisovans\u2014should have less diversity, not more. Instead, they have the most. This demonstrates that balancing selection, operating within a single population lineage over sufficient time, is fully capable of generating all the HLA diversity we observe. No interbreeding with archaic populations is required.")
 ]));
 
+content.push(para([
+  tb("A critical point must be emphasized: none of this is ad hoc reasoning invented to rescue monogenism."),
+  t(" Balancing selection, heterozygote advantage, and frequency-dependent selection are standard textbook population genetics\u2014established science taught in every graduate program in the field. The coalescence-time inflation under balancing selection was demonstrated mathematically by Takahata in 1990 and refined by Slatkin in 2022\u2014neither of whom had any interest in the monogenism question. Gene conversion at HLA loci was documented by Bergström et al. in "),
+  ti("Nature Genetics"),
+  t(" in 1998 and confirmed by Fortier and Pritchard in "),
+  ti("eLife"),
+  t(" in 2025. The exon 2 versus exon 3 discordance at DRB1\u2014the most dramatic evidence that apparent deep ancestry is an artifact\u2014was discovered by mainstream evolutionary biologists studying primate immunology, not by anyone attempting to defend a theological position.")
+]));
+
+content.push(para([
+  t("What has been refuted is not monogenism. What has been refuted is the "),
+  ti("assumption"),
+  t(" on which the original argument against monogenism was built. Ayala\u2019s 1998 argument to the US Catholic Bishops rested on a neutral molecular clock applied to HLA genes: count the DNA differences between alleles, divide by the mutation rate, conclude the lineages are tens of millions of years old, therefore a single couple cannot account for them. But this calculation "),
+  ti("assumed"),
+  t(" that HLA genes evolve at a neutral rate. They do not. They are under the strongest balancing selection in the entire genome. The neutral clock assumption was always wrong for these genes\u2014and the field now knows it. Every \u201Cmillions of years old\u201D estimate for HLA lineages that was calculated under a neutral model is an overestimate, likely by an order of magnitude or more. The trajectory of the science has been consistent and one-directional: every major study since 1998 has reduced the apparent depth and number of truly independent ancient HLA lineages, not increased them.")
+]));
+
 content.push(heading2("The TMR4A Number: The Key to the Puzzle"));
 content.push(para([
   t("In 2017\u20132018, computational biologist S. Joshua Swamidass and population geneticist Richard Buggs developed a concept called TMR4A\u2014Time to Most Recent Four Alleles."),
