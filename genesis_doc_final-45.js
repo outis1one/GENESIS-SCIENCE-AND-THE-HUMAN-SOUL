@@ -291,15 +291,15 @@ content.push(new Paragraph({
 }));
 
 const tocEntries = [
-  "Chapter 1: The Problem and the Promise",
-  "Chapter 2: The Case for a Young Earth\u2014Stated Fairly",
-  "Chapter 3: The Crux\u2014Why This Document Parts Ways with the Young Earth Position",
+  "Chapter 1: Faith and Fossils",
+  "Chapter 2: The Case for the Young Earth",
+  "Chapter 3: The Case Against",
   "Chapter 4: Existing Models\u2014Their Strengths and Limitations",
-  "Chapter 5: Augros and Stanciu\u2014The New Biology and Latent Potential",
-  "Chapter 6: The Hominid Family Tree\u2014Who Are These Cousins?",
+  "Chapter 5: Latent Potential",
+  "Chapter 6: The Hominid Family Tree",
   "Chapter 7: The Synthesis\u2014A Proposed Framework",
-  "Chapter 8: The Cain and Abel Problem",
-  "Chapter 9: Original Sin and the Nature of the Fall",
+  "Chapter 8: Original Sin and the Nature of the Fall",
+  "Chapter 9: The Cain and Abel Problem",
   "Chapter 10: The Genetic Diversity Problem\u2014A Rigorous Examination",
   "Chapter 11: The Hard Problem of Consciousness\u2014The Strongest Argument",
   "Chapter 12: What a Scientist Would Say\u2014A Candid Assessment",
@@ -323,7 +323,7 @@ tocEntries.forEach(title => {
 content.push(pageBreak());
 
 // ===== INTRODUCTION =====
-content.push(heading1("Chapter 1: The Problem and the Promise"));
+content.push(heading1("Chapter 1: Faith and Fossils"));
 
 content.push(para([
   t("For centuries, the opening chapters of Genesis have stood at the center of a seemingly irreconcilable conflict between faith and science. On one side, Catholic teaching holds that Adam and Eve were real, historical individuals\u2014the first true humans, from whom every human being descends, and through whom original sin entered the world. On the other side, modern genetics, paleoanthropology (the study of ancient human ancestors through fossils and archaeology), and the fossil record present a picture of human origins that appears to challenge these claims at every turn: populations of thousands, not a single pair; timescales of hundreds of thousands of years, not six thousand; a branching family tree of hominid species (the broader family of upright-walking primates that includes modern humans and our extinct relatives like Neanderthals), not a single created couple in a garden.")
@@ -357,7 +357,7 @@ content.push(pageBreak());
 
 
 // ===== CHAPTER 2: THE CASE FOR A YOUNG EARTH =====
-content.push(heading1("Chapter 2: The Case for a Young Earth\u2014Stated Fairly"));
+content.push(heading1("Chapter 2: The Case for the Young Earth"));
 
 content.push(para([
   t("Any serious discussion of human origins must begin with the age of the earth. The young earth position has deep roots in Christian history and is held sincerely by many faithful believers today. It deserves to be stated at its strongest before this document explains why it takes a different path.")
@@ -478,7 +478,7 @@ content.push(para([
 content.push(pageBreak());
 
 // ===== CHAPTER 3: THE CRUX =====
-content.push(heading1("Chapter 3: The Crux\u2014Why This Document Parts Ways with the Young Earth Position"));
+content.push(heading1("Chapter 3: The Case Against"));
 
 content.push(para([
   t("The previous chapter tried to state the case for a young earth at its strongest. This chapter explains why, despite those arguments, we believe the young earth position faces difficulties it cannot fully resolve\u2014not only because of the scientific evidence (though it is substantial), but because of a tension with dogmatic Catholic teaching that has not yet received adequate attention from either side.")
@@ -1052,7 +1052,7 @@ content.push(para([
 content.push(pageBreak());
 
 // ===== CHAPTER 5: THE NEW BIOLOGY =====
-content.push(heading1("Chapter 5: Augros and Stanciu\u2014The New Biology and Latent Potential"));
+content.push(heading1("Chapter 5: Latent Potential"));
 
 content.push(para([
   t("Before presenting our synthesis, we need one more piece of the puzzle. In 1987, philosopher Robert Augros and physicist George Stanciu published "),
@@ -1219,7 +1219,7 @@ content.push(para([
 content.push(pageBreak());
 
 // ===== CHAPTER 6: THE HOMINID FAMILY =====
-content.push(heading1("Chapter 6: The Hominid Family Tree\u2014Who Are These Cousins?"));
+content.push(heading1("Chapter 6: The Hominid Family Tree"));
 
 content.push(para([
   t("Before presenting the synthesis, it is important to understand the cast of characters. The fossil record reveals a rich and complex family of hominid species spanning millions of years. (A note on terminology: modern taxonomy distinguishes \u201Chominin\u201D\u2014the human lineage specifically\u2014from \u201Chominid,\u201D which now includes all great apes. This document uses the older, more familiar term \u201Chominid\u201D throughout for accessibility, understanding that specialists may prefer \u201Chominin\u201D for the species discussed here.) Here are the major players relevant to our discussion.")
@@ -1531,51 +1531,8 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 8: CAIN AND ABEL =====
-content.push(heading1("Chapter 8: The Cain and Abel Problem"));
-
-content.push(para([
-  t("If Adam and Eve are the first humans and the Fall happens before any children are born, then when Cain kills Abel and is exiled to the land of Nod, where are the other people he fears? Where does his wife come from?")
-]));
-
-content.push(para([
-  t("Genesis itself never explains this, regardless of timescale. The text simply introduces other people without accounting for them. This is a puzzle under any reading of Genesis\u2014young earth, old earth, or otherwise.")
-]));
-
-content.push(para([
-  t("Under the deep-time framework presented here, the resolution is straightforward. Adam and Eve fall before reproducing. They then have children. Over many generations\u2014compressed by Genesis into a few verses\u2014the population grows substantially. By the time the Cain and Abel event occurs, there are enough people for Cain to fear strangers and find a wife in Nod.")
-]));
-
-content.push(para([
-  t("Under this framework, with Adam placed at 750,000 to 1,000,000 years ago, the population of his descendants has had an enormous span to grow before the Cain and Abel narrative. The \u201Cother people\u201D Cain fears are simply other descendants of Adam\u2014members of a large ensouled population that Genesis compresses into a few verses.")
-]));
-
-content.push(para([
-  t("Cain and Abel, critically, are not necessarily the first and second children of Adam and Eve. They are the first "),
-  ti("narratively and theologically important"),
-  t(" children. Genesis handles genealogy this way throughout\u2014it skips generations freely, gives the significant figures, and compresses potentially vast stretches of time. Matthew\u2019s genealogy of Jesus famously skips known kings. The Hebrew word for \u201Cson of\u201D ("),
-  ti("ben"),
-  t(") also means \u201Cdescendant of.\u201D The text is giving theological narrative, not a census.")
-]));
-
-content.push(heading2("Required vs. Open: What the Church Demands About Cain, Abel, and the \u201COther People\u201D"));
-
-content.push(para([
-  tb("Required: "),
-  t("The narrative of the Fall conveys a real, historical event\u2014\u201Ca deed that took place at the beginning of the history of man\u201D ("),
-  cccLink("390"),
-  t("). Sin and its consequences are real. The theological truths embedded in the Cain and Abel story\u2014that sin escalates, that violence follows disobedience, that God holds us accountable\u2014are matters of faith and morals.")
-]));
-
-content.push(para([
-  tb("Open: "),
-  t("Whether Cain and Abel were literally the first and second children born to Adam and Eve, who the \u201Cother people\u201D were, where Nod was located, and the chronological scope of the narrative are all open questions. The Catechism acknowledges that Genesis uses \u201Cfigurative language\u201D (\u00A7390), and the Pontifical Biblical Commission\u2019s 1948 letter grants liberty regarding the literary forms of Genesis 1\u201311. The identity of Cain\u2019s wife has been an open question since the patristic era\u2014Augustine addressed it, as did Aquinas\u2014and the Church has never issued a definitive answer.")
-]));
-
-content.push(pageBreak());
-
-// ===== CHAPTER 9: ORIGINAL SIN =====
-content.push(heading1("Chapter 9: Original Sin and the Nature of the Fall"));
+// ===== CHAPTER 8: ORIGINAL SIN =====
+content.push(heading1("Chapter 8: Original Sin and the Nature of the Fall"));
 
 content.push(para([
   t("The Catholic claim about original sin is not that humanity has a design flaw that education, politics, technology, or evolution can fix. It is that humanity has a spiritual wound that only grace can heal.")
@@ -1591,6 +1548,10 @@ content.push(para([
 
 content.push(para([
   t("If original sin were ignorance, education would fix it. If it were bad social structures, politics would fix it. If it were evolutionary selfishness, we could evolve past it. The Catholic position is that none of these work at the fundamental level because the problem is spiritual, not material. Only grace heals it\u2014grace that comes from outside us, from God, through the sacraments and ultimately through Christ\u2019s redemptive act.")
+]));
+
+content.push(para([
+  t("This is precisely why monogenism\u2014the descent of all human beings from a single original couple\u2014matters so profoundly. If original sin is transmitted through biological descent from a real, historical Adam, then there must be a real Adam from whom all descend. The universality of the wound demands a singular source. Every human being who has ever lived carries the same moral fracture: the capacity to recognize the good and choose against it, the tendency toward selfishness that no education or political system has ever eradicated. This is not a cultural artifact that different populations developed independently. It is an inherited condition\u2014a privation of grace passed from parent to child since the first parents lost what had been freely given. The empirical evidence of universal moral failure is not merely an interesting observation. It is exactly what one would expect if the Catholic doctrine is true: one man, one Fall, one wound, transmitted to every descendant without exception.")
 ]));
 
 content.push(heading2("Biological Death and Spiritual Death"));
@@ -1633,6 +1594,49 @@ content.push(para([
   t(" of transmission through descent. The "),
   ti("mechanism"),
   t(" remains open.")
+]));
+
+content.push(pageBreak());
+
+// ===== CHAPTER 9: CAIN AND ABEL =====
+content.push(heading1("Chapter 9: The Cain and Abel Problem"));
+
+content.push(para([
+  t("If Adam and Eve are the first humans and the Fall happens before any children are born, then when Cain kills Abel and is exiled to the land of Nod, where are the other people he fears? Where does his wife come from?")
+]));
+
+content.push(para([
+  t("Genesis itself never explains this, regardless of timescale. The text simply introduces other people without accounting for them. This is a puzzle under any reading of Genesis\u2014young earth, old earth, or otherwise.")
+]));
+
+content.push(para([
+  t("Under the deep-time framework presented here, the resolution is straightforward. Adam and Eve fall before reproducing. They then have children. Over many generations\u2014compressed by Genesis into a few verses\u2014the population grows substantially. By the time the Cain and Abel event occurs, there are enough people for Cain to fear strangers and find a wife in Nod.")
+]));
+
+content.push(para([
+  t("Under this framework, with Adam placed at 750,000 to 1,000,000 years ago, the population of his descendants has had an enormous span to grow before the Cain and Abel narrative. The \u201Cother people\u201D Cain fears are simply other descendants of Adam\u2014members of a large ensouled population that Genesis compresses into a few verses.")
+]));
+
+content.push(para([
+  t("Cain and Abel, critically, are not necessarily the first and second children of Adam and Eve. They are the first "),
+  ti("narratively and theologically important"),
+  t(" children. Genesis handles genealogy this way throughout\u2014it skips generations freely, gives the significant figures, and compresses potentially vast stretches of time. Matthew\u2019s genealogy of Jesus famously skips known kings. The Hebrew word for \u201Cson of\u201D ("),
+  ti("ben"),
+  t(") also means \u201Cdescendant of.\u201D The text is giving theological narrative, not a census.")
+]));
+
+content.push(heading2("Required vs. Open: What the Church Demands About Cain, Abel, and the \u201COther People\u201D"));
+
+content.push(para([
+  tb("Required: "),
+  t("The narrative of the Fall conveys a real, historical event\u2014\u201Ca deed that took place at the beginning of the history of man\u201D ("),
+  cccLink("390"),
+  t("). Sin and its consequences are real. The theological truths embedded in the Cain and Abel story\u2014that sin escalates, that violence follows disobedience, that God holds us accountable\u2014are matters of faith and morals.")
+]));
+
+content.push(para([
+  tb("Open: "),
+  t("Whether Cain and Abel were literally the first and second children born to Adam and Eve, who the \u201Cother people\u201D were, where Nod was located, and the chronological scope of the narrative are all open questions. The Catechism acknowledges that Genesis uses \u201Cfigurative language\u201D (\u00A7390), and the Pontifical Biblical Commission\u2019s 1948 letter grants liberty regarding the literary forms of Genesis 1\u201311. The identity of Cain\u2019s wife has been an open question since the patristic era\u2014Augustine addressed it, as did Aquinas\u2014and the Church has never issued a definitive answer.")
 ]));
 
 content.push(pageBreak());
@@ -2357,7 +2361,7 @@ const indexEntries = [
   "Balancing selection \u2014 Chapter 10",
   "Bergstr\u00f6m, Tomas (recent origin of DRB1 alleles) \u2014 Chapter 10",
   "C-decay hypothesis (Setterfield) \u2014 Chapters 2, 3",
-  "Cain and Abel \u2014 Chapter 8",
+  "Cain and Abel \u2014 Chapter 9",
   "Cambrian explosion \u2014 Chapter 5",
   "Carroll, Sean B. (evo-devo) \u2014 Chapter 5",
   "Copernicus, Nicolaus \u2014 Chapters 2, 3",
@@ -2421,7 +2425,7 @@ const indexEntries = [
   "Neutron star mergers \u2014 Chapter 5",
   "Nunn, Patrick \u2014 Appendix A",
   "Omphalos hypothesis \u2014 Chapters 2, 3",
-  "Original sin \u2014 Chapters 7, 9",
+  "Original sin \u2014 Chapters 7, 8",
   "Ott, Ludwig (Fundamentals of Catholic Dogma) \u2014 Chapter 3",
   "Owen, Hugh \u2014 Chapter 2",
   "Pike, Alistair \u2014 Chapter 6",
