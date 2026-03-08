@@ -322,7 +322,7 @@ tocEntries.forEach(title => {
 
 content.push(pageBreak());
 
-// ===== INTRODUCTION =====
+// ===== CHAPTER 1: TWO BOOKS, ONE AUTHOR =====
 content.push(heading1("Chapter 1: Two Books, One Author"));
 
 content.push(para([
@@ -356,7 +356,7 @@ content.push(para([
 content.push(pageBreak());
 
 
-// ===== CHAPTER 2: THE CASE FOR A YOUNG EARTH =====
+// ===== CHAPTER 2: THE CASE FOR THE YOUNG EARTH =====
 content.push(heading1("Chapter 2: The Case for the Young Earth"));
 
 content.push(para([
@@ -477,7 +477,7 @@ content.push(para([
 // Chapter 2 footnotes now handled by cite() system
 content.push(pageBreak());
 
-// ===== CHAPTER 3: THE CRUX =====
+// ===== CHAPTER 3: THE CASE AGAINST =====
 content.push(heading1("Chapter 3: The Case Against"));
 
 content.push(para([
@@ -1051,7 +1051,7 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 5: THE NEW BIOLOGY =====
+// ===== CHAPTER 5: LATENT POTENTIAL =====
 content.push(heading1("Chapter 5: Latent Potential"));
 
 content.push(para([
@@ -1218,7 +1218,7 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 6: THE HOMINID FAMILY =====
+// ===== CHAPTER 6: THE HOMINID FAMILY TREE =====
 content.push(heading1("Chapter 6: The Hominid Family Tree"));
 
 content.push(para([
@@ -2035,7 +2035,7 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 12: WHAT A SCIENTIST WOULD SAY =====
+// ===== CHAPTER 12: WHAT A SCIENTIST MIGHT SAY =====
 content.push(heading1("Chapter 12: What a Scientist Might Say\u2014A Candid Assessment"));
 
 content.push(para([
@@ -2102,7 +2102,7 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 13: SUMMARY =====
+// ===== CHAPTER 13: THE FRAMEWORK SUMMARIZED =====
 content.push(heading1("Chapter 13: The Framework Summarized"));
 
 content.push(para([
@@ -2184,7 +2184,7 @@ content.push(para([
 
 content.push(pageBreak());
 
-// ===== CHAPTER 14: ACKNOWLEDGMENTS OF WEAKNESS =====
+// ===== CHAPTER 14: ACKNOWLEDGED WEAKNESSES AND OPEN QUESTIONS =====
 content.push(heading1("Chapter 14: Acknowledged Weaknesses and Open Questions"));
 
 content.push(para([
