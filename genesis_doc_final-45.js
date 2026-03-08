@@ -291,7 +291,7 @@ content.push(new Paragraph({
 }));
 
 const tocEntries = [
-  "Chapter 1: Faith and Fossils",
+  "Chapter 1: Two Books, One Author",
   "Chapter 2: The Case for the Young Earth",
   "Chapter 3: The Case Against",
   "Chapter 4: Existing Models\u2014Their Strengths and Limitations",
@@ -302,7 +302,7 @@ const tocEntries = [
   "Chapter 9: The Cain and Abel Problem",
   "Chapter 10: The Genetic Diversity Problem\u2014A Rigorous Examination",
   "Chapter 11: The Hard Problem of Consciousness\u2014The Strongest Argument",
-  "Chapter 12: What a Scientist Would Say\u2014A Candid Assessment",
+  "Chapter 12: What a Scientist Might Say\u2014A Candid Assessment",
   "Chapter 13: The Framework Summarized",
   "Chapter 14: Acknowledged Weaknesses and Open Questions",
   "Appendix A: The Flood and the Memory of Near-Extinction",
@@ -323,7 +323,7 @@ tocEntries.forEach(title => {
 content.push(pageBreak());
 
 // ===== INTRODUCTION =====
-content.push(heading1("Chapter 1: Faith and Fossils"));
+content.push(heading1("Chapter 1: Two Books, One Author"));
 
 content.push(para([
   t("For centuries, the opening chapters of Genesis have stood at the center of a seemingly irreconcilable conflict between faith and science. On one side, Catholic teaching holds that Adam and Eve were real, historical individuals\u2014the first true humans, from whom every human being descends, and through whom original sin entered the world. On the other side, modern genetics, paleoanthropology (the study of ancient human ancestors through fossils and archaeology), and the fossil record present a picture of human origins that appears to challenge these claims at every turn: populations of thousands, not a single pair; timescales of hundreds of thousands of years, not six thousand; a branching family tree of hominid species (the broader family of upright-walking primates that includes modern humans and our extinct relatives like Neanderthals), not a single created couple in a garden.")
@@ -2036,7 +2036,7 @@ content.push(para([
 content.push(pageBreak());
 
 // ===== CHAPTER 12: WHAT A SCIENTIST WOULD SAY =====
-content.push(heading1("Chapter 12: What a Scientist Would Say\u2014A Candid Assessment"));
+content.push(heading1("Chapter 12: What a Scientist Might Say\u2014A Candid Assessment"));
 
 content.push(para([
   t("Any framework that claims compatibility with science must be willing to face scientific scrutiny. Here is a candid assessment of how a fair-minded, non-believing scientist would likely evaluate our proposal.")
